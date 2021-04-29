@@ -19,7 +19,31 @@ namespace OperationScreens
 
         private void SystemVerification_Load(object sender, EventArgs e)
         {
+            validationProcess1.Visible = true;
+            spaceShipDetails1.Visible = false;
+            selectionPlanet1.Visible = false;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            validationProcess1.Visible = true;
+            spaceShipDetails1.Visible = false;
+            selectionPlanet1.Visible = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            validationProcess1.Visible = false;
+            spaceShipDetails1.Visible = false;
+            selectionPlanet1.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            validationProcess1.Visible = false;
+            spaceShipDetails1.Visible = true;
+            selectionPlanet1.Visible = false;
         }
     }
 }

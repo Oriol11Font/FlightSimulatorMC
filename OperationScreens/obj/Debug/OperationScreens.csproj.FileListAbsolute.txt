@@ -8,3 +8,8 @@ C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\Operat
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.csproj.CoreCompileInputs.cache
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.exe
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\PersonalControls.dll
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\UtilsMuchoCodigo.dll
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\PersonalControls.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\UtilsMuchoCodigo.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.csproj.CopyComplete
