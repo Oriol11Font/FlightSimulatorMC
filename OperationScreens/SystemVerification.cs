@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainFlightSimulator
+namespace OperationScreens
 {
-    public partial class Splash : Form
+    public partial class SystemVerification : Form
     {
-        public Splash()
+        public SystemVerification()
         {
             InitializeComponent();
+        }
+
+        private void SystemVerification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

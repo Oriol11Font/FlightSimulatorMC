@@ -1,0 +1,10 @@
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\OperationScreens.exe.config
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\OperationScreens.exe
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\bin\Debug\OperationScreens.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.csprojAssemblyReference.cache
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.Properties.Resources.resources
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.SystemVerification.resources
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.csproj.GenerateResource.cache
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.csproj.CoreCompileInputs.cache
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.exe
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\OperationScreens\obj\Debug\OperationScreens.pdb

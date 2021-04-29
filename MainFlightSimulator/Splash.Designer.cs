@@ -1,7 +1,7 @@
 ﻿
 namespace MainFlightSimulator
 {
-    partial class Form1
+    partial class Splash
     {
         /// <summary>
         /// Variable del diseñador necesaria.
