@@ -33,13 +33,13 @@ namespace PersonalControls
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -51,7 +51,7 @@ namespace PersonalControls
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Alien Encounters", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(52, 31);
+            this.label11.Location = new System.Drawing.Point(16, 270);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(516, 39);
             this.label11.TabIndex = 11;
@@ -61,9 +61,10 @@ namespace PersonalControls
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(40, 86);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Location = new System.Drawing.Point(40, 34);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(549, 525);
+            this.panel6.Size = new System.Drawing.Size(549, 577);
             this.panel6.TabIndex = 6;
             // 
             // SpaceShipDetails
@@ -75,7 +76,8 @@ namespace PersonalControls
             this.Name = "SpaceShipDetails";
             this.Size = new System.Drawing.Size(634, 649);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
