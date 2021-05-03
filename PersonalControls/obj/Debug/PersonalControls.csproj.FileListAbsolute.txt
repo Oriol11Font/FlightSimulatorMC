@@ -1,5 +1,6 @@
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\bin\Debug\PersonalControls.dll
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\bin\Debug\PersonalControls.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.Properties.Resources.resources
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.SelectionPlanet.resources
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.SpaceShipDetails.resources
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.ValidationProcess.resources
@@ -7,4 +8,3 @@ C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\Person
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.csproj.CoreCompileInputs.cache
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.dll
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.pdb
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\PersonalControls\obj\Debug\PersonalControls.Properties.Resources.resources

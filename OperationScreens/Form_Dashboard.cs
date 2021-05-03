@@ -20,6 +20,7 @@ namespace OperationScreens
             Thread.Sleep(5000);
             InitializeComponent();
             trd.Abort();
+            this.Show();
         }
 
         public void formRun ()
@@ -54,6 +55,11 @@ namespace OperationScreens
             validationProcess1.Visible = false;
             spaceShipDetails1.Visible = true;
             selectionPlanet1.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
