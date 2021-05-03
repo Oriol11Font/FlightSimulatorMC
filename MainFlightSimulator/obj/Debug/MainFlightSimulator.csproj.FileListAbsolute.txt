@@ -6,3 +6,10 @@ C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFl
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\obj\Debug\MainFlightSimulator.csproj.CoreCompileInputs.cache
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\obj\Debug\MainFlightSimulator.exe
 C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\obj\Debug\MainFlightSimulator.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\obj\Debug\MainFlightSimulator.csprojAssemblyReference.cache
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\bin\Debug\OperationScreens.exe
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\bin\Debug\PersonalControls.dll
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\bin\Debug\OperationScreens.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\bin\Debug\OperationScreens.exe.config
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\bin\Debug\PersonalControls.pdb
+C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\MainFlightSimulator\obj\Debug\MainFlightSimulator.csproj.CopyComplete

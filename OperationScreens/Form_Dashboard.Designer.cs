@@ -1,7 +1,7 @@
 ﻿
 namespace OperationScreens
 {
-    partial class SystemVerification
+    partial class Form_dashboard
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -39,12 +39,14 @@ namespace OperationScreens
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.validationProcess1 = new PersonalControls.ValidationProcess();
             this.spaceShipDetails1 = new PersonalControls.SpaceShipDetails();
             this.selectionPlanet1 = new PersonalControls.SelectionPlanet();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -58,7 +60,7 @@ namespace OperationScreens
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(13, 12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(582, 643);
+            this.panel4.Size = new System.Drawing.Size(738, 1056);
             this.panel4.TabIndex = 2;
             // 
             // panel5
@@ -67,16 +69,17 @@ namespace OperationScreens
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Location = new System.Drawing.Point(40, 516);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 938);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(494, 96);
+            this.panel5.Size = new System.Drawing.Size(738, 118);
             this.panel5.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Alien Encounters", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(23, 25);
+            this.label9.Location = new System.Drawing.Point(75, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(360, 30);
             this.label9.TabIndex = 10;
@@ -88,7 +91,7 @@ namespace OperationScreens
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Alien Encounters", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(21, 55);
+            this.label8.Location = new System.Drawing.Point(73, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(364, 19);
             this.label8.TabIndex = 5;
@@ -98,7 +101,7 @@ namespace OperationScreens
             // pictureBox2
             // 
             this.pictureBox2.Image = global::OperationScreens.Properties.Resources.Untitled__6_;
-            this.pictureBox2.Location = new System.Drawing.Point(389, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(566, 16);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(83, 83);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,11 +111,12 @@ namespace OperationScreens
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 384);
+            this.button3.Location = new System.Drawing.Point(0, 710);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(582, 91);
+            this.button3.Size = new System.Drawing.Size(738, 225);
             this.button3.TabIndex = 8;
             this.button3.Text = "SPACESHIP DETAILS";
             this.button3.UseVisualStyleBackColor = false;
@@ -121,11 +125,12 @@ namespace OperationScreens
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 287);
+            this.button2.Location = new System.Drawing.Point(0, 485);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(582, 91);
+            this.button2.Size = new System.Drawing.Size(738, 225);
             this.button2.TabIndex = 7;
             this.button2.Text = "SELECTION PLANET";
             this.button2.UseVisualStyleBackColor = false;
@@ -134,11 +139,12 @@ namespace OperationScreens
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 192);
+            this.button1.Location = new System.Drawing.Point(0, 260);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(582, 91);
+            this.button1.Size = new System.Drawing.Size(738, 225);
             this.button1.TabIndex = 6;
             this.button1.Text = "VERIFICATION SYSTEM";
             this.button1.UseVisualStyleBackColor = false;
@@ -146,11 +152,12 @@ namespace OperationScreens
             // 
             // label7
             // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Alien Encounters", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(23, 71);
+            this.label7.Location = new System.Drawing.Point(0, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(537, 71);
+            this.label7.Size = new System.Drawing.Size(738, 141);
             this.label7.TabIndex = 5;
             this.label7.Text = "Welcome to X-Wing simulator, the real experience of a master pilot of republican " +
     "squadron. Come with us to destroy the imperium and take the galaxy";
@@ -158,57 +165,76 @@ namespace OperationScreens
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("Alien Encounters", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(42, 32);
+            this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(501, 39);
+            this.label6.Size = new System.Drawing.Size(738, 119);
             this.label6.TabIndex = 5;
             this.label6.Text = "X-WING SIMULATOR";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.selectionPlanet1);
+            this.panel1.Controls.Add(this.validationProcess1);
+            this.panel1.Controls.Add(this.spaceShipDetails1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(757, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1163, 1080);
+            this.panel1.TabIndex = 3;
             // 
             // validationProcess1
             // 
+            this.validationProcess1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.validationProcess1.AutoSize = true;
             this.validationProcess1.BackColor = System.Drawing.Color.Transparent;
-            this.validationProcess1.Location = new System.Drawing.Point(603, 15);
+            this.validationProcess1.Location = new System.Drawing.Point(16, 12);
             this.validationProcess1.Name = "validationProcess1";
-            this.validationProcess1.Size = new System.Drawing.Size(636, 649);
+            this.validationProcess1.Size = new System.Drawing.Size(1135, 1056);
             this.validationProcess1.TabIndex = 5;
             // 
             // spaceShipDetails1
             // 
+            this.spaceShipDetails1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.spaceShipDetails1.AutoSize = true;
             this.spaceShipDetails1.BackColor = System.Drawing.Color.Transparent;
-            this.spaceShipDetails1.Location = new System.Drawing.Point(603, 12);
+            this.spaceShipDetails1.Location = new System.Drawing.Point(16, 12);
             this.spaceShipDetails1.Name = "spaceShipDetails1";
-            this.spaceShipDetails1.Size = new System.Drawing.Size(634, 649);
+            this.spaceShipDetails1.Size = new System.Drawing.Size(1141, 1062);
             this.spaceShipDetails1.TabIndex = 4;
             // 
             // selectionPlanet1
             // 
+            this.selectionPlanet1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.selectionPlanet1.AutoSize = true;
             this.selectionPlanet1.BackColor = System.Drawing.Color.Transparent;
-            this.selectionPlanet1.Location = new System.Drawing.Point(601, 15);
+            this.selectionPlanet1.Location = new System.Drawing.Point(16, 12);
             this.selectionPlanet1.Name = "selectionPlanet1";
-            this.selectionPlanet1.Size = new System.Drawing.Size(636, 640);
+            this.selectionPlanet1.Size = new System.Drawing.Size(1135, 1056);
             this.selectionPlanet1.TabIndex = 3;
             // 
-            // SystemVerification
+            // Form_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1263, 683);
-            this.Controls.Add(this.validationProcess1);
-            this.Controls.Add(this.spaceShipDetails1);
-            this.Controls.Add(this.selectionPlanet1);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
-            this.Name = "SystemVerification";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Form_dashboard";
+            this.Text = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SystemVerification_Load);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,6 +253,7 @@ namespace OperationScreens
         private PersonalControls.SelectionPlanet selectionPlanet1;
         private PersonalControls.SpaceShipDetails spaceShipDetails1;
         private PersonalControls.ValidationProcess validationProcess1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OperationScreens;
 
 namespace MainFlightSimulator
 {
@@ -16,7 +17,7 @@ namespace MainFlightSimulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash());
+            Application.Run(new Form_dashboard());
         }
     }
 }

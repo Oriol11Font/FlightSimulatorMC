@@ -16,5 +16,24 @@ namespace OperationScreens
         {
             InitializeComponent();
         }
+
+        private void Form_Splash_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panelSlider.Left += 20;
+
+            if (panelSlider.Left > 315)
+            {
+                panelSlider.Left = 0;
+            }
+            if (panelSlider.Left < 0)
+            {
+                //move = 2;
+            }
+        }
     }
 }

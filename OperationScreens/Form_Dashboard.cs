@@ -5,16 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OperationScreens
 {
-    public partial class SystemVerification : Form
+    public partial class Form_dashboard : Form
     {
-        public SystemVerification()
+        public Form_dashboard()
         {
+            Thread trd = new Thread(new ThreadStart(formRun));
+            trd.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            trd.Abort();
+        }
+
+        public void formRun ()
+        {
+            Application.Run(new Form_Splash());
         }
 
         private void SystemVerification_Load(object sender, EventArgs e)

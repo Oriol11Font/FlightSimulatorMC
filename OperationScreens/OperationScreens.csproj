@@ -46,14 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SystemVerification.cs">
+    <Compile Include="Form_Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemVerification.Designer.cs">
-      <DependentUpon>SystemVerification.cs</DependentUpon>
+    <Compile Include="Form_Splash.Designer.cs">
+      <DependentUpon>Form_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dashboard.Designer.cs">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Splash.resx">
+      <DependentUpon>Form_Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,8 +73,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SystemVerification.resx">
-      <DependentUpon>SystemVerification.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Dashboard.resx">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,6 +104,15 @@
       <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
       <Name>UtilsMuchoCodigo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashLogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashLogo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
