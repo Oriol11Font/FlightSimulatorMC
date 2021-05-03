@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MainFlightSimulator
+namespace OperationScreens
 {
-    public partial class Splash : Form
+    public partial class Form_Splash : Form
     {
-        public Splash()
+        public Form_Splash()
         {
             InitializeComponent();
         }
