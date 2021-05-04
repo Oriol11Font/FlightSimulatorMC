@@ -70,7 +70,7 @@ namespace OperationScreens
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(241, 349);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(448, 74);
+            this.label1.Size = new System.Drawing.Size(457, 76);
             this.label1.TabIndex = 2;
             this.label1.Text = "SPACESHIP FLIGHT\r\nSIMULATOR";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,7 +99,6 @@ namespace OperationScreens
             this.Name = "Form_Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Splash";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_Splash_Load);
             this.panelFix.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

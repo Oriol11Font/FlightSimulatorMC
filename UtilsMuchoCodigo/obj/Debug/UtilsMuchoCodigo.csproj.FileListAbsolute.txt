@@ -1,5 +1,0 @@
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\UtilsMuchoCodigo\bin\Debug\UtilsMuchoCodigo.dll
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\UtilsMuchoCodigo\bin\Debug\UtilsMuchoCodigo.pdb
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\UtilsMuchoCodigo\obj\Debug\UtilsMuchoCodigo.csproj.CoreCompileInputs.cache
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\UtilsMuchoCodigo\obj\Debug\UtilsMuchoCodigo.dll
-C:\Users\oriol\OneDrive\Documents\Repositories - GitHub\FlightSimulatorMC\UtilsMuchoCodigo\obj\Debug\UtilsMuchoCodigo.pdb

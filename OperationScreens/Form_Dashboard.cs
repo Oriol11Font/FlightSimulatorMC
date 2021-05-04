@@ -20,7 +20,7 @@ namespace OperationScreens
             Thread.Sleep(5000);
             InitializeComponent();
             trd.Abort();
-            this.Show();
+            Show();
         }
 
         public void formRun ()

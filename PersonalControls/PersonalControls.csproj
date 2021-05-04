@@ -86,5 +86,11 @@
   <ItemGroup>
     <None Include="Resources\3bc97fe6bc122c8875786b4fe0ad31df.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsMuchoCodigo\UtilsMuchoCodigo.csproj">
+      <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
+      <Name>UtilsMuchoCodigo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
