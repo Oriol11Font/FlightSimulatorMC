@@ -71,7 +71,7 @@ namespace PersonalControls
             this.pb_planet.Location = new System.Drawing.Point(26, 167);
             this.pb_planet.Name = "pb_planet";
             this.pb_planet.Size = new System.Drawing.Size(1000, 800);
-            this.pb_planet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pb_planet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_planet.TabIndex = 14;
             this.pb_planet.TabStop = false;
             // 
@@ -118,7 +118,6 @@ namespace PersonalControls
             this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pb_planet)).EndInit();
             this.ResumeLayout(false);
         }

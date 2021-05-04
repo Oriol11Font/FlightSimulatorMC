@@ -40,16 +40,18 @@ namespace PersonalControls
             var selectedPlanet = _planets[cbx_planets.SelectedIndex];
 
             var imagePath =
-                FindFileByName(Path.Combine(Application.StartupPath, "assets", "planetes"),
+                FindFileByName(Path.Combine("assets", "planetes"),
                     selectedPlanet.Name);
             pb_planet.Image = Image.FromFile(imagePath ?? Path.Combine
-                (Application.StartupPath, "assets", "placeholder.png"));
+                ("assets", "placeholder.png"));
         }
 
         private static List<Planet> ReadPlanets(string dbName)
         {
+            var dbPath = Path.Combine("assets", dbName);
+            
             var doc = new XmlDocument();
-            doc.Load(dbName);
+            doc.Load(dbPath);
 
             var root = doc.DocumentElement;
 

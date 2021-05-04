@@ -40,10 +40,10 @@ namespace OperationScreens
 
             if (form.AutoScroll)
                 form.AutoScroll = false;
+            
             pn_main.Controls.Clear();
             pn_main.Controls.Add(form);
             form.Show();
-
         }
 
         private void button4_Click(object sender, EventArgs e)
