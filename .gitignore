@@ -3,3 +3,4 @@
 *.pdb
 obj/
 *.cache
+*.exe.config
