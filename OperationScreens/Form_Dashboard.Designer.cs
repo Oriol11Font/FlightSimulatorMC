@@ -24,8 +24,8 @@ namespace OperationScreens
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -43,12 +43,12 @@ namespace OperationScreens
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pn_main = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -85,7 +85,7 @@ namespace OperationScreens
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(372, 342);
             this.button5.Name = "button5";
@@ -93,13 +93,13 @@ namespace OperationScreens
             this.button5.TabIndex = 3;
             this.button5.Text = "WEAPONS SYSTEM";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.HandleFormChange);
             // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(3, 342);
             this.button3.Name = "button3";
@@ -107,13 +107,13 @@ namespace OperationScreens
             this.button3.TabIndex = 2;
             this.button3.Text = "SPACESHIP DETAILS";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.HandleFormChange);
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(372, 3);
             this.button2.Name = "button2";
@@ -121,13 +121,13 @@ namespace OperationScreens
             this.button2.TabIndex = 1;
             this.button2.Text = "SELECTION PLANET";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.HandleFormChange);
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
@@ -135,7 +135,7 @@ namespace OperationScreens
             this.button1.TabIndex = 0;
             this.button1.Text = "VERIFICATION SYSTEM";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.HandleFormChange);
             // 
             // panel5
             // 
@@ -163,7 +163,7 @@ namespace OperationScreens
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label9.Font = new System.Drawing.Font("Alien Encounters", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
@@ -176,7 +176,7 @@ namespace OperationScreens
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label8.Font = new System.Drawing.Font("Alien Encounters", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(0, 63);
             this.label8.Name = "label8";
@@ -189,7 +189,7 @@ namespace OperationScreens
             // 
             this.button4.BackColor = System.Drawing.Color.Black;
             this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button4.ForeColor = System.Drawing.Color.Red;
             this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Name = "button4";
@@ -202,7 +202,6 @@ namespace OperationScreens
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::OperationScreens.Properties.Resources.Untitled__6_;
             this.pictureBox2.Location = new System.Drawing.Point(605, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(131, 116);
@@ -213,20 +212,19 @@ namespace OperationScreens
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Alien Encounters", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(738, 141);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Welcome to X-Wing simulator, the real experience of a master pilot of republican " +
-    "squadron. Come with us to destroy the imperium and take the galaxy";
+            this.label7.Text = "Welcome to X-Wing simulator, the real experience of a master pilot of republican " + "squadron. Come with us to destroy the imperium and take the galaxy";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Alien Encounters", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
@@ -235,13 +233,13 @@ namespace OperationScreens
             this.label6.Text = "X-WING SIMULATOR";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // pn_main
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(757, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1163, 1080);
-            this.panel1.TabIndex = 3;
+            this.pn_main.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pn_main.Location = new System.Drawing.Point(757, 0);
+            this.pn_main.Name = "pn_main";
+            this.pn_main.Size = new System.Drawing.Size(1163, 1080);
+            this.pn_main.TabIndex = 3;
             // 
             // Form_dashboard
             // 
@@ -249,21 +247,21 @@ namespace OperationScreens
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pn_main);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_dashboard";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.SystemVerification_Load);
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.Panel pn_main;
 
         #endregion
         private System.Windows.Forms.Panel panel4;

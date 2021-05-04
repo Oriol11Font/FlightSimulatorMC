@@ -11,13 +11,13 @@ namespace PersonalControls
 {
     public partial class SelectionPlanet : UserControl
     {
+        private const string DbFileName = "DataBank.xml";
+        private List<Planet> _planets;
+
         public SelectionPlanet()
         {
             InitializeComponent();
         }
-
-        private const string DbFileName = "DataBank.xml";
-        private List<Planet> _planets;
 
         private void OnFormLoad(object sender, EventArgs eventArgs)
         {
@@ -27,19 +27,21 @@ namespace PersonalControls
         private void Init()
         {
             _planets = ReadPlanets(DbFileName);
-            
+
             if (!(_planets.Count > 0)) return;
-            
+
             cbx_planets.Items.Clear();
             foreach (var planet in _planets)
                 cbx_planets.Items.Add(planet.Name);
         }
-        
+
         private void cbx_planets_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var selectedPlanet = _planets[cbx_planets.SelectedIndex];
 
-            var imagePath = FindFileByName(Path.Combine(Application.StartupPath, "assets", "planetes"), selectedPlanet.Name);
+            var imagePath =
+                FindFileByName(Path.Combine(Application.StartupPath, "assets", "planetes"),
+                    selectedPlanet.Name);
             pb_planet.Image = Image.FromFile(imagePath ?? Path.Combine
                 (Application.StartupPath, "assets", "placeholder.png"));
         }
@@ -63,7 +65,8 @@ namespace PersonalControls
                 let longitude = double.Parse(situationNode.SelectSingleNode("long").InnerText)
                 let situation = new Coordinates {Latitude = latitude, Longitude = longitude}
                 let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
-                let hyperSpaceRoutes = (from XmlNode route in routes select route.InnerText).ToList()
+                let hyperSpaceRoutes =
+                    (from XmlNode route in routes select route.InnerText).ToList()
                 select new Planet
                 {
                     Name = name,
@@ -74,7 +77,7 @@ namespace PersonalControls
                     HyperspaceRoutes = hyperSpaceRoutes
                 }).ToList();
         }
-        
+
         private static string FindFileByName(string path, string name)
         {
             var dir = new DirectoryInfo(path);
