@@ -61,5 +61,12 @@ namespace OperationScreens
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            validationProcess1.Visible = false;
+            spaceShipDetails1.Visible = false;
+            selectionPlanet1.Visible = false;
+        }
     }
 }

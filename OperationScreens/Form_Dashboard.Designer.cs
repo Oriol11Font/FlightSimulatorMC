@@ -30,41 +30,112 @@ namespace OperationScreens
         private void InitializeComponent()
         {
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.validationProcess1 = new PersonalControls.ValidationProcess();
-            this.spaceShipDetails1 = new PersonalControls.SpaceShipDetails();
-            this.selectionPlanet1 = new PersonalControls.SelectionPlanet();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(13, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(738, 1056);
             this.panel4.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.button5, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 260);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(738, 678);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(372, 342);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(363, 333);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "WEAPONS SYSTEM";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 342);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(363, 333);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "SPACESHIP DETAILS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(372, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(363, 333);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "SELECTION PLANET";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(363, 333);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "VERIFICATION SYSTEM";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel5
             // 
@@ -77,6 +148,16 @@ namespace OperationScreens
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(738, 118);
             this.panel5.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(192, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(407, 116);
+            this.panel2.TabIndex = 12;
             // 
             // label9
             // 
@@ -104,47 +185,30 @@ namespace OperationScreens
             this.label8.Text = "POWERED BY MuchoCodigoIT";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // button4
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 710);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(738, 225);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "SPACESHIP DETAILS";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button4.BackColor = System.Drawing.Color.Black;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button4.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(192, 116);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "END";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
+            // pictureBox2
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 485);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(738, 225);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "SELECTION PLANET";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(738, 225);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "VERIFICATION SYSTEM";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::OperationScreens.Properties.Resources.Untitled__6_;
+            this.pictureBox2.Location = new System.Drawing.Point(605, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 116);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // label7
             // 
@@ -173,79 +237,11 @@ namespace OperationScreens
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.selectionPlanet1);
-            this.panel1.Controls.Add(this.validationProcess1);
-            this.panel1.Controls.Add(this.spaceShipDetails1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(757, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1163, 1080);
             this.panel1.TabIndex = 3;
-            // 
-            // validationProcess1
-            // 
-            this.validationProcess1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.validationProcess1.AutoSize = true;
-            this.validationProcess1.BackColor = System.Drawing.Color.Transparent;
-            this.validationProcess1.Location = new System.Drawing.Point(16, 12);
-            this.validationProcess1.Name = "validationProcess1";
-            this.validationProcess1.Size = new System.Drawing.Size(1135, 1056);
-            this.validationProcess1.TabIndex = 5;
-            // 
-            // spaceShipDetails1
-            // 
-            this.spaceShipDetails1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.spaceShipDetails1.AutoSize = true;
-            this.spaceShipDetails1.BackColor = System.Drawing.Color.Transparent;
-            this.spaceShipDetails1.Location = new System.Drawing.Point(16, 12);
-            this.spaceShipDetails1.Name = "spaceShipDetails1";
-            this.spaceShipDetails1.Size = new System.Drawing.Size(1141, 1062);
-            this.spaceShipDetails1.TabIndex = 4;
-            // 
-            // selectionPlanet1
-            // 
-            this.selectionPlanet1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.selectionPlanet1.AutoSize = true;
-            this.selectionPlanet1.BackColor = System.Drawing.Color.Transparent;
-            this.selectionPlanet1.Location = new System.Drawing.Point(16, 12);
-            this.selectionPlanet1.Name = "selectionPlanet1";
-            this.selectionPlanet1.Size = new System.Drawing.Size(1135, 1056);
-            this.selectionPlanet1.TabIndex = 3;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::OperationScreens.Properties.Resources.Untitled__6_;
-            this.pictureBox2.Location = new System.Drawing.Point(605, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 116);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button4.Font = new System.Drawing.Font("Alien Encounters", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(192, 116);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "END";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(192, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(407, 116);
-            this.panel2.TabIndex = 12;
             // 
             // Form_dashboard
             // 
@@ -261,11 +257,10 @@ namespace OperationScreens
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SystemVerification_Load);
             this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,9 +270,6 @@ namespace OperationScreens
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
@@ -287,6 +279,11 @@ namespace OperationScreens
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 
