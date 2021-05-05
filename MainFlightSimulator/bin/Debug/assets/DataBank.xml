@@ -10,7 +10,7 @@
 			<type>Major hyperspace route</type>
 			<nameRoute>Perlemian Trade Route</nameRoute>
 			<start>Coruscant</start>
-			<end> Quermia</end>
+			<end>Quermia</end>
 		</Route>
 		<Route>
 			<type>Major hyperspace route</type>
@@ -480,7 +480,7 @@
 		</planet>
 		<planet>
 			<name>Shili</name>
-					<sector>Shili-Expansion Region</sector>
+			<sector>Shili-Expansion Region</sector>
 			<filiation>Republican</filiation>
 			<situation>
 				<long>637532259</long>
