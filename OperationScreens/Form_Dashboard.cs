@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PersonalControls;
 
 namespace OperationScreens
 {
@@ -15,7 +9,7 @@ namespace OperationScreens
     {
         public Form_dashboard()
         {
-            Thread trd = new Thread(new ThreadStart(formRun));
+            var trd = new Thread(formRun);
             trd.Start();
             Thread.Sleep(5000);
             InitializeComponent();
@@ -23,50 +17,39 @@ namespace OperationScreens
             Show();
         }
 
-        public void formRun ()
+        private static void formRun ()
         {
             Application.Run(new Form_Splash());
         }
 
-        private void SystemVerification_Load(object sender, EventArgs e)
+        private void HandleFormChange(object sender, EventArgs e)
         {
-            validationProcess1.Visible = true;
-            spaceShipDetails1.Visible = false;
-            selectionPlanet1.Visible = false;
-        }
+            if (sender is not Button button) return;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            validationProcess1.Visible = true;
-            spaceShipDetails1.Visible = false;
-            selectionPlanet1.Visible = false;
+            var btnName = button.Name;
 
-        }
+            dynamic form = btnName switch
+            {
+                "button1" => new ValidationProcess(),
+                "button2" => new SelectionPlanet(),
+                "button3" => new SpaceShipDetails(),
+                _ => null
+            };
+            
+            pn_main.Controls.Clear();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            validationProcess1.Visible = false;
-            spaceShipDetails1.Visible = false;
-            selectionPlanet1.Visible = true;
-        }
+            if (form == null) return;
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            validationProcess1.Visible = false;
-            spaceShipDetails1.Visible = true;
-            selectionPlanet1.Visible = false;
+            if (form.AutoScroll)
+                form.AutoScroll = false;
+            
+            pn_main.Controls.Add(form);
+            form.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            validationProcess1.Visible = false;
-            spaceShipDetails1.Visible = false;
-            selectionPlanet1.Visible = false;
         }
     }
 }
