@@ -32,7 +32,7 @@ namespace PersonalControls
             _planets = ReadPlanets(DbFilePath);
             _routes = ReadRoutes(DbFilePath);
 
-            if (!(_planets.Count > 0)) return;
+            if (_planets is not {Count: > 0}) return;
 
             cbx_origin_planet.Items.Clear();
             cbx_destination_planet.Items.Clear();
@@ -68,8 +68,13 @@ namespace PersonalControls
             lbl_natives.Text = planet.Natives;
 
             lb_routes.Items.Clear();
-            foreach (var route in planet.HyperspaceRoutes)
-                lb_routes.Items.Add(route);
+            foreach (var routeName in planet.HyperspaceRoutes)
+            {
+                var route = _routes.Find(x => x.Name == routeName);
+                var major = route.Type.ToLower().Contains("major");
+                
+                lb_routes.Items.Add($"{route.Name} ({(major ? "Major" : "Minor")})");
+            }
 
             var imagePath = planet.ImageName != null
                 ? Path.Combine(Application.StartupPath,
