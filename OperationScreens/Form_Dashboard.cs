@@ -33,7 +33,7 @@ namespace OperationScreens
                 "button1" => new ValidationProcess(),
                 "button2" => new SelectionPlanet(),
                 "button3" => new SpaceShipDetails(),
-                "button4" => new WeaponsSystem(),
+                "button5" => new WeaponsSystem(),
                 _ => null
             };
             
@@ -45,6 +45,7 @@ namespace OperationScreens
                 form.AutoScroll = false;
             
             pn_main.Controls.Add(form);
+            form.Dock = DockStyle.Fill;
             form.Show();
         }
 
