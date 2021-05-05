@@ -24,9 +24,9 @@ namespace OperationScreens
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panelSlider.Left += 20;
+            panelSlider.Left += 40;
 
-            if (panelSlider.Left > 315)
+            if (panelSlider.Left > 859)
             {
                 panelSlider.Left = 0;
             }
