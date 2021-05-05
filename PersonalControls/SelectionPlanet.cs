@@ -121,7 +121,7 @@ namespace PersonalControls
                 let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
                 let hyperSpaceRoutes =
                     (from XmlNode route in routes select route.InnerText).ToList()
-                let imageName = FindFileByName(Path.Combine(Application.StartupPath,
+                let imageInfo = FindFileByName(Path.Combine(Application.StartupPath,
                     "assets", "planetes"), name)
                 select new Planet
                 {
@@ -132,7 +132,7 @@ namespace PersonalControls
                     Situation = situation,
                     Natives = natives,
                     HyperspaceRoutes = hyperSpaceRoutes,
-                    ImageName = imageName
+                    ImageName = imageInfo?.Name
                 }).ToList();
         }
         
@@ -154,11 +154,11 @@ namespace PersonalControls
                 ).ToList();
         }
 
-        private static string FindFileByName(string path, string name)
+        private static FileInfo FindFileByName(string path, string name)
         {
             var dir = new DirectoryInfo(path);
             var files = dir.GetFiles($@"{name}*", SearchOption.TopDirectoryOnly);
-            return files is {Length: > 0} ? files[0].Name : null;
+            return files is {Length: > 0} ? files[0] : null;
         }
     }
 }
