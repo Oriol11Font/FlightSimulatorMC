@@ -67,6 +67,12 @@
       <DependentUpon>ValidationProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeaponsSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeaponsSystem.Designer.cs">
+      <DependentUpon>WeaponsSystem.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ValidationProcess.resx">
       <DependentUpon>ValidationProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeaponsSystem.resx">
+      <DependentUpon>WeaponsSystem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

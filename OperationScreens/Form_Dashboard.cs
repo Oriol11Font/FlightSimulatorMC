@@ -33,6 +33,7 @@ namespace OperationScreens
                 "button1" => new ValidationProcess(),
                 "button2" => new SelectionPlanet(),
                 "button3" => new SpaceShipDetails(),
+                "button4" => new WeaponsSystem(),
                 _ => null
             };
             
