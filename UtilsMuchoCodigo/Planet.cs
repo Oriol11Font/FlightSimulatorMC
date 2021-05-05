@@ -16,5 +16,6 @@ namespace UtilsMuchoCodigo
         public Coordinates Situation { get; set; }
         public IEnumerable<string> HyperspaceRoutes { get; set; }
         public string Natives { get; set; }
+        public string? ImageName { get; set; }
     }
 }

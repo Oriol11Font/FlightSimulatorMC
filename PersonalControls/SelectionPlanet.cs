@@ -39,9 +39,11 @@ namespace PersonalControls
         {
             var selectedPlanet = _planets[cbx_planets.SelectedIndex];
 
-            var imagePath =
-                FindFileByName(Path.Combine("assets", "planetes"),
-                    selectedPlanet.Name);
+            var imagePath = selectedPlanet.ImageName != null ? Path.Combine(Application.StartupPath, 
+                "assets", 
+                "planetes",
+                selectedPlanet.ImageName) : null;
+            
             pb_planet.Image = Image.FromFile(imagePath ?? Path.Combine
                 ("assets", "placeholder.png"));
         }
@@ -69,6 +71,8 @@ namespace PersonalControls
                 let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
                 let hyperSpaceRoutes =
                     (from XmlNode route in routes select route.InnerText).ToList()
+                let imageName = FindFileByName(Path.Combine(Application.StartupPath, 
+                    "assets", "planetes"), name)
                 select new Planet
                 {
                     Name = name,
@@ -76,7 +80,8 @@ namespace PersonalControls
                     Filiation = filiation,
                     Situation = situation,
                     Natives = natives,
-                    HyperspaceRoutes = hyperSpaceRoutes
+                    HyperspaceRoutes = hyperSpaceRoutes,
+                    ImageName = imageName
                 }).ToList();
         }
 
@@ -84,7 +89,7 @@ namespace PersonalControls
         {
             var dir = new DirectoryInfo(path);
             var files = dir.GetFiles($@"{name}*", SearchOption.TopDirectoryOnly);
-            return files != null && files.Length > 0 ? files[0].FullName : null;
+            return files != null && files.Length > 0 ? files[0].Name : null;
         }
     }
 }

@@ -238,6 +238,7 @@ namespace OperationScreens
             this.pn_main.Dock = System.Windows.Forms.DockStyle.Right;
             this.pn_main.Location = new System.Drawing.Point(757, 0);
             this.pn_main.Name = "pn_main";
+            this.pn_main.Padding = new System.Windows.Forms.Padding(10);
             this.pn_main.Size = new System.Drawing.Size(1163, 1080);
             this.pn_main.TabIndex = 3;
             // 

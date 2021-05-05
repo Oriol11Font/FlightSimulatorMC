@@ -68,9 +68,9 @@ namespace PersonalControls
             // 
             // pb_planet
             // 
-            this.pb_planet.Location = new System.Drawing.Point(26, 167);
+            this.pb_planet.Location = new System.Drawing.Point(38, 202);
             this.pb_planet.Name = "pb_planet";
-            this.pb_planet.Size = new System.Drawing.Size(1000, 800);
+            this.pb_planet.Size = new System.Drawing.Size(441, 306);
             this.pb_planet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pb_planet.TabIndex = 14;
             this.pb_planet.TabStop = false;
@@ -79,19 +79,19 @@ namespace PersonalControls
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(314, 107);
+            this.label1.Location = new System.Drawing.Point(54, 144);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 29);
+            this.label1.Size = new System.Drawing.Size(100, 29);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Planet Name:";
+            this.label1.Text = "Origin:";
             // 
             // cbx_planets
             // 
             this.cbx_planets.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.cbx_planets.FormattingEnabled = true;
-            this.cbx_planets.Location = new System.Drawing.Point(455, 103);
+            this.cbx_planets.Location = new System.Drawing.Point(169, 142);
             this.cbx_planets.Name = "cbx_planets";
-            this.cbx_planets.Size = new System.Drawing.Size(286, 33);
+            this.cbx_planets.Size = new System.Drawing.Size(286, 37);
             this.cbx_planets.TabIndex = 12;
             this.cbx_planets.SelectionChangeCommitted += new System.EventHandler(this.cbx_planets_SelectionChangeCommitted);
             // 
