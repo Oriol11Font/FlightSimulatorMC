@@ -11,8 +11,11 @@ namespace PersonalControls
 {
     public partial class SelectionPlanet : UserControl
     {
-        private const string DbFileName = "DataBank.xml";
         private List<Planet> _planets;
+        private List<Route> _routes;
+
+        private readonly string DbFilePath =
+            Path.Combine(Application.StartupPath, "assets", "DataBank.xml");
 
         public SelectionPlanet()
         {
@@ -26,7 +29,8 @@ namespace PersonalControls
 
         private void Init()
         {
-            _planets = ReadPlanets(DbFileName);
+            _planets = ReadPlanets(DbFilePath);
+            _routes = ReadRoutes(DbFilePath);
 
             if (!(_planets.Count > 0)) return;
 
@@ -86,10 +90,8 @@ namespace PersonalControls
                     : PictureBoxSizeMode.CenterImage;
         }
 
-        private static List<Planet> ReadPlanets(string dbName)
+        private static List<Planet> ReadPlanets(string dbPath)
         {
-            var dbPath = Path.Combine("assets", dbName);
-
             var doc = new XmlDocument();
             doc.Load(dbPath);
 
@@ -99,13 +101,18 @@ namespace PersonalControls
 
             return (from XmlNode planet in planets
                 let name = planet.SelectSingleNode("name").InnerText
-                let sector = planet.SelectSingleNode("sector").InnerText
+                let sector = planet.SelectSingleNode("sector").InnerText.Split('-')
                 let filiation = planet.SelectSingleNode("filiation").InnerText
                 let natives = planet.SelectSingleNode("natives").InnerText
                 let situationNode = planet.SelectSingleNode("situation")
                 let latitude = double.Parse(situationNode.SelectSingleNode("lat").InnerText)
                 let longitude = double.Parse(situationNode.SelectSingleNode("long").InnerText)
-                let situation = new Coordinates {Latitude = latitude, Longitude = longitude}
+                let parsecs = situationNode.SelectSingleNode("parsecs").InnerText
+                let situation = new Coordinates
+                {
+                    Latitude = latitude, Longitude = longitude,
+                    Parsecs = parsecs
+                }
                 let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
                 let hyperSpaceRoutes =
                     (from XmlNode route in routes select route.InnerText).ToList()
@@ -114,13 +121,32 @@ namespace PersonalControls
                 select new Planet
                 {
                     Name = name,
-                    Sector = sector,
+                    Sector = sector[0],
+                    Region = sector[1],
                     Filiation = filiation,
                     Situation = situation,
                     Natives = natives,
                     HyperspaceRoutes = hyperSpaceRoutes,
                     ImageName = imageName
                 }).ToList();
+        }
+        
+        private static List<Route> ReadRoutes(string dbPath)
+        {
+            var doc = new XmlDocument();
+            doc.Load(dbPath);
+
+            var root = doc.DocumentElement;
+
+            var routes = root.SelectNodes("//Route");
+
+            return (from XmlNode route in routes
+                    let type = route.SelectSingleNode("type").InnerText
+                    let name = route.SelectSingleNode("nameRoute").InnerText
+                    let start = route.SelectSingleNode("start").InnerText
+                    let end = route.SelectSingleNode("end").InnerText
+                    select new Route {Name = name, Type = type, Start = start, End = end}   
+                ).ToList();
         }
 
         private static string FindFileByName(string path, string name)
