@@ -42,17 +42,17 @@ namespace OperationScreens
             // panelFix
             // 
             this.panelFix.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelFix.BackColor = System.Drawing.Color.White;
+            this.panelFix.BackColor = System.Drawing.Color.Transparent;
             this.panelFix.Controls.Add(this.panelSlider);
-            this.panelFix.Location = new System.Drawing.Point(254, 439);
+            this.panelFix.Location = new System.Drawing.Point(1, 454);
             this.panelFix.Name = "panelFix";
-            this.panelFix.Size = new System.Drawing.Size(422, 10);
+            this.panelFix.Size = new System.Drawing.Size(931, 10);
             this.panelFix.TabIndex = 0;
             // 
             // panelSlider
             // 
             this.panelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.panelSlider.Location = new System.Drawing.Point(349, 0);
+            this.panelSlider.Location = new System.Drawing.Point(858, 0);
             this.panelSlider.Name = "panelSlider";
             this.panelSlider.Size = new System.Drawing.Size(73, 10);
             this.panelSlider.TabIndex = 1;
