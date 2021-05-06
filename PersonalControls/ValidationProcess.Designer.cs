@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.validationSystem = new System.Windows.Forms.Panel();
-            this.lst = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.progress2 = new System.Windows.Forms.ProgressBar();
             this.progress1 = new System.Windows.Forms.ProgressBar();
@@ -45,8 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.progressG = new System.Windows.Forms.ProgressBar();
+            this.lst = new System.Windows.Forms.ListBox();
             this.btn_Start = new System.Windows.Forms.Button();
             this.validationSystem.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -56,28 +58,25 @@
             // 
             this.validationSystem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.validationSystem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.validationSystem.Controls.Add(this.panel2);
             this.validationSystem.Controls.Add(this.progressG);
-            this.validationSystem.Controls.Add(this.btn_Start);
             this.validationSystem.Controls.Add(this.lst);
-            this.validationSystem.Controls.Add(this.panel1);
-            this.validationSystem.Controls.Add(this.panel3);
+            this.validationSystem.Controls.Add(this.btn_Start);
             this.validationSystem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.validationSystem.Location = new System.Drawing.Point(0, 0);
             this.validationSystem.Name = "validationSystem";
-            this.validationSystem.Size = new System.Drawing.Size(1135, 1056);
+            this.validationSystem.Size = new System.Drawing.Size(1277, 1320);
             this.validationSystem.TabIndex = 2;
             // 
-            // lst
+            // panel2
             // 
-            this.lst.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lst.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lst.Font = new System.Drawing.Font("Alien Encounters", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lst.ForeColor = System.Drawing.Color.White;
-            this.lst.FormattingEnabled = true;
-            this.lst.Location = new System.Drawing.Point(0, 0);
-            this.lst.Name = "lst";
-            this.lst.Size = new System.Drawing.Size(1133, 407);
-            this.lst.TabIndex = 1;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 426);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1275, 578);
+            this.panel2.TabIndex = 8;
             // 
             // panel1
             // 
@@ -89,9 +88,10 @@
             this.panel1.Controls.Add(this.progress5);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.progressSensor);
-            this.panel1.Location = new System.Drawing.Point(630, 429);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(808, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 623);
+            this.panel1.Size = new System.Drawing.Size(467, 578);
             this.panel1.TabIndex = 0;
             // 
             // progress2
@@ -136,10 +136,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PersonalControls.Properties.Resources._3bc97fe6bc122c8875786b4fe0ad31df;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(449, 575);
+            this.pictureBox1.Size = new System.Drawing.Size(465, 576);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -160,82 +161,102 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(3, 491);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(621, 560);
+            this.panel3.Size = new System.Drawing.Size(420, 578);
             this.panel3.TabIndex = 6;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 480);
+            this.label5.Location = new System.Drawing.Point(0, 447);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(495, 33);
+            this.label5.Size = new System.Drawing.Size(418, 98);
             this.label5.TabIndex = 4;
             this.label5.Text = "5. Test dels Sensors";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(21, 380);
+            this.label4.Location = new System.Drawing.Point(0, 348);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(538, 33);
+            this.label4.Size = new System.Drawing.Size(418, 99);
             this.label4.TabIndex = 3;
             this.label4.Text = "4. Generador d’energia";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(21, 266);
+            this.label3.Location = new System.Drawing.Point(0, 234);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(571, 33);
+            this.label3.Size = new System.Drawing.Size(418, 114);
             this.label3.TabIndex = 2;
             this.label3.Text = "3. Test dels Deflectors";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 153);
+            this.label2.Location = new System.Drawing.Point(0, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(452, 33);
+            this.label2.Size = new System.Drawing.Size(418, 118);
             this.label2.TabIndex = 1;
             this.label2.Text = "2. Estat del Motor";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 35);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(526, 33);
+            this.label1.Size = new System.Drawing.Size(418, 116);
             this.label1.TabIndex = 0;
             this.label1.Text = "1. Sistema d’armament";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // progressG
             // 
             this.progressG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressG.Location = new System.Drawing.Point(0, 407);
+            this.progressG.Location = new System.Drawing.Point(0, 410);
             this.progressG.Name = "progressG";
-            this.progressG.Size = new System.Drawing.Size(1133, 16);
+            this.progressG.Size = new System.Drawing.Size(1275, 16);
             this.progressG.TabIndex = 6;
+            // 
+            // lst
+            // 
+            this.lst.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lst.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lst.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst.ForeColor = System.Drawing.Color.White;
+            this.lst.FormattingEnabled = true;
+            this.lst.ItemHeight = 25;
+            this.lst.Location = new System.Drawing.Point(0, 56);
+            this.lst.Name = "lst";
+            this.lst.Size = new System.Drawing.Size(1275, 354);
+            this.lst.TabIndex = 1;
             // 
             // btn_Start
             // 
+            this.btn_Start.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Start.Font = new System.Drawing.Font("Alien Encounters", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Start.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Start.Location = new System.Drawing.Point(2, 429);
+            this.btn_Start.Location = new System.Drawing.Point(0, 0);
             this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(622, 56);
+            this.btn_Start.Size = new System.Drawing.Size(1275, 56);
             this.btn_Start.TabIndex = 7;
             this.btn_Start.Text = "START INTEGRITY CHECK";
             this.btn_Start.UseVisualStyleBackColor = true;
@@ -246,13 +267,12 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.validationSystem);
             this.Name = "ValidationProcess";
-            this.Size = new System.Drawing.Size(1135, 1056);
-            this.Load += new System.EventHandler(this.ValidationProcess_Load);
+            this.Size = new System.Drawing.Size(1277, 1320);
             this.validationSystem.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +297,6 @@
         private System.Windows.Forms.ProgressBar progressG;
         private System.Windows.Forms.ProgressBar progress2;
         private System.Windows.Forms.Button btn_Start;
+        private System.Windows.Forms.Panel panel2;
     }
 }
