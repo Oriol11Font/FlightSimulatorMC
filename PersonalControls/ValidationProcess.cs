@@ -188,10 +188,5 @@ namespace PersonalControls
                 lst.Items.Add(text);
             }
         }
-
-        private void ValidationProcess_Load(object sender, EventArgs e)
-        {
-            //Control.CheckForIllegalCrossThreadCalls = false;
-        }
     }
 }

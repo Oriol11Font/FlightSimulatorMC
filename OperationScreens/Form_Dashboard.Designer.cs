@@ -288,10 +288,6 @@ namespace OperationScreens
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label9;
-        private PersonalControls.SelectionPlanet selectionPlanet1;
-        private PersonalControls.SpaceShipDetails spaceShipDetails1;
-        private PersonalControls.ValidationProcess validationProcess1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

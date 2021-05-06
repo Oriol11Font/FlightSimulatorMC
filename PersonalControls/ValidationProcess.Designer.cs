@@ -268,7 +268,6 @@
             this.Controls.Add(this.validationSystem);
             this.Name = "ValidationProcess";
             this.Size = new System.Drawing.Size(1277, 1320);
-            this.Load += new System.EventHandler(this.ValidationProcess_Load);
             this.validationSystem.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
