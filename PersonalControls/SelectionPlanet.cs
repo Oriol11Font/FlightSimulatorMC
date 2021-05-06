@@ -186,6 +186,35 @@ namespace PersonalControls
                 ).ToList();
         }
 
+        private static void AddDefinedRoute(string dbPath, DefinedRoute definedRoute)
+        {
+            var doc = new XmlDocument();
+            doc.Load(dbPath);
+
+            var root = doc.DocumentElement;
+
+            var defineRoute = doc.CreateElement("defineRoute");
+
+            var OrDes = doc.CreateElement("OrDes");
+            OrDes.InnerText = $@"{definedRoute.Origin}-{definedRoute.Destination}";
+            defineRoute.AppendChild(OrDes);
+
+            var selectedRoute = doc.CreateElement("selectedRoute");
+            selectedRoute.InnerText = string.Join("-", definedRoute.Routes);
+            defineRoute.AppendChild(selectedRoute);
+
+            if (definedRoute.Map != null)
+            {
+                var map = doc.CreateElement("map");
+                map.InnerText = definedRoute.Map;
+                defineRoute.AppendChild(map);
+            }
+
+            var parent = doc.SelectSingleNode("//definedRoutes");
+            parent?.AppendChild(defineRoute);
+            doc.Save(dbPath);
+        }
+
         private static void MakeLabelsVisible(IEnumerable<Label> labels)
         {
             var enumerable = labels as Label[] ?? labels.ToArray();
@@ -222,6 +251,8 @@ namespace PersonalControls
         {
             _selectedRoute = _routes.Find(x => lb_routes.Text.Contains(x.Name));
             MapRouteToControls();
+
+            if (!btn_calc_vector.Enabled) btn_calc_vector.Enabled = true;
         }
 
         private void MapRouteToControls()
@@ -246,6 +277,53 @@ namespace PersonalControls
 
             pb_route_image.Image = Image.FromFile(imagePath);
             FitPictureBoxImage(pb_route_image);
+        }
+
+        private void btn_calc_vector_Click(object sender, EventArgs e)
+        {
+            CalculateVector();
+        }
+
+        private void CalculateVector()
+        {
+            var selectedDefinedRoute = new DefinedRoute
+            {
+                Origin = _selectedOriginPlanet.Name,
+                Destination = _selectedDestinationPlanet.Name, Routes = _selectedOriginPlanet
+                    .HyperspaceRoutes.Concat(_selectedDestinationPlanet.HyperspaceRoutes)
+            };
+
+            var isDefinedRouteExist = _definedRoutes.Any(x =>
+                x.Origin.Equals(selectedDefinedRoute.Origin) && x.Destination.Equals(
+                    selectedDefinedRoute.Destination) &&
+                x.Routes.SequenceEqual(selectedDefinedRoute.Routes));
+
+            if (!isDefinedRouteExist)
+            {
+                var msg = MessageBox.Show(
+                    @"You have selected a new route not saved on the database, do you want to save it now?",
+                    null, MessageBoxButtons.YesNo);
+
+                if (msg == DialogResult.Yes)
+                {
+                    var initialPath = Path.Combine(Application.StartupPath, "assets", "planetes");
+
+                    var fileDialog = new OpenFileDialog
+                    {
+                        InitialDirectory = initialPath,
+                        CheckFileExists = true, Filter = @"*.png|*.jpg",
+                        Title = @"Select an image tied to this route"
+                    };
+
+                    if (fileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        selectedDefinedRoute.Map = fileDialog.SafeFileName;
+                    }
+                }
+
+                AddDefinedRoute(_dbFilePath, selectedDefinedRoute);
+                _definedRoutes.Add(selectedDefinedRoute);
+            }
         }
     }
 }

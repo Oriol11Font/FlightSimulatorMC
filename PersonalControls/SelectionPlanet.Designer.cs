@@ -34,6 +34,7 @@ namespace PersonalControls
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btn_calc_vector = new System.Windows.Forms.Button();
             this.gpb_route = new System.Windows.Forms.GroupBox();
             this.pb_route_image = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@ namespace PersonalControls
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.btn_calc_vector);
             this.panel7.Controls.Add(this.gpb_route);
             this.panel7.Controls.Add(this.gpb_planet);
             this.panel7.Controls.Add(this.lb_routes);
@@ -101,6 +103,20 @@ namespace PersonalControls
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1057, 995);
             this.panel7.TabIndex = 6;
+            // 
+            // btn_calc_vector
+            // 
+            this.btn_calc_vector.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_calc_vector.Enabled = false;
+            this.btn_calc_vector.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_calc_vector.ForeColor = System.Drawing.Color.White;
+            this.btn_calc_vector.Location = new System.Drawing.Point(355, 813);
+            this.btn_calc_vector.Name = "btn_calc_vector";
+            this.btn_calc_vector.Size = new System.Drawing.Size(682, 165);
+            this.btn_calc_vector.TabIndex = 33;
+            this.btn_calc_vector.Text = "Calculate Vector";
+            this.btn_calc_vector.UseVisualStyleBackColor = false;
+            this.btn_calc_vector.Click += new System.EventHandler(this.btn_calc_vector_Click);
             // 
             // gpb_route
             // 
@@ -349,10 +365,10 @@ namespace PersonalControls
             this.lb_routes.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lb_routes.ForeColor = System.Drawing.Color.White;
             this.lb_routes.FormattingEnabled = true;
-            this.lb_routes.ItemHeight = 25;
+            this.lb_routes.ItemHeight = 20;
             this.lb_routes.Location = new System.Drawing.Point(19, 516);
             this.lb_routes.Name = "lb_routes";
-            this.lb_routes.Size = new System.Drawing.Size(319, 75);
+            this.lb_routes.Size = new System.Drawing.Size(319, 60);
             this.lb_routes.TabIndex = 30;
             this.lb_routes.SelectedValueChanged += new System.EventHandler(this.lb_routes_SelectedValueChanged);
             // 
@@ -382,7 +398,7 @@ namespace PersonalControls
             this.cbx_destination_planet.FormattingEnabled = true;
             this.cbx_destination_planet.Location = new System.Drawing.Point(18, 255);
             this.cbx_destination_planet.Name = "cbx_destination_planet";
-            this.cbx_destination_planet.Size = new System.Drawing.Size(320, 40);
+            this.cbx_destination_planet.Size = new System.Drawing.Size(320, 33);
             this.cbx_destination_planet.TabIndex = 15;
             this.cbx_destination_planet.SelectionChangeCommitted += new System.EventHandler(this.cbx_planets_SelectionChangeCommitted);
             // 
@@ -414,7 +430,7 @@ namespace PersonalControls
             this.cbx_origin_planet.FormattingEnabled = true;
             this.cbx_origin_planet.Location = new System.Drawing.Point(19, 164);
             this.cbx_origin_planet.Name = "cbx_origin_planet";
-            this.cbx_origin_planet.Size = new System.Drawing.Size(319, 40);
+            this.cbx_origin_planet.Size = new System.Drawing.Size(319, 33);
             this.cbx_origin_planet.TabIndex = 12;
             this.cbx_origin_planet.SelectionChangeCommitted += new System.EventHandler(this.cbx_origin_planet_SelectionChangeCommitted);
             // 
@@ -447,6 +463,8 @@ namespace PersonalControls
             ((System.ComponentModel.ISupportInitialize) (this.pb_planet_image)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button btn_calc_vector;
 
         private System.Windows.Forms.PictureBox pb_route_image;
 
