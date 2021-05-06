@@ -11,11 +11,16 @@ namespace PersonalControls
 {
     public partial class SelectionPlanet : UserControl
     {
-        private List<Planet> _planets;
-        private List<Route> _routes;
-
         private readonly string _dbFilePath =
             Path.Combine(Application.StartupPath, "assets", "DataBank.xml");
+
+        private List<DefinedRoute> _definedRoutes;
+        private List<Planet> _planets;
+        private List<Route> _routes;
+        private Planet _selectedDestinationPlanet;
+
+        private Planet _selectedOriginPlanet;
+        private Route _selectedRoute;
 
         public SelectionPlanet()
         {
@@ -31,6 +36,7 @@ namespace PersonalControls
         {
             _planets = ReadPlanets(_dbFilePath);
             _routes = ReadRoutes(_dbFilePath);
+            _definedRoutes = ReadDefinedRoutes(_dbFilePath);
 
             if (_planets is not {Count: > 0}) return;
 
@@ -44,30 +50,35 @@ namespace PersonalControls
             }
         }
 
-        private void cbx_planets_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cbx_origin_planet_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var selectedPlanet = _planets[cbx_destination_planet.SelectedIndex];
-
-
-            MapPlanetToControls(selectedPlanet);
+            _selectedOriginPlanet = _planets[cbx_origin_planet.SelectedIndex];
         }
 
-        private void MapPlanetToControls(Planet planet)
+        private void cbx_planets_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _selectedDestinationPlanet = _planets[cbx_destination_planet.SelectedIndex];
+
+            MapPlanetToControls();
+        }
+
+        private void MapPlanetToControls()
         {
             var labelControls = gpb_planet.Controls.OfType<Label>();
             MakeLabelsVisible(labelControls);
 
             if (!label11.Visible) label11.Visible = true;
 
-            lbl_name.Text = planet.Name;
-            lbl_sector.Text = planet.Sector;
-            lbl_filiation.Text = planet.Filiation;
-            lbl_situation.Text = $@"{planet.Situation.Latitude.ToString()}, {planet.Situation
-                .Longitude.ToString()}";
-            lbl_natives.Text = planet.Natives;
+            lbl_name.Text = _selectedDestinationPlanet.Name;
+            lbl_sector.Text = _selectedDestinationPlanet.Sector;
+            lbl_filiation.Text = _selectedDestinationPlanet.Filiation;
+            lbl_situation.Text =
+                $@"{_selectedDestinationPlanet.Situation.Latitude.ToString()}, {_selectedDestinationPlanet.Situation
+                    .Longitude.ToString()}";
+            lbl_natives.Text = _selectedDestinationPlanet.Natives;
 
             lb_routes.Items.Clear();
-            foreach (var routeName in planet.HyperspaceRoutes)
+            foreach (var routeName in _selectedDestinationPlanet.HyperspaceRoutes)
             {
                 var route = _routes.Find(x => x.Name == routeName);
                 var major = route.Type.ToLower().Contains("major");
@@ -75,11 +86,11 @@ namespace PersonalControls
                 lb_routes.Items.Add($"{route.Name} ({(major ? "Major" : "Minor")})");
             }
 
-            var imagePath = planet.ImageName != null
+            var imagePath = _selectedDestinationPlanet.ImageName != null
                 ? Path.Combine(Application.StartupPath,
                     "assets",
                     "planetes",
-                    planet.ImageName)
+                    _selectedDestinationPlanet.ImageName)
                 : Path.Combine
                     ("assets", "placeholder.png");
 
@@ -96,9 +107,7 @@ namespace PersonalControls
 
             if (root == null) return null;
 
-            var planets = root.SelectNodes("//planet");
-
-            return (from XmlNode planet in planets
+            return (from XmlNode planet in root.SelectNodes("//planet")
                 let name = planet.SelectSingleNode("name")?.InnerText
                 let sector = planet.SelectSingleNode("sector")?.InnerText.Split('-')
                 let filiation = planet.SelectSingleNode("filiation")?.InnerText
@@ -141,9 +150,7 @@ namespace PersonalControls
 
             if (root == null) return null;
 
-            var routes = root.SelectNodes("//Route");
-
-            return (from XmlNode route in routes
+            return (from XmlNode route in root.SelectNodes("//Route")
                     let type = route.SelectSingleNode("type")?.InnerText
                     let name = route.SelectSingleNode("nameRoute")?.InnerText
                     let start = route.SelectSingleNode("start")?.InnerText
@@ -158,12 +165,32 @@ namespace PersonalControls
                 ).ToList();
         }
 
+        private static List<DefinedRoute> ReadDefinedRoutes(string dbPath)
+        {
+            var doc = new XmlDocument();
+            doc.Load(dbPath);
+
+            var root = doc.DocumentElement;
+
+            if (root == null) return null;
+
+            return (from XmlNode route in root.SelectNodes("//defineRoute")
+                    let ordes = route.SelectSingleNode("OrDes")?.InnerText.Split('-')
+                    let routes = route.SelectSingleNode("selectedRoute")?.InnerText.Split('-')
+                    let map = route.SelectSingleNode("map")?.InnerText
+                    select new DefinedRoute
+                    {
+                        Origin = ordes[0], Destination = ordes[1], Routes = routes,
+                        Map = map
+                    }
+                ).ToList();
+        }
+
         private static void MakeLabelsVisible(IEnumerable<Label> labels)
         {
             var enumerable = labels as Label[] ?? labels.ToArray();
 
             var isAnyLabelInvisible = enumerable.Any(x => x.Visible == false);
-
             if (!isAnyLabelInvisible) return;
 
             foreach (var label in enumerable)
@@ -184,32 +211,35 @@ namespace PersonalControls
         private static FileInfo FindFileByName(string path, string name)
         {
             var dir = new DirectoryInfo(path);
+
             var files = dir.GetFiles($@"{name}*", SearchOption.TopDirectoryOnly);
-            return files is {Length: > 0} ? files[0] : null;
+            return files is {Length: > 0}
+                ? files[0]
+                : null;
         }
 
         private void lb_routes_SelectedValueChanged(object sender, EventArgs e)
         {
-            var selectedRoute = _routes.Find(x => lb_routes.Text.Contains(x.Name));
-
-            MapRouteToControls(selectedRoute);
+            _selectedRoute = _routes.Find(x => lb_routes.Text.Contains(x.Name));
+            MapRouteToControls();
         }
 
-        private void MapRouteToControls(Route route)
+        private void MapRouteToControls()
         {
             var labelControls = gpb_route.Controls.OfType<Label>();
+
             MakeLabelsVisible(labelControls);
+            if (!label11.Visible) label11.Visible = true;
+            lbl_route_name.Text = _selectedRoute.Name;
+            lbl_route_type.Text = _selectedRoute.Type;
+            lbl_route_start.Text = _selectedRoute.Start;
+            lbl_route_end.Text = _selectedRoute.End;
 
-            lbl_route_name.Text = route.Name;
-            lbl_route_type.Text = route.Type;
-            lbl_route_start.Text = route.Start;
-            lbl_route_end.Text = route.End;
-
-            var imagePath = route.ImageName != null
+            var imagePath = _selectedRoute.ImageName != null
                 ? Path.Combine(Application.StartupPath,
                     "assets",
                     "planetes",
-                    route.ImageName)
+                    _selectedRoute.ImageName)
                 : Path.Combine(Application.StartupPath,
                     "assets",
                     "placeholder.png");

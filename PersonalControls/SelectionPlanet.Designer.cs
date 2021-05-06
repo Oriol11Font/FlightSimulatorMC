@@ -374,6 +374,7 @@ namespace PersonalControls
             this.label11.Size = new System.Drawing.Size(319, 23);
             this.label11.TabIndex = 28;
             this.label11.Text = "Routes";
+            this.label11.Visible = false;
             // 
             // cbx_destination_planet
             // 
@@ -415,6 +416,7 @@ namespace PersonalControls
             this.cbx_origin_planet.Name = "cbx_origin_planet";
             this.cbx_origin_planet.Size = new System.Drawing.Size(319, 40);
             this.cbx_origin_planet.TabIndex = 12;
+            this.cbx_origin_planet.SelectionChangeCommitted += new System.EventHandler(this.cbx_origin_planet_SelectionChangeCommitted);
             // 
             // label10
             // 
