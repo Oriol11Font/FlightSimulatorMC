@@ -20,6 +20,7 @@ namespace OperationScreens
         private void Form_Splash_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            timer2.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -34,6 +35,15 @@ namespace OperationScreens
             {
                 //move = 2;
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Form_dashboard dash = new Form_dashboard();
+            dash.Show();
+            this.Hide();
+            timer1.Stop();
+            timer2.Stop();
         }
     }
 }

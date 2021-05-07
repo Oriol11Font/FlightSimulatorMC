@@ -17,7 +17,7 @@ namespace MainFlightSimulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_dashboard());
+            Application.Run(new Form_Splash());
         }
     }
 }

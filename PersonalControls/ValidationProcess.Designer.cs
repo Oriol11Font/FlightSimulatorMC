@@ -73,7 +73,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 426);
+            this.panel2.Location = new System.Drawing.Point(0, 406);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1275, 578);
             this.panel2.TabIndex = 8;
@@ -89,9 +89,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.progressSensor);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(808, 0);
+            this.panel1.Location = new System.Drawing.Point(826, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 578);
+            this.panel1.Size = new System.Drawing.Size(449, 578);
             this.panel1.TabIndex = 0;
             // 
             // progress2
@@ -140,7 +140,7 @@
             this.pictureBox1.Image = global::PersonalControls.Properties.Resources._3bc97fe6bc122c8875786b4fe0ad31df;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(465, 576);
+            this.pictureBox1.Size = new System.Drawing.Size(447, 576);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -172,9 +172,9 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 447);
+            this.label5.Location = new System.Drawing.Point(0, 325);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(418, 98);
+            this.label5.Size = new System.Drawing.Size(418, 86);
             this.label5.TabIndex = 4;
             this.label5.Text = "5. Test dels Sensors";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,9 +184,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 348);
+            this.label4.Location = new System.Drawing.Point(0, 240);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(418, 99);
+            this.label4.Size = new System.Drawing.Size(418, 85);
             this.label4.TabIndex = 3;
             this.label4.Text = "4. Generador d’energia";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,9 +196,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 234);
+            this.label3.Location = new System.Drawing.Point(0, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(418, 114);
+            this.label3.Size = new System.Drawing.Size(418, 82);
             this.label3.TabIndex = 2;
             this.label3.Text = "3. Test dels Deflectors";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,9 +208,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Alien Encounters", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 116);
+            this.label2.Location = new System.Drawing.Point(0, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(418, 118);
+            this.label2.Size = new System.Drawing.Size(418, 82);
             this.label2.TabIndex = 1;
             this.label2.Text = "2. Estat del Motor";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,7 +222,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 116);
+            this.label1.Size = new System.Drawing.Size(418, 76);
             this.label1.TabIndex = 0;
             this.label1.Text = "1. Sistema d’armament";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,7 +230,7 @@
             // progressG
             // 
             this.progressG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressG.Location = new System.Drawing.Point(0, 410);
+            this.progressG.Location = new System.Drawing.Point(0, 390);
             this.progressG.Name = "progressG";
             this.progressG.Size = new System.Drawing.Size(1275, 16);
             this.progressG.TabIndex = 6;
@@ -242,10 +242,10 @@
             this.lst.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst.ForeColor = System.Drawing.Color.White;
             this.lst.FormattingEnabled = true;
-            this.lst.ItemHeight = 25;
+            this.lst.ItemHeight = 22;
             this.lst.Location = new System.Drawing.Point(0, 56);
             this.lst.Name = "lst";
-            this.lst.Size = new System.Drawing.Size(1275, 354);
+            this.lst.Size = new System.Drawing.Size(1275, 334);
             this.lst.TabIndex = 1;
             // 
             // btn_Start

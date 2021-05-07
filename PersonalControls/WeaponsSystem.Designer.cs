@@ -37,9 +37,10 @@ namespace PersonalControls
             this.btn_Abort = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btn_misil = new System.Windows.Forms.Button();
             this.btn_laser = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.aimPanel = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@ namespace PersonalControls
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aimPanel)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel7.SuspendLayout();
@@ -127,7 +128,7 @@ namespace PersonalControls
             this.btn_Abort.TabIndex = 3;
             this.btn_Abort.Text = "ABORT";
             this.btn_Abort.UseVisualStyleBackColor = true;
-            this.btn_Abort.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Abort.Click += new System.EventHandler(this.btn_abort_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -147,15 +148,29 @@ namespace PersonalControls
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.btn_misil);
             this.panel6.Controls.Add(this.btn_laser);
-            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Controls.Add(this.aimPanel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(572, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(560, 562);
             this.panel6.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(0, 387);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(560, 34);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "FIRE!";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Visible = false;
             // 
             // btn_misil
             // 
@@ -187,15 +202,17 @@ namespace PersonalControls
             this.btn_laser.Visible = false;
             this.btn_laser.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox2
+            // aimPanel
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, -3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(554, 387);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.aimPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aimPanel.Location = new System.Drawing.Point(0, 0);
+            this.aimPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.aimPanel.Name = "aimPanel";
+            this.aimPanel.Size = new System.Drawing.Size(560, 387);
+            this.aimPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.aimPanel.TabIndex = 0;
+            this.aimPanel.TabStop = false;
+            this.aimPanel.Visible = false;
             // 
             // panel5
             // 
@@ -344,7 +361,12 @@ namespace PersonalControls
             // 
             // reloadWeapons
             // 
-            this.reloadWeapons.Tick += new System.EventHandler(this.timer1_Tick);
+            this.reloadWeapons.Tick += new System.EventHandler(this.reloadWeapons_Tick);
+            // 
+            // aimEnemy
+            // 
+            this.aimEnemy.Interval = 3000;
+            this.aimEnemy.Tick += new System.EventHandler(this.aimEnemy_Tick);
             // 
             // WeaponsSystem
             // 
@@ -354,10 +376,11 @@ namespace PersonalControls
             this.Controls.Add(this.panel1);
             this.Name = "WeaponsSystem";
             this.Size = new System.Drawing.Size(1135, 1056);
+            this.Load += new System.EventHandler(this.WeaponsSystem_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aimPanel)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -386,7 +409,7 @@ namespace PersonalControls
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_misil;
         private System.Windows.Forms.Button btn_laser;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox aimPanel;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -395,5 +418,6 @@ namespace PersonalControls
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Timer aimEnemy;
+        private System.Windows.Forms.Label label5;
     }
 }
