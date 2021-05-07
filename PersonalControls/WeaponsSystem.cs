@@ -29,41 +29,35 @@ namespace PersonalControls
 
             int num = rnd.Next(0, lineCount-1);
 
-            string[] adeu = lines[num].Split('|');
+            string[] spaceShip = lines[num].Split('|');
 
-            if (adeu[1].Equals("E"))
+            if (spaceShip[1].Equals("E"))
             {
-                label3.Text = adeu[0];
+                label3.Text = spaceShip[0];
                 label4.Text = "ENEMIC!!";
                 label4.ForeColor = Color.Red;
                 //picture de la nau (video) --> Aixo diu el Pol que es molt fàcil i que ja ho fa ell
                 pictureBox2.Visible = true;
-                button1.Visible = true;
-                button2.Visible = true;
+                btn_laser.Visible = true;
+                btn_misil.Visible = true;
                 btn_Abort.Enabled = true;
                 pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
-                video_Spaceship.Visible = true;
-                video_Spaceship.uiMode = "none";
-                video_Spaceship.stretchToFit = true;
-                video_Spaceship.URL = Application.StartupPath + "\\assets\\videos\\" + adeu[0] + ".mp4";
-                video_Spaceship.settings.autoStart = true;
-                video_Spaceship.settings.setMode("loop", true);
                 //calcular un temps per apuntar i el gif es quedi fix
                 //activar botons de disparar
 
-            } else if (adeu[1].Equals("A"))
+            } else if (spaceShip[1].Equals("A"))
             {
-                label3.Text = adeu[0];
+                label3.Text = spaceShip[0];
                 label4.Text = "Aliat";
                 label4.ForeColor = Color.Green;
                 //picture de la nau (video)
-                button1.Visible = false;
-                button2.Visible = false;
+                btn_laser.Visible = false;
+                btn_misil.Visible = false;
                 btn_Abort.Enabled = false;
-                video_Spaceship.Visible = false;
-                video_Spaceship.Ctlcontrols.stop();
                 //descarregar les armes
             }
+            picture_SpaceShip.ImageLocation = Application.StartupPath + "\\assets\\models\\"+spaceShip[0]+".gif";
+            picture_SpaceShip.Visible = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -81,7 +75,7 @@ namespace PersonalControls
             if (slider1.Width >= 1277 && slider2.Width >= 1277)
             {
                 btn_Start.Enabled = true;
-                timer1.Stop();
+                reloadWeapons.Stop();
             }
         }
 
@@ -90,36 +84,40 @@ namespace PersonalControls
             slider1.Width = 0;
             slider2.Width = 0;
             btn_Start.Enabled = false;
-            timer1.Start();
+            btn_laser.Visible = false;
+            btn_misil.Visible = false;
+            picture_SpaceShip.Visible = false;
+            reloadWeapons.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             slider1.Width = 0;
-            button1.Visible = false;
+            btn_laser.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             slider2.Width = 0;
-            button2.Visible = false;
+            btn_misil.Visible = false;
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button1.Visible = false;
-            button2.Visible = false;
+            btn_laser.Visible = false;
+            btn_misil.Visible = false;
             btn_Abort.Enabled = false;
+            picture_SpaceShip.Visible = false;
             label3.Text = "";
             label4.Text = "";
-            pictureBox1.ImageLocation = "";
+            picture_SpaceShip.ImageLocation = "";
             pictureBox2.ImageLocation = "";
             pictureBox3.ImageLocation = "";
             slider1.Width = 0;
             slider2.Width = 0;
             btn_Start.Enabled = false;
-            if (timer1.Enabled) { timer1.Stop(); }
+            if (reloadWeapons.Enabled) { reloadWeapons.Stop(); }
         }
     }
 }
