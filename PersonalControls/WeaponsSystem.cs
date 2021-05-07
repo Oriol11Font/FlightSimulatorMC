@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,54 +24,76 @@ namespace PersonalControls
         bool dead = false;
         bool misil = false;
         bool laser = false;
+        string[] spaceShip;
+        Thread trd;
+        
         private void btn_Start_Click(object sender, EventArgs e)
+        {
+            bool wait = true;
+
+            pictureBox3.ImageLocation = "";
+
+            trd = new Thread(SearchSpaceShips);
+            trd.Start();
+
+            while(wait)
+            {
+                if (!trd.IsAlive)
+                {
+                    if (spaceShip[1].Equals("E"))
+                    {
+                        label3.Text = spaceShip[0];
+                        label4.Text = "ENEMIC!!";
+                        label4.ForeColor = Color.Red;
+                        aimPanel.Visible = true;
+                        btn_Start.Enabled = false;
+                        if (laser)
+                        {
+                            btn_laser.Visible = true;
+                        }
+                        if (misil)
+                        {
+                            btn_misil.Visible = true;
+                        }
+
+                        btn_Abort.Enabled = true;
+                        pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
+                        aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.gif";
+                        aimEnemy.Start();
+
+                    }
+                    else if (spaceShip[1].Equals("A"))
+                    {
+                        label3.Text = spaceShip[0];
+                        label4.Text = "Aliat";
+                        label4.ForeColor = Color.Green;
+                        btn_laser.Visible = false;
+                        btn_misil.Visible = false;
+                        btn_Abort.Enabled = false;
+                        label5.Visible = false;
+                        aimPanel.Visible = false;
+                        pictureBox3.ImageLocation = "";
+                    }
+
+                    picture_SpaceShip.ImageLocation = Application.StartupPath + "\\assets\\models\\" + spaceShip[0] + ".gif";
+                    picture_SpaceShip.Visible = true;
+
+                    wait = false;
+                }
+            }
+        }
+
+
+        private void SearchSpaceShips ()
         {
             List<string> lines = File.ReadLines(ruta).ToList();
             var lineCount = File.ReadLines(ruta).Count();
 
-            pictureBox3.ImageLocation = "";
+            int num = rnd.Next(0, lineCount - 1);
 
-            int num = rnd.Next(0, lineCount-1);
+            spaceShip = lines[num].Split('|');
 
-            string[] spaceShip = lines[num].Split('|');
-
-            if (spaceShip[1].Equals("E"))
-            {
-                label3.Text = spaceShip[0];
-                label4.Text = "ENEMIC!!";
-                label4.ForeColor = Color.Red;
-                //picture de la nau (video) --> Aixo diu el Pol que es molt fàcil i que ja ho fa ell
-                aimPanel.Visible = true;
-                btn_Start.Enabled = false;
-                if (laser)
-                {
-                    btn_laser.Visible = true;
-                }
-                if (misil)
-                {
-                    btn_misil.Visible = true;
-                }
-                
-                btn_Abort.Enabled = true;
-                pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
-                aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.gif";
-                aimEnemy.Start();
-
-            } else if (spaceShip[1].Equals("A"))
-            {
-                label3.Text = spaceShip[0];
-                label4.Text = "Aliat";
-                label4.ForeColor = Color.Green;
-                btn_laser.Visible = false;
-                btn_misil.Visible = false;
-                btn_Abort.Enabled = false;
-                label5.Visible = false;
-                aimPanel.Visible = false;
-                pictureBox3.ImageLocation = "";
-            }
-
-            picture_SpaceShip.ImageLocation = Application.StartupPath + "\\assets\\models\\"+spaceShip[0]+".gif";
-            picture_SpaceShip.Visible = true;
+            trd.Abort();
         }
 
         private void reloadWeapons_Tick(object sender, EventArgs e)
