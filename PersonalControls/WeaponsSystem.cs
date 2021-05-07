@@ -42,6 +42,12 @@ namespace PersonalControls
                 button2.Visible = true;
                 btn_Abort.Enabled = true;
                 pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
+                video_Spaceship.Visible = true;
+                video_Spaceship.uiMode = "none";
+                video_Spaceship.stretchToFit = true;
+                video_Spaceship.URL = Application.StartupPath + "\\assets\\videos\\" + adeu[0] + ".mp4";
+                video_Spaceship.settings.autoStart = true;
+                video_Spaceship.settings.setMode("loop", true);
                 //calcular un temps per apuntar i el gif es quedi fix
                 //activar botons de disparar
 
@@ -54,6 +60,8 @@ namespace PersonalControls
                 button1.Visible = false;
                 button2.Visible = false;
                 btn_Abort.Enabled = false;
+                video_Spaceship.Visible = false;
+                video_Spaceship.Ctlcontrols.stop();
                 //descarregar les armes
             }
         }
@@ -62,12 +70,12 @@ namespace PersonalControls
         {
             if (slider1.Width < 1277)
             {
-                slider1.Width += 50;
+                slider1.Width += 100;
             }
 
             if (slider2.Width < 1277)
             {
-                slider2.Width += 10;
+                slider2.Width += 100;
             }
 
             if (slider1.Width >= 1277 && slider2.Width >= 1277)
