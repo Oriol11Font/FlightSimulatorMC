@@ -33,7 +33,7 @@ namespace PersonalControls
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Abort = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@ namespace PersonalControls
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btn_Abort);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.btn_Start);
             this.panel1.Controls.Add(this.panel2);
@@ -109,20 +109,21 @@ namespace PersonalControls
             this.panel1.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.TabIndex = 10;
             // 
-            // button3
+            // btn_Abort
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(0, 898);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1135, 93);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "ABORT";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Abort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Abort.Enabled = false;
+            this.btn_Abort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Abort.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Abort.ForeColor = System.Drawing.Color.Red;
+            this.btn_Abort.Location = new System.Drawing.Point(0, 898);
+            this.btn_Abort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Abort.Name = "btn_Abort";
+            this.btn_Abort.Size = new System.Drawing.Size(1135, 93);
+            this.btn_Abort.TabIndex = 3;
+            this.btn_Abort.Text = "ABORT";
+            this.btn_Abort.UseVisualStyleBackColor = true;
+            this.btn_Abort.Click += new System.EventHandler(this.button3_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -370,7 +371,7 @@ namespace PersonalControls
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Abort;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

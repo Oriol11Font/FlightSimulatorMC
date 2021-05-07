@@ -40,6 +40,7 @@ namespace PersonalControls
                 pictureBox2.Visible = true;
                 button1.Visible = true;
                 button2.Visible = true;
+                btn_Abort.Enabled = true;
                 pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
                 //calcular un temps per apuntar i el gif es quedi fix
                 //activar botons de disparar
@@ -50,7 +51,9 @@ namespace PersonalControls
                 label4.Text = "Aliat";
                 label4.ForeColor = Color.Green;
                 //picture de la nau (video)
-                //desactivar la opcio de disparar
+                button1.Visible = false;
+                button2.Visible = false;
+                btn_Abort.Enabled = false;
                 //descarregar les armes
             }
         }
@@ -85,17 +88,21 @@ namespace PersonalControls
         private void button1_Click(object sender, EventArgs e)
         {
             slider1.Width = 0;
+            button1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             slider2.Width = 0;
+            button2.Visible = false;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             button1.Visible = false;
             button2.Visible = false;
+            btn_Abort.Enabled = false;
             label3.Text = "";
             label4.Text = "";
             pictureBox1.ImageLocation = "";
