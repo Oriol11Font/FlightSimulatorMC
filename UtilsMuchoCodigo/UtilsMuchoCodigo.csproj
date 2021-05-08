@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculus.cs" />
+    <Compile Include="Hyperspace.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="TPL.cs" />

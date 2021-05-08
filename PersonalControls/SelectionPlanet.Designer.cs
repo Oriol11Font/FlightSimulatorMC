@@ -33,7 +33,7 @@ namespace PersonalControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel_selectplanet = new System.Windows.Forms.Panel();
             this.btn_calc_vector = new System.Windows.Forms.Button();
             this.gpb_route = new System.Windows.Forms.GroupBox();
             this.pb_route_image = new System.Windows.Forms.PictureBox();
@@ -58,7 +58,6 @@ namespace PersonalControls
             this.lbl_filiation = new System.Windows.Forms.Label();
             this.lbl_situation = new System.Windows.Forms.Label();
             this.lb_routes = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbx_destination_planet = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +65,7 @@ namespace PersonalControls
             this.cbx_origin_planet = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.panel_selectplanet.SuspendLayout();
             this.gpb_route.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pb_route_image)).BeginInit();
             this.gpb_planet.SuspendLayout();
@@ -77,32 +76,31 @@ namespace PersonalControls
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel_selectplanet);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.TabIndex = 8;
             // 
-            // panel7
+            // panel_selectplanet
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.btn_calc_vector);
-            this.panel7.Controls.Add(this.gpb_route);
-            this.panel7.Controls.Add(this.gpb_planet);
-            this.panel7.Controls.Add(this.lb_routes);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.cbx_destination_planet);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.cbx_origin_planet);
-            this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(40, 30);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1057, 995);
-            this.panel7.TabIndex = 6;
+            this.panel_selectplanet.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel_selectplanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_selectplanet.Controls.Add(this.btn_calc_vector);
+            this.panel_selectplanet.Controls.Add(this.gpb_route);
+            this.panel_selectplanet.Controls.Add(this.gpb_planet);
+            this.panel_selectplanet.Controls.Add(this.lb_routes);
+            this.panel_selectplanet.Controls.Add(this.label11);
+            this.panel_selectplanet.Controls.Add(this.cbx_destination_planet);
+            this.panel_selectplanet.Controls.Add(this.label2);
+            this.panel_selectplanet.Controls.Add(this.label1);
+            this.panel_selectplanet.Controls.Add(this.cbx_origin_planet);
+            this.panel_selectplanet.Controls.Add(this.label10);
+            this.panel_selectplanet.Location = new System.Drawing.Point(40, 30);
+            this.panel_selectplanet.Name = "panel_selectplanet";
+            this.panel_selectplanet.Size = new System.Drawing.Size(1057, 995);
+            this.panel_selectplanet.TabIndex = 6;
             // 
             // btn_calc_vector
             // 
@@ -365,27 +363,18 @@ namespace PersonalControls
             this.lb_routes.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lb_routes.ForeColor = System.Drawing.Color.White;
             this.lb_routes.FormattingEnabled = true;
-            this.lb_routes.ItemHeight = 20;
-            this.lb_routes.Location = new System.Drawing.Point(19, 516);
+            this.lb_routes.ItemHeight = 25;
+            this.lb_routes.Location = new System.Drawing.Point(19, 374);
             this.lb_routes.Name = "lb_routes";
-            this.lb_routes.Size = new System.Drawing.Size(319, 60);
+            this.lb_routes.Size = new System.Drawing.Size(319, 100);
             this.lb_routes.TabIndex = 30;
             this.lb_routes.SelectedValueChanged += new System.EventHandler(this.lb_routes_SelectedValueChanged);
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(18, 666);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(373, 42);
-            this.label9.TabIndex = 29;
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(19, 490);
+            this.label11.Location = new System.Drawing.Point(19, 348);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(319, 23);
             this.label11.TabIndex = 28;
@@ -398,7 +387,7 @@ namespace PersonalControls
             this.cbx_destination_planet.FormattingEnabled = true;
             this.cbx_destination_planet.Location = new System.Drawing.Point(18, 255);
             this.cbx_destination_planet.Name = "cbx_destination_planet";
-            this.cbx_destination_planet.Size = new System.Drawing.Size(320, 33);
+            this.cbx_destination_planet.Size = new System.Drawing.Size(320, 40);
             this.cbx_destination_planet.TabIndex = 15;
             this.cbx_destination_planet.SelectionChangeCommitted += new System.EventHandler(this.cbx_planets_SelectionChangeCommitted);
             // 
@@ -430,7 +419,7 @@ namespace PersonalControls
             this.cbx_origin_planet.FormattingEnabled = true;
             this.cbx_origin_planet.Location = new System.Drawing.Point(19, 164);
             this.cbx_origin_planet.Name = "cbx_origin_planet";
-            this.cbx_origin_planet.Size = new System.Drawing.Size(319, 33);
+            this.cbx_origin_planet.Size = new System.Drawing.Size(319, 40);
             this.cbx_origin_planet.TabIndex = 12;
             this.cbx_origin_planet.SelectionChangeCommitted += new System.EventHandler(this.cbx_origin_planet_SelectionChangeCommitted);
             // 
@@ -456,13 +445,15 @@ namespace PersonalControls
             this.Size = new System.Drawing.Size(1135, 1056);
             this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.panel_selectplanet.ResumeLayout(false);
             this.gpb_route.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pb_route_image)).EndInit();
             this.gpb_planet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pb_planet_image)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Panel panel_selectplanet;
 
         private System.Windows.Forms.Button btn_calc_vector;
 
@@ -483,7 +474,6 @@ namespace PersonalControls
 
         private System.Windows.Forms.ListBox lb_routes;
 
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
 
         private System.Windows.Forms.Label label6;

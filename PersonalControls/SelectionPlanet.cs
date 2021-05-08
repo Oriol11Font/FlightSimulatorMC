@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using UtilsMuchoCodigo;
@@ -34,9 +37,9 @@ namespace PersonalControls
 
         private void Init()
         {
-            _planets = ReadPlanets(_dbFilePath);
-            _routes = ReadRoutes(_dbFilePath);
-            _definedRoutes = ReadDefinedRoutes(_dbFilePath);
+            Parallel.Invoke(() => _planets = ReadPlanets(_dbFilePath),
+                () => _routes = ReadRoutes(_dbFilePath),
+                () => _definedRoutes = ReadDefinedRoutes(_dbFilePath));
 
             if (_planets is not {Count: > 0}) return;
 
@@ -59,7 +62,7 @@ namespace PersonalControls
         {
             _selectedDestinationPlanet = _planets[cbx_destination_planet.SelectedIndex];
 
-            MapPlanetToControls();
+            Task.Run(MapPlanetToControls);
         }
 
         private void MapPlanetToControls()
@@ -73,8 +76,9 @@ namespace PersonalControls
             lbl_sector.Text = _selectedDestinationPlanet.Sector;
             lbl_filiation.Text = _selectedDestinationPlanet.Filiation;
             lbl_situation.Text =
-                $@"{_selectedDestinationPlanet.Situation.Latitude.ToString()}, {_selectedDestinationPlanet.Situation
-                    .Longitude.ToString()}";
+                $@"{_selectedDestinationPlanet.Situation.Latitude.ToString(CultureInfo.InvariantCulture)}, 
+                {_selectedDestinationPlanet.Situation
+                    .Longitude.ToString(CultureInfo.InvariantCulture)}";
             lbl_natives.Text = _selectedDestinationPlanet.Natives;
 
             lb_routes.Items.Clear();
@@ -191,13 +195,11 @@ namespace PersonalControls
             var doc = new XmlDocument();
             doc.Load(dbPath);
 
-            var root = doc.DocumentElement;
-
             var defineRoute = doc.CreateElement("defineRoute");
 
-            var OrDes = doc.CreateElement("OrDes");
-            OrDes.InnerText = $@"{definedRoute.Origin}-{definedRoute.Destination}";
-            defineRoute.AppendChild(OrDes);
+            var orDes = doc.CreateElement("OrDes");
+            orDes.InnerText = $@"{definedRoute.Origin}-{definedRoute.Destination}";
+            defineRoute.AppendChild(orDes);
 
             var selectedRoute = doc.CreateElement("selectedRoute");
             selectedRoute.InnerText = string.Join("-", definedRoute.Routes);
@@ -281,10 +283,12 @@ namespace PersonalControls
 
         private void btn_calc_vector_Click(object sender, EventArgs e)
         {
-            CalculateVector();
+            var thread = new Thread(CalculateCoordinates);
+
+            thread.Start();
         }
 
-        private void CalculateVector()
+        private void CalculateCoordinates()
         {
             var selectedDefinedRoute = new DefinedRoute
             {
@@ -298,32 +302,54 @@ namespace PersonalControls
                     selectedDefinedRoute.Destination) &&
                 x.Routes.SequenceEqual(selectedDefinedRoute.Routes));
 
-            if (!isDefinedRouteExist)
+
+            var originVector = Hyperspace.CalculateVector(_selectedOriginPlanet.Situation);
+            var destinationVector = Hyperspace.CalculateVector();
+
+            // Parallel.Invoke(() => originVector = Hyperspace.CalculateVector(_selectedOriginPlanet
+            //     .Situation), () => destinationVector = Hyperspace.CalculateVector());
+
+            // if (string.IsNullOrEmpty(originVector) ||
+            //     string.IsNullOrEmpty(destinationVector)) return;
+
+            MessageBox.Show(
+                $@"origin vector: {originVector}, destination vector: {destinationVector}");
+
+            if (originVector == null)
             {
-                var msg = MessageBox.Show(
-                    @"You have selected a new route not saved on the database, do you want to save it now?",
-                    null, MessageBoxButtons.YesNo);
-
-                if (msg == DialogResult.Yes)
-                {
-                    var initialPath = Path.Combine(Application.StartupPath, "assets", "planetes");
-
-                    var fileDialog = new OpenFileDialog
-                    {
-                        InitialDirectory = initialPath,
-                        CheckFileExists = true, Filter = @"*.png|*.jpg",
-                        Title = @"Select an image tied to this route"
-                    };
-
-                    if (fileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        selectedDefinedRoute.Map = fileDialog.SafeFileName;
-                    }
-                }
-
-                AddDefinedRoute(_dbFilePath, selectedDefinedRoute);
-                _definedRoutes.Add(selectedDefinedRoute);
+                MessageBox.Show(
+                    @"No s'ha trobat cap ruta segura per per a apropar-se al planeta de destí");
+                return;
             }
+
+            if (!isDefinedRouteExist)
+                SaveDefinedRoute(selectedDefinedRoute);
+        }
+
+        private void SaveDefinedRoute(DefinedRoute selectedDefinedRoute)
+        {
+            var msg = MessageBox.Show(
+                @"You have selected a new route not saved on the database, do you want to save it now?",
+                null, MessageBoxButtons.YesNo);
+
+            if (msg == DialogResult.Yes)
+            {
+                var initialPath = Path.Combine(Application.StartupPath, "assets", "planetes");
+
+                var fileDialog = new OpenFileDialog
+                {
+                    InitialDirectory = initialPath,
+                    CheckFileExists = true, Filter = @"*.png|*.jpg",
+                    Title = @"Select an image tied to this route"
+                };
+
+                selectedDefinedRoute.Map = fileDialog.ShowDialog() == DialogResult.OK
+                    ? fileDialog.SafeFileName
+                    : null;
+            }
+
+            Task.Run(() => AddDefinedRoute(_dbFilePath, selectedDefinedRoute));
+            _definedRoutes.Add(selectedDefinedRoute);
         }
     }
 }
