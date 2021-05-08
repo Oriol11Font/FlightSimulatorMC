@@ -40,7 +40,14 @@ namespace PersonalControls
                 pictureBox2.Visible = true;
                 button1.Visible = true;
                 button2.Visible = true;
+                btn_Abort.Enabled = true;
                 pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
+                video_Spaceship.Visible = true;
+                video_Spaceship.uiMode = "none";
+                video_Spaceship.stretchToFit = true;
+                video_Spaceship.URL = Application.StartupPath + "\\assets\\videos\\" + adeu[0] + ".mp4";
+                video_Spaceship.settings.autoStart = true;
+                video_Spaceship.settings.setMode("loop", true);
                 //calcular un temps per apuntar i el gif es quedi fix
                 //activar botons de disparar
 
@@ -50,7 +57,11 @@ namespace PersonalControls
                 label4.Text = "Aliat";
                 label4.ForeColor = Color.Green;
                 //picture de la nau (video)
-                //desactivar la opcio de disparar
+                button1.Visible = false;
+                button2.Visible = false;
+                btn_Abort.Enabled = false;
+                video_Spaceship.Visible = false;
+                video_Spaceship.Ctlcontrols.stop();
                 //descarregar les armes
             }
         }
@@ -59,12 +70,12 @@ namespace PersonalControls
         {
             if (slider1.Width < 1277)
             {
-                slider1.Width += 50;
+                slider1.Width += 100;
             }
 
             if (slider2.Width < 1277)
             {
-                slider2.Width += 10;
+                slider2.Width += 100;
             }
 
             if (slider1.Width >= 1277 && slider2.Width >= 1277)
@@ -85,17 +96,21 @@ namespace PersonalControls
         private void button1_Click(object sender, EventArgs e)
         {
             slider1.Width = 0;
+            button1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             slider2.Width = 0;
+            button2.Visible = false;
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             button1.Visible = false;
             button2.Visible = false;
+            btn_Abort.Enabled = false;
             label3.Text = "";
             label4.Text = "";
             pictureBox1.ImageLocation = "";
