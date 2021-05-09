@@ -34,7 +34,6 @@ namespace PersonalControls
             this.pnlPlanetDetails = new System.Windows.Forms.Panel();
             this.pnlRegion = new System.Windows.Forms.Panel();
             this.pcbRegionImage = new System.Windows.Forms.PictureBox();
-            this.lblRegionDescription = new System.Windows.Forms.Label();
             this.lblRegionDescriptionTitle = new System.Windows.Forms.Label();
             this.lblRegionName = new System.Windows.Forms.Label();
             this.lblRegionNameTitle = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@ namespace PersonalControls
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.cbxCategories = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.txbRegionDescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnlPlanetDetails.SuspendLayout();
@@ -115,8 +115,8 @@ namespace PersonalControls
             // 
             // pnlRegion
             // 
+            this.pnlRegion.Controls.Add(this.txbRegionDescription);
             this.pnlRegion.Controls.Add(this.pcbRegionImage);
-            this.pnlRegion.Controls.Add(this.lblRegionDescription);
             this.pnlRegion.Controls.Add(this.lblRegionDescriptionTitle);
             this.pnlRegion.Controls.Add(this.lblRegionName);
             this.pnlRegion.Controls.Add(this.lblRegionNameTitle);
@@ -134,15 +134,6 @@ namespace PersonalControls
             this.pcbRegionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbRegionImage.TabIndex = 29;
             this.pcbRegionImage.TabStop = false;
-            // 
-            // lblRegionDescription
-            // 
-            this.lblRegionDescription.AutoSize = true;
-            this.lblRegionDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRegionDescription.Location = new System.Drawing.Point(45, 161);
-            this.lblRegionDescription.Name = "lblRegionDescription";
-            this.lblRegionDescription.Size = new System.Drawing.Size(0, 17);
-            this.lblRegionDescription.TabIndex = 20;
             // 
             // lblRegionDescriptionTitle
             // 
@@ -344,6 +335,18 @@ namespace PersonalControls
             this.label11.Text = "SPACESHIP DETAILS";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txbRegionDescription
+            // 
+            this.txbRegionDescription.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txbRegionDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbRegionDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbRegionDescription.Location = new System.Drawing.Point(48, 158);
+            this.txbRegionDescription.Multiline = true;
+            this.txbRegionDescription.Name = "txbRegionDescription";
+            this.txbRegionDescription.ReadOnly = true;
+            this.txbRegionDescription.Size = new System.Drawing.Size(475, 158);
+            this.txbRegionDescription.TabIndex = 30;
+            // 
             // SpaceShipDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,9 +392,9 @@ namespace PersonalControls
         private System.Windows.Forms.Label lblPlanetRoutesTitle;
         private System.Windows.Forms.Panel pnlRegion;
         private System.Windows.Forms.PictureBox pcbRegionImage;
-        private System.Windows.Forms.Label lblRegionDescription;
         private System.Windows.Forms.Label lblRegionDescriptionTitle;
         private System.Windows.Forms.Label lblRegionName;
         private System.Windows.Forms.Label lblRegionNameTitle;
+        private System.Windows.Forms.TextBox txbRegionDescription;
     }
 }
