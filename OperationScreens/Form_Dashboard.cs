@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PersonalControls;
+using System;
 using System.Threading;
 using System.Windows.Forms;
-using PersonalControls;
 
 namespace OperationScreens
 {
@@ -17,7 +17,7 @@ namespace OperationScreens
             Show();
         }
 
-        private static void formRun ()
+        private static void formRun()
         {
             Application.Run(new Form_Splash());
         }
@@ -35,14 +35,14 @@ namespace OperationScreens
                 "button3" => new SpaceShipDetails(),
                 _ => null
             };
-            
+
             pn_main.Controls.Clear();
 
             if (form == null) return;
 
             if (form.AutoScroll)
                 form.AutoScroll = false;
-            
+
             pn_main.Controls.Add(form);
             form.Show();
         }

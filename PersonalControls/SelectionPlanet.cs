@@ -39,11 +39,11 @@ namespace PersonalControls
         {
             var selectedPlanet = _planets[cbx_planets.SelectedIndex];
 
-            var imagePath = selectedPlanet.ImageName != null ? Path.Combine(Application.StartupPath, 
-                "assets", 
+            var imagePath = selectedPlanet.ImageName != null ? Path.Combine(Application.StartupPath,
+                "assets",
                 "planetes",
                 selectedPlanet.ImageName) : null;
-            
+
             pb_planet.Image = Image.FromFile(imagePath ?? Path.Combine
                 ("assets", "placeholder.png"));
         }
@@ -51,7 +51,7 @@ namespace PersonalControls
         private static List<Planet> ReadPlanets(string dbName)
         {
             var dbPath = Path.Combine("assets", dbName);
-            
+
             var doc = new XmlDocument();
             doc.Load(dbPath);
 
@@ -60,29 +60,29 @@ namespace PersonalControls
             var planets = root.SelectNodes("//planet");
 
             return (from XmlNode planet in planets
-                let name = planet.SelectSingleNode("name").InnerText
-                let sector = planet.SelectSingleNode("sector").InnerText
-                let filiation = planet.SelectSingleNode("filiation").InnerText
-                let natives = planet.SelectSingleNode("natives").InnerText
-                let situationNode = planet.SelectSingleNode("situation")
-                let latitude = double.Parse(situationNode.SelectSingleNode("lat").InnerText)
-                let longitude = double.Parse(situationNode.SelectSingleNode("long").InnerText)
-                let situation = new Coordinates {Latitude = latitude, Longitude = longitude}
-                let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
-                let hyperSpaceRoutes =
-                    (from XmlNode route in routes select route.InnerText).ToList()
-                let imageName = FindFileByName(Path.Combine(Application.StartupPath, 
-                    "assets", "planetes"), name)
-                select new Planet
-                {
-                    Name = name,
-                    Sector = sector,
-                    Filiation = filiation,
-                    Situation = situation,
-                    Natives = natives,
-                    HyperspaceRoutes = hyperSpaceRoutes,
-                    ImageName = imageName
-                }).ToList();
+                    let name = planet.SelectSingleNode("name").InnerText
+                    let sector = planet.SelectSingleNode("sector").InnerText
+                    let filiation = planet.SelectSingleNode("filiation").InnerText
+                    let natives = planet.SelectSingleNode("natives").InnerText
+                    let situationNode = planet.SelectSingleNode("situation")
+                    let latitude = double.Parse(situationNode.SelectSingleNode("lat").InnerText)
+                    let longitude = double.Parse(situationNode.SelectSingleNode("long").InnerText)
+                    let situation = new Coordinates { Latitude = latitude, Longitude = longitude }
+                    let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
+                    let hyperSpaceRoutes =
+                        (from XmlNode route in routes select route.InnerText).ToList()
+                    let imageName = FindFileByName(Path.Combine(Application.StartupPath,
+                        "assets", "planetes"), name)
+                    select new Planet
+                    {
+                        Name = name,
+                        Sector = sector,
+                        Filiation = filiation,
+                        Situation = situation,
+                        Natives = natives,
+                        HyperspaceRoutes = hyperSpaceRoutes,
+                        ImageName = imageName
+                    }).ToList();
         }
 
         private static string FindFileByName(string path, string name)

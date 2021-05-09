@@ -39,7 +39,7 @@ namespace PersonalControls
             this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pb_planet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_planet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,7 +77,7 @@ namespace PersonalControls
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(54, 144);
             this.label1.Name = "label1";
@@ -87,7 +87,7 @@ namespace PersonalControls
             // 
             // cbx_planets
             // 
-            this.cbx_planets.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cbx_planets.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_planets.FormattingEnabled = true;
             this.cbx_planets.Location = new System.Drawing.Point(169, 142);
             this.cbx_planets.Name = "cbx_planets";
@@ -98,7 +98,7 @@ namespace PersonalControls
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
@@ -118,8 +118,9 @@ namespace PersonalControls
             this.Load += new System.EventHandler(this.OnFormLoad);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pb_planet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_planet)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.PictureBox pb_planet;
