@@ -304,6 +304,7 @@ namespace PersonalControls
             lblRegionDescription.Text = regionDescription;
             pcbRegionImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", imageName));
+            hidePanels();
             pnlRegion.Visible = true;
         }
 
