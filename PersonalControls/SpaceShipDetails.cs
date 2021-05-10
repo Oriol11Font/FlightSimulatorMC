@@ -16,6 +16,7 @@ namespace PersonalControls
         XDocument xDoc;
         //int selectedCategoryId = -1;
         int selectedOptionId = -1;
+        String selectedOptionText = "";
         String dbPath = Application.StartupPath + "\\assets" + "\\" + DbFileName;
         TreeNode rootTreeNode;
         String selectedCategoryName;
@@ -223,7 +224,7 @@ namespace PersonalControls
 
                         break;
                     case "routes":
-                        fillRouteDetails();
+                        fillRouteDetails(selectedOptionText);
 
 
                         break;
@@ -283,9 +284,41 @@ namespace PersonalControls
             throw new NotImplementedException();
         }
 
-        private void fillRouteDetails()
+        private void fillRouteDetails(String selectedOptionText)
         {
-            throw new NotImplementedException();
+            
+            lblRouteName.Text = selectedOptionText;
+            lsbRoutePlanets.Items.Clear();
+            //IEnumerable<XElement> ddd = xDoc.Root.Elements("planets").Elements("planet").Elements("hperspaceRoute").Elements("route");
+            IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
+
+            //XElement routeElement = xDoc.Root.Elements("regions").Elements("Region").ElementAt(selectedOptionId);
+
+            List<String> planetsInRoute = new List<String>();
+            listaPlanets.Count();
+            foreach (XElement element in listaPlanets)
+            {
+                IEnumerable<XElement> planetHyperspaceRouteElements = element.Elements("hyperspaceRoute").Elements("route");
+                foreach (XElement route in planetHyperspaceRouteElements)
+                {
+                    if(route.Value.ToString().ToLower() == selectedOptionText.ToLower())
+                    {
+                        String planetName = element.Element("name").Value.ToString();
+                        lsbRoutePlanets.Items.Add(planetName);
+                    }
+                }
+                
+            }
+
+            pcbRoute.Image = Image.FromFile(Path.Combine(Application.StartupPath, "assets", "placeholder.png"));
+
+            hidePanels();
+
+            pnlRoute.Visible = true;
+
+
+
+
         }
 
         private void fillRegionDetails(int selectedOptionId)
@@ -331,6 +364,7 @@ namespace PersonalControls
             //Hide Panel
             pnlPlanetDetails.Visible = false;
             pnlRegion.Visible = false;
+            pnlRoute.Visible = false;
         }
 
         private void clearTreeview()
@@ -342,6 +376,7 @@ namespace PersonalControls
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             selectedOptionId = Convert.ToInt32(treeView1.SelectedNode.Tag);
+            selectedOptionText = treeView1.SelectedNode.Text.ToString();
 
             //Hay que coger como elemento padre el
             fillDetails(selectedCategoryName, selectedOptionId);

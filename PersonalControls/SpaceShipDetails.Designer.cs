@@ -31,12 +31,19 @@ namespace PersonalControls
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.pnlPlanetDetails = new System.Windows.Forms.Panel();
             this.pnlRegion = new System.Windows.Forms.Panel();
+            this.pnlRoute = new System.Windows.Forms.Panel();
+            this.lsbRoutePlanets = new System.Windows.Forms.ListBox();
+            this.pcbRoute = new System.Windows.Forms.PictureBox();
+            this.lblRoutePlanetsTitle = new System.Windows.Forms.Label();
+            this.lblRouteName = new System.Windows.Forms.Label();
+            this.lblRouteNameTitle = new System.Windows.Forms.Label();
+            this.txbRegionDescription = new System.Windows.Forms.TextBox();
             this.pcbRegionImage = new System.Windows.Forms.PictureBox();
             this.lblRegionDescriptionTitle = new System.Windows.Forms.Label();
             this.lblRegionName = new System.Windows.Forms.Label();
             this.lblRegionNameTitle = new System.Windows.Forms.Label();
+            this.pnlPlanetDetails = new System.Windows.Forms.Panel();
             this.lblPlanetRoutesTitle = new System.Windows.Forms.Label();
             this.pcbPlanetImage = new System.Windows.Forms.PictureBox();
             this.lblNatives = new System.Windows.Forms.Label();
@@ -55,12 +62,13 @@ namespace PersonalControls
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.cbxCategories = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txbRegionDescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.pnlPlanetDetails.SuspendLayout();
             this.pnlRegion.SuspendLayout();
+            this.pnlRoute.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).BeginInit();
+            this.pnlPlanetDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPlanetImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +87,7 @@ namespace PersonalControls
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.pnlRoute);
             this.panel6.Controls.Add(this.pnlRegion);
             this.panel6.Controls.Add(this.pnlPlanetDetails);
             this.panel6.Controls.Add(this.treeView1);
@@ -90,29 +99,6 @@ namespace PersonalControls
             this.panel6.TabIndex = 6;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
-            // pnlPlanetDetails
-            // 
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetRoutesTitle);
-            this.pnlPlanetDetails.Controls.Add(this.pcbPlanetImage);
-            this.pnlPlanetDetails.Controls.Add(this.lblNatives);
-            this.pnlPlanetDetails.Controls.Add(this.lblNativesTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblLatitude);
-            this.pnlPlanetDetails.Controls.Add(this.lblLatitudeTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblLongitude);
-            this.pnlPlanetDetails.Controls.Add(this.lblLongitudeTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliation);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliationTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSector);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSectorTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetName);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetNameTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lbxPlanetRoutes);
-            this.pnlPlanetDetails.Location = new System.Drawing.Point(463, 146);
-            this.pnlPlanetDetails.Name = "pnlPlanetDetails";
-            this.pnlPlanetDetails.Size = new System.Drawing.Size(583, 567);
-            this.pnlPlanetDetails.TabIndex = 30;
-            this.pnlPlanetDetails.Visible = false;
-            // 
             // pnlRegion
             // 
             this.pnlRegion.Controls.Add(this.txbRegionDescription);
@@ -120,11 +106,83 @@ namespace PersonalControls
             this.pnlRegion.Controls.Add(this.lblRegionDescriptionTitle);
             this.pnlRegion.Controls.Add(this.lblRegionName);
             this.pnlRegion.Controls.Add(this.lblRegionNameTitle);
-            this.pnlRegion.Location = new System.Drawing.Point(463, 149);
+            this.pnlRegion.Location = new System.Drawing.Point(460, 143);
             this.pnlRegion.Name = "pnlRegion";
             this.pnlRegion.Size = new System.Drawing.Size(583, 567);
             this.pnlRegion.TabIndex = 31;
             this.pnlRegion.Visible = false;
+            // 
+            // pnlRoute
+            // 
+            this.pnlRoute.Controls.Add(this.lsbRoutePlanets);
+            this.pnlRoute.Controls.Add(this.pcbRoute);
+            this.pnlRoute.Controls.Add(this.lblRoutePlanetsTitle);
+            this.pnlRoute.Controls.Add(this.lblRouteName);
+            this.pnlRoute.Controls.Add(this.lblRouteNameTitle);
+            this.pnlRoute.Location = new System.Drawing.Point(457, 143);
+            this.pnlRoute.Name = "pnlRoute";
+            this.pnlRoute.Size = new System.Drawing.Size(583, 567);
+            this.pnlRoute.TabIndex = 32;
+            this.pnlRoute.Visible = false;
+            // 
+            // lsbRoutePlanets
+            // 
+            this.lsbRoutePlanets.FormattingEnabled = true;
+            this.lsbRoutePlanets.ItemHeight = 16;
+            this.lsbRoutePlanets.Location = new System.Drawing.Point(45, 166);
+            this.lsbRoutePlanets.Name = "lsbRoutePlanets";
+            this.lsbRoutePlanets.Size = new System.Drawing.Size(160, 244);
+            this.lsbRoutePlanets.TabIndex = 30;
+            // 
+            // pcbRoute
+            // 
+            this.pcbRoute.Location = new System.Drawing.Point(325, 322);
+            this.pcbRoute.Name = "pcbRoute";
+            this.pcbRoute.Size = new System.Drawing.Size(223, 216);
+            this.pcbRoute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbRoute.TabIndex = 29;
+            this.pcbRoute.TabStop = false;
+            // 
+            // lblRoutePlanetsTitle
+            // 
+            this.lblRoutePlanetsTitle.AutoSize = true;
+            this.lblRoutePlanetsTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRoutePlanetsTitle.Location = new System.Drawing.Point(45, 129);
+            this.lblRoutePlanetsTitle.Name = "lblRoutePlanetsTitle";
+            this.lblRoutePlanetsTitle.Size = new System.Drawing.Size(98, 17);
+            this.lblRoutePlanetsTitle.TabIndex = 19;
+            this.lblRoutePlanetsTitle.Text = "Planets within:";
+            // 
+            // lblRouteName
+            // 
+            this.lblRouteName.AutoSize = true;
+            this.lblRouteName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteName.Location = new System.Drawing.Point(45, 83);
+            this.lblRouteName.Name = "lblRouteName";
+            this.lblRouteName.Size = new System.Drawing.Size(0, 17);
+            this.lblRouteName.TabIndex = 18;
+            // 
+            // lblRouteNameTitle
+            // 
+            this.lblRouteNameTitle.AutoSize = true;
+            this.lblRouteNameTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteNameTitle.Location = new System.Drawing.Point(45, 51);
+            this.lblRouteNameTitle.Name = "lblRouteNameTitle";
+            this.lblRouteNameTitle.Size = new System.Drawing.Size(49, 17);
+            this.lblRouteNameTitle.TabIndex = 17;
+            this.lblRouteNameTitle.Text = "Name:";
+            // 
+            // txbRegionDescription
+            // 
+            this.txbRegionDescription.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txbRegionDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbRegionDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txbRegionDescription.Location = new System.Drawing.Point(48, 158);
+            this.txbRegionDescription.Multiline = true;
+            this.txbRegionDescription.Name = "txbRegionDescription";
+            this.txbRegionDescription.ReadOnly = true;
+            this.txbRegionDescription.Size = new System.Drawing.Size(475, 158);
+            this.txbRegionDescription.TabIndex = 30;
             // 
             // pcbRegionImage
             // 
@@ -163,6 +221,29 @@ namespace PersonalControls
             this.lblRegionNameTitle.Size = new System.Drawing.Size(49, 17);
             this.lblRegionNameTitle.TabIndex = 17;
             this.lblRegionNameTitle.Text = "Name:";
+            // 
+            // pnlPlanetDetails
+            // 
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetRoutesTitle);
+            this.pnlPlanetDetails.Controls.Add(this.pcbPlanetImage);
+            this.pnlPlanetDetails.Controls.Add(this.lblNatives);
+            this.pnlPlanetDetails.Controls.Add(this.lblNativesTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblLatitude);
+            this.pnlPlanetDetails.Controls.Add(this.lblLatitudeTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblLongitude);
+            this.pnlPlanetDetails.Controls.Add(this.lblLongitudeTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliation);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliationTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSector);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSectorTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetName);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetNameTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lbxPlanetRoutes);
+            this.pnlPlanetDetails.Location = new System.Drawing.Point(463, 146);
+            this.pnlPlanetDetails.Name = "pnlPlanetDetails";
+            this.pnlPlanetDetails.Size = new System.Drawing.Size(583, 567);
+            this.pnlPlanetDetails.TabIndex = 30;
+            this.pnlPlanetDetails.Visible = false;
             // 
             // lblPlanetRoutesTitle
             // 
@@ -335,18 +416,6 @@ namespace PersonalControls
             this.label11.Text = "SPACESHIP DETAILS";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbRegionDescription
-            // 
-            this.txbRegionDescription.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txbRegionDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbRegionDescription.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbRegionDescription.Location = new System.Drawing.Point(48, 158);
-            this.txbRegionDescription.Multiline = true;
-            this.txbRegionDescription.Name = "txbRegionDescription";
-            this.txbRegionDescription.ReadOnly = true;
-            this.txbRegionDescription.Size = new System.Drawing.Size(475, 158);
-            this.txbRegionDescription.TabIndex = 30;
-            // 
             // SpaceShipDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,11 +426,14 @@ namespace PersonalControls
             this.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.pnlPlanetDetails.ResumeLayout(false);
-            this.pnlPlanetDetails.PerformLayout();
             this.pnlRegion.ResumeLayout(false);
             this.pnlRegion.PerformLayout();
+            this.pnlRoute.ResumeLayout(false);
+            this.pnlRoute.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).EndInit();
+            this.pnlPlanetDetails.ResumeLayout(false);
+            this.pnlPlanetDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPlanetImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -396,5 +468,11 @@ namespace PersonalControls
         private System.Windows.Forms.Label lblRegionName;
         private System.Windows.Forms.Label lblRegionNameTitle;
         private System.Windows.Forms.TextBox txbRegionDescription;
+        private System.Windows.Forms.Panel pnlRoute;
+        private System.Windows.Forms.PictureBox pcbRoute;
+        private System.Windows.Forms.Label lblRoutePlanetsTitle;
+        private System.Windows.Forms.Label lblRouteName;
+        private System.Windows.Forms.Label lblRouteNameTitle;
+        private System.Windows.Forms.ListBox lsbRoutePlanets;
     }
 }
