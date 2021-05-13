@@ -58,6 +58,12 @@
     <Compile Include="OnBoardRegions.Designer.cs">
       <DependentUpon>OnBoardRegions.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnBoardRoutes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardRoutes.Designer.cs">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OnBoardRegions.resx">
       <DependentUpon>OnBoardRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardRoutes.resx">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

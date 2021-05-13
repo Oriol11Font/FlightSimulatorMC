@@ -280,37 +280,45 @@ namespace PersonalControls
             throw new NotImplementedException();
         }
 
-        private void fillRouteDetails(String selectedOptionText)
+        private OnBoardRoutes fillRouteDetails(int selectedOptionId, OnBoardRoutes form)
         {
+            XElement routeElement = xDoc.Root.Elements("hyperspaceRoutes").Elements("Route").ElementAt(selectedOptionId);
 
             lblRouteName.Text = selectedOptionText;
             lsbRoutePlanets.Items.Clear();
             //IEnumerable<XElement> ddd = xDoc.Root.Elements("planets").Elements("planet").Elements("hperspaceRoute").Elements("route");
             IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
-
+            String routeType = routeElement.Element("type").Value.ToString();
+            String routeName = routeElement.Element("nameRoute").Value.ToString();
+            String routeStart = routeElement.Element("start").Value.ToString();
+            String routeEnd = routeElement.Element("end").Value.ToString();
             //XElement routeElement = xDoc.Root.Elements("regions").Elements("Region").ElementAt(selectedOptionId);
-
+            form.RouteType = routeType;
+            form.RouteName = routeName;
+            form.RouteStart = routeStart;
+            form.RouteEnd = routeEnd;
             List<String> planetsInRoute = new List<String>();
             listaPlanets.Count();
-            foreach (XElement element in listaPlanets)
-            {
-                IEnumerable<XElement> planetHyperspaceRouteElements = element.Elements("hyperspaceRoute").Elements("route");
-                foreach (XElement route in planetHyperspaceRouteElements)
-                {
-                    if (route.Value.ToString().ToLower() == selectedOptionText.ToLower())
-                    {
-                        String planetName = element.Element("name").Value.ToString();
-                        lsbRoutePlanets.Items.Add(planetName);
-                    }
-                }
+            return form;
+            //foreach (XElement element in listaPlanets)
+            //{
+            //    IEnumerable<XElement> planetHyperspaceRouteElements = element.Elements("hyperspaceRoute").Elements("route");
+            //    foreach (XElement route in planetHyperspaceRouteElements)
+            //    {
+            //        if (route.Value.ToString().ToLower() == selectedOptionText.ToLower())
+            //        {
+            //            String planetName = element.Element("name").Value.ToString();
+            //            lsbRoutePlanets.Items.Add(planetName);
+            //        }
+            //    }
 
-            }
+            //}
 
-            pcbRoute.Image = Image.FromFile(Path.Combine(Application.StartupPath, "assets", "placeholder.png"));
+            //pcbRoute.Image = Image.FromFile(Path.Combine(Application.StartupPath, "assets", "placeholder.png"));
 
-            hidePanels();
+            //hidePanels();
 
-            pnlRoute.Visible = true;
+            //pnlRoute.Visible = true;
 
 
 
@@ -332,8 +340,7 @@ namespace PersonalControls
                         "assets", "planetes", imageName));
 
 
-            lblRegionName.Text = regionName;
-            txbRegionDescription.Text = regionDescription;
+
 
             return form;
             //hidePanels();
@@ -406,8 +413,8 @@ namespace PersonalControls
                         form = fillRegionDetails(selectedOptionId, form);
                         break;
                     case "routes":
-                        form = new OnBoardPlanets();
-                        form = fillPlanetDetails(selectedOptionId, form);
+                        form = new OnBoardRoutes();
+                        form = fillRouteDetails(selectedOptionId, form);
                         break;
                     case "maps":
                         form = new OnBoardPlanets();
