@@ -144,6 +144,14 @@
         <OrDes>Dathomir-Mandalore</OrDes>
         <selectedRoute>Hydian Way-Rimma Trade Route-Hydian Way</selectedRoute>
       </defineRoute>
+      <defineRoute>
+        <OrDes>Dathomir-Hoth</OrDes>
+        <selectedRoute>Hydian Way-Rimma Trade Route-Corellian Run-Corellian Trade Spine</selectedRoute>
+      </defineRoute>
+      <defineRoute>
+        <OrDes>Corellia-Hoth</OrDes>
+        <selectedRoute>Corellian Run-Corellian Trade Spine-Corellian Run-Corellian Trade Spine</selectedRoute>
+      </defineRoute>
     </definedRoutes>
   </hyperspaceRoutes>
   <filiations>

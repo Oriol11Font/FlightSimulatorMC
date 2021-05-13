@@ -10,7 +10,7 @@ namespace UtilsMuchoCodigo
         {
             var rnd = new Random();
 
-            return ObtainCoordinate(rnd.Next(1, 6), rnd.Next(1, 5));
+            return ObtainCoordinate(rnd.Next(1, 5), rnd.Next(1, 5));
         }
 
         public static string CalculateVector(Coordinates situation)
