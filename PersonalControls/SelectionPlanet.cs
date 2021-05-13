@@ -51,6 +51,8 @@ namespace PersonalControls
                 cbx_origin_planet.Items.Add(planet.Name);
                 cbx_destination_planet.Items.Add(planet.Name);
             }
+
+            mapa1.BringToFront();
         }
 
         private void cbx_origin_planet_SelectionChangeCommitted(object sender, EventArgs e)
@@ -283,9 +285,7 @@ namespace PersonalControls
 
         private void btn_calc_vector_Click(object sender, EventArgs e)
         {
-            var thread = new Thread(CalculateCoordinates);
-
-            thread.Start();
+            CalculateCoordinates();
         }
 
         private void CalculateCoordinates()
@@ -306,12 +306,6 @@ namespace PersonalControls
             var originVector = Hyperspace.CalculateVector(_selectedOriginPlanet.Situation);
             var destinationVector = Hyperspace.CalculateVector();
 
-            // Parallel.Invoke(() => originVector = Hyperspace.CalculateVector(_selectedOriginPlanet
-            //     .Situation), () => destinationVector = Hyperspace.CalculateVector());
-
-            // if (string.IsNullOrEmpty(originVector) ||
-            //     string.IsNullOrEmpty(destinationVector)) return;
-
             MessageBox.Show(
                 $@"origin vector: {originVector}, destination vector: {destinationVector}");
 
@@ -324,6 +318,17 @@ namespace PersonalControls
 
             if (!isDefinedRouteExist)
                 SaveDefinedRoute(selectedDefinedRoute);
+
+            foreach (Control control in panel_selectplanet.Controls)
+                control.Visible = false;
+
+            mapa1.ApproachVector = originVector;
+            mapa1.DestinationVector = destinationVector;
+            mapa1.DestinationPlanet = _selectedDestinationPlanet.Name;
+
+            mapa1.Init();
+            mapa1.Visible = true;
+            mapa1.BringToFront();
         }
 
         private void SaveDefinedRoute(DefinedRoute selectedDefinedRoute)

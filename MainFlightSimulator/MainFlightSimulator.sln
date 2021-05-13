@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationScreens", "..\Oper
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalControls", "..\PersonalControls\PersonalControls.csproj", "{85C231F9-7666-4B54-87F2-0141590E2571}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsMuchoCodigo.UnitTest", "UtilsMuchoCodigo.UnitTest\UtilsMuchoCodigo.UnitTest.csproj", "{6F775B9E-565A-4282-A71D-72B132E204FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{85C231F9-7666-4B54-87F2-0141590E2571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85C231F9-7666-4B54-87F2-0141590E2571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85C231F9-7666-4B54-87F2-0141590E2571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F775B9E-565A-4282-A71D-72B132E204FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F775B9E-565A-4282-A71D-72B132E204FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F775B9E-565A-4282-A71D-72B132E204FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F775B9E-565A-4282-A71D-72B132E204FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,7 +31,8 @@ namespace UtilsMuchoCodigo
             return a;
         }
 
-        public static int GetMcm(int a, int b) {
+        public static int GetMcm(int a, int b)
+        {
             return a / Gcf(a, b) * b;
         }
 
@@ -58,9 +59,9 @@ namespace UtilsMuchoCodigo
         public static int Divide(int a, int b)
         {
             if (b.Equals(0)) throw new DivideByZeroException();
-            
+
             var division = (double) a / b;
-            
+
             return Round(division);
         }
 
@@ -82,14 +83,13 @@ namespace UtilsMuchoCodigo
             var division = Divide(a, b);
             var inverseDivision = InverseDivide(a, b);
 
-            return multiplication <= 300 ? 
-                new List<int>
+            return multiplication <= 300
+                ? new List<int>
                 {
                     sum, deduction, inverseDeduction, multiplication, division,
                     inverseDivision
-                } 
-                : 
-                new List<int>();
+                }
+                : new List<int>();
         }
 
         private static int Round(double num) =>

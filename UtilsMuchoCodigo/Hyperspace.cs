@@ -35,7 +35,7 @@ namespace UtilsMuchoCodigo
             return ObtainCoordinate(posicioLletra, posicioNumero);
         }
 
-        private static string ObtainCoordinate(int posicioLletra, int posicioNumero)
+        public static string ObtainCoordinate(int posicioLletra, int posicioNumero)
         {
             var chars = new ArrayList {'A', 'B', 'C', 'D', 'E', 'F'};
 

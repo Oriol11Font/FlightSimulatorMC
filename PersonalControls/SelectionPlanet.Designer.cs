@@ -34,6 +34,7 @@ namespace PersonalControls
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_selectplanet = new System.Windows.Forms.Panel();
+            this.mapa1 = new PersonalControls.Mapa();
             this.btn_calc_vector = new System.Windows.Forms.Button();
             this.gpb_route = new System.Windows.Forms.GroupBox();
             this.pb_route_image = new System.Windows.Forms.PictureBox();
@@ -87,6 +88,7 @@ namespace PersonalControls
             // 
             this.panel_selectplanet.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_selectplanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_selectplanet.Controls.Add(this.mapa1);
             this.panel_selectplanet.Controls.Add(this.btn_calc_vector);
             this.panel_selectplanet.Controls.Add(this.gpb_route);
             this.panel_selectplanet.Controls.Add(this.gpb_planet);
@@ -101,6 +103,15 @@ namespace PersonalControls
             this.panel_selectplanet.Name = "panel_selectplanet";
             this.panel_selectplanet.Size = new System.Drawing.Size(1057, 995);
             this.panel_selectplanet.TabIndex = 6;
+            // 
+            // mapa1
+            // 
+            this.mapa1.Location = new System.Drawing.Point(289, 330);
+            this.mapa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mapa1.Name = "mapa1";
+            this.mapa1.Size = new System.Drawing.Size(588, 459);
+            this.mapa1.TabIndex = 34;
+            this.mapa1.Visible = false;
             // 
             // btn_calc_vector
             // 
@@ -507,6 +518,6 @@ namespace PersonalControls
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel7;
+        private PersonalControls.Mapa mapa1;
     }
 }
