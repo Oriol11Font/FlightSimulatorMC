@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -51,8 +50,6 @@ namespace PersonalControls
                 cbx_origin_planet.Items.Add(planet.Name);
                 cbx_destination_planet.Items.Add(planet.Name);
             }
-
-            mapa1.BringToFront();
         }
 
         private void cbx_origin_planet_SelectionChangeCommitted(object sender, EventArgs e)
@@ -64,7 +61,7 @@ namespace PersonalControls
         {
             _selectedDestinationPlanet = _planets[cbx_destination_planet.SelectedIndex];
 
-            Task.Run(MapPlanetToControls);
+            MapPlanetToControls();
         }
 
         private void MapPlanetToControls()

@@ -45,6 +45,19 @@ namespace PersonalControls
             Controls.Add(pane);
             pane.Show();
             pane.BringToFront();
+
+            if (planetName is null) return;
+
+            var label = new Label
+            {
+                BackColor = Color.Transparent, Visible = true, Location = new Point(location.X,
+                    location.Y + 10),
+                ForeColor = Color.White, Size = new Size(40, 20), Text = planetName
+            };
+
+            Controls.Add(label);
+            label.Show();
+            label.BringToFront();
         }
 
         private static Point GetCoordsPosition(Control cnt, int row, int column)

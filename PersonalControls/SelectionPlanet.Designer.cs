@@ -87,7 +87,6 @@ namespace PersonalControls
             // panel_selectplanet
             // 
             this.panel_selectplanet.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_selectplanet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_selectplanet.Controls.Add(this.mapa1);
             this.panel_selectplanet.Controls.Add(this.btn_calc_vector);
             this.panel_selectplanet.Controls.Add(this.gpb_route);
@@ -106,7 +105,10 @@ namespace PersonalControls
             // 
             // mapa1
             // 
-            this.mapa1.Location = new System.Drawing.Point(289, 330);
+            this.mapa1.ApproachVector = null;
+            this.mapa1.DestinationPlanet = "";
+            this.mapa1.DestinationVector = "asdasdasd";
+            this.mapa1.Location = new System.Drawing.Point(208, 255);
             this.mapa1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mapa1.Name = "mapa1";
             this.mapa1.Size = new System.Drawing.Size(588, 459);
@@ -441,7 +443,7 @@ namespace PersonalControls
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1055, 110);
+            this.label10.Size = new System.Drawing.Size(1057, 110);
             this.label10.TabIndex = 11;
             this.label10.Text = "PLANETS AVAILABLE";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
