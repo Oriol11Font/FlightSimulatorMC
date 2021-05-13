@@ -23,6 +23,9 @@ namespace PersonalControls
         {
             if (ApproachVector == null || DestinationVector == null) return;
 
+            pn_total.SendToBack();
+            
+
             Parallel.Invoke(
                 () => CreatePlanet(ApproachVector, Color.Yellow),
                 () => CreatePlanet(DestinationVector, Color.Yellow, DestinationPlanet));

@@ -34,8 +34,9 @@ namespace PersonalControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mapa));
             this.pb_background = new System.Windows.Forms.PictureBox();
             this.pn_total = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace PersonalControls
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize) (this.pb_background)).BeginInit();
             this.pn_total.SuspendLayout();
             this.SuspendLayout();
@@ -75,14 +75,13 @@ namespace PersonalControls
             this.pn_total.Size = new System.Drawing.Size(518, 399);
             this.pn_total.TabIndex = 1;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(161, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 394);
-            this.panel1.TabIndex = 9;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(189, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(0, 398);
+            this.panel2.TabIndex = 9;
             // 
             // label7
             // 
@@ -93,6 +92,15 @@ namespace PersonalControls
             this.label7.Size = new System.Drawing.Size(24, 26);
             this.label7.TabIndex = 8;
             this.label7.Text = "1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(161, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(0, 394);
+            this.panel1.TabIndex = 9;
             // 
             // label1
             // 
@@ -214,14 +222,6 @@ namespace PersonalControls
             this.label12.Size = new System.Drawing.Size(24, 26);
             this.label12.TabIndex = 13;
             this.label12.Text = "5";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(189, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(0, 398);
-            this.panel2.TabIndex = 9;
             // 
             // Mapa
             // 
