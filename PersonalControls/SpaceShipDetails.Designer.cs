@@ -30,20 +30,24 @@ namespace PersonalControls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pnlRegion = new System.Windows.Forms.Panel();
             this.pnlRoute = new System.Windows.Forms.Panel();
             this.lsbRoutePlanets = new System.Windows.Forms.ListBox();
             this.pcbRoute = new System.Windows.Forms.PictureBox();
             this.lblRoutePlanetsTitle = new System.Windows.Forms.Label();
             this.lblRouteName = new System.Windows.Forms.Label();
             this.lblRouteNameTitle = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlSelectedCategory = new System.Windows.Forms.Panel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.cbxCategories = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pnlPlanetDetails = new System.Windows.Forms.Panel();
+            this.pnlRegion = new System.Windows.Forms.Panel();
             this.txbRegionDescription = new System.Windows.Forms.TextBox();
             this.pcbRegionImage = new System.Windows.Forms.PictureBox();
             this.lblRegionDescriptionTitle = new System.Windows.Forms.Label();
             this.lblRegionName = new System.Windows.Forms.Label();
             this.lblRegionNameTitle = new System.Windows.Forms.Label();
-            this.pnlPlanetDetails = new System.Windows.Forms.Panel();
             this.lblPlanetRoutesTitle = new System.Windows.Forms.Label();
             this.pcbPlanetImage = new System.Windows.Forms.PictureBox();
             this.lblNatives = new System.Windows.Forms.Label();
@@ -59,16 +63,13 @@ namespace PersonalControls
             this.lblPlanetName = new System.Windows.Forms.Label();
             this.lblPlanetNameTitle = new System.Windows.Forms.Label();
             this.lbxPlanetRoutes = new System.Windows.Forms.ListBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.cbxCategories = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.pnlRegion.SuspendLayout();
             this.pnlRoute.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).BeginInit();
+            this.panel6.SuspendLayout();
             this.pnlPlanetDetails.SuspendLayout();
+            this.pnlRegion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPlanetImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,35 +84,6 @@ namespace PersonalControls
             this.panel1.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.TabIndex = 13;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.pnlRoute);
-            this.panel6.Controls.Add(this.pnlRegion);
-            this.panel6.Controls.Add(this.pnlPlanetDetails);
-            this.panel6.Controls.Add(this.treeView1);
-            this.panel6.Controls.Add(this.cbxCategories);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(14, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1103, 1026);
-            this.panel6.TabIndex = 6;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // pnlRegion
-            // 
-            this.pnlRegion.Controls.Add(this.txbRegionDescription);
-            this.pnlRegion.Controls.Add(this.pcbRegionImage);
-            this.pnlRegion.Controls.Add(this.lblRegionDescriptionTitle);
-            this.pnlRegion.Controls.Add(this.lblRegionName);
-            this.pnlRegion.Controls.Add(this.lblRegionNameTitle);
-            this.pnlRegion.Location = new System.Drawing.Point(460, 143);
-            this.pnlRegion.Name = "pnlRegion";
-            this.pnlRegion.Size = new System.Drawing.Size(583, 567);
-            this.pnlRegion.TabIndex = 31;
-            this.pnlRegion.Visible = false;
-            // 
             // pnlRoute
             // 
             this.pnlRoute.Controls.Add(this.lsbRoutePlanets);
@@ -119,7 +91,7 @@ namespace PersonalControls
             this.pnlRoute.Controls.Add(this.lblRoutePlanetsTitle);
             this.pnlRoute.Controls.Add(this.lblRouteName);
             this.pnlRoute.Controls.Add(this.lblRouteNameTitle);
-            this.pnlRoute.Location = new System.Drawing.Point(457, 143);
+            this.pnlRoute.Location = new System.Drawing.Point(321, 115);
             this.pnlRoute.Name = "pnlRoute";
             this.pnlRoute.Size = new System.Drawing.Size(583, 567);
             this.pnlRoute.TabIndex = 32;
@@ -172,6 +144,94 @@ namespace PersonalControls
             this.lblRouteNameTitle.TabIndex = 17;
             this.lblRouteNameTitle.Text = "Name:";
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.pnlRoute);
+            this.panel6.Controls.Add(this.pnlRegion);
+            this.panel6.Controls.Add(this.pnlPlanetDetails);
+            this.panel6.Controls.Add(this.pnlSelectedCategory);
+            this.panel6.Controls.Add(this.treeView1);
+            this.panel6.Controls.Add(this.cbxCategories);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Location = new System.Drawing.Point(12, 25);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1103, 1026);
+            this.panel6.TabIndex = 6;
+            // 
+            // pnlSelectedCategory
+            // 
+            this.pnlSelectedCategory.Location = new System.Drawing.Point(475, 129);
+            this.pnlSelectedCategory.Name = "pnlSelectedCategory";
+            this.pnlSelectedCategory.Size = new System.Drawing.Size(619, 591);
+            this.pnlSelectedCategory.TabIndex = 15;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(70, 227);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(229, 238);
+            this.treeView1.TabIndex = 14;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.HandleFormChange);
+            // 
+            // cbxCategories
+            // 
+            this.cbxCategories.FormattingEnabled = true;
+            this.cbxCategories.Location = new System.Drawing.Point(70, 115);
+            this.cbxCategories.Name = "cbxCategories";
+            this.cbxCategories.Size = new System.Drawing.Size(229, 24);
+            this.cbxCategories.TabIndex = 12;
+            this.cbxCategories.SelectedValueChanged += new System.EventHandler(this.cbxCategories_SelectedValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(1101, 88);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "SPACESHIP DETAILS";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlPlanetDetails
+            // 
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetRoutesTitle);
+            this.pnlPlanetDetails.Controls.Add(this.pcbPlanetImage);
+            this.pnlPlanetDetails.Controls.Add(this.lblNatives);
+            this.pnlPlanetDetails.Controls.Add(this.lblNativesTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblLatitude);
+            this.pnlPlanetDetails.Controls.Add(this.lblLatitudeTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblLongitude);
+            this.pnlPlanetDetails.Controls.Add(this.lblLongitudeTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliation);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliationTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSector);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSectorTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetName);
+            this.pnlPlanetDetails.Controls.Add(this.lblPlanetNameTitle);
+            this.pnlPlanetDetails.Controls.Add(this.lbxPlanetRoutes);
+            this.pnlPlanetDetails.Location = new System.Drawing.Point(657, 71);
+            this.pnlPlanetDetails.Name = "pnlPlanetDetails";
+            this.pnlPlanetDetails.Size = new System.Drawing.Size(583, 567);
+            this.pnlPlanetDetails.TabIndex = 30;
+            this.pnlPlanetDetails.Visible = false;
+            // 
+            // pnlRegion
+            // 
+            this.pnlRegion.Controls.Add(this.txbRegionDescription);
+            this.pnlRegion.Controls.Add(this.pcbRegionImage);
+            this.pnlRegion.Controls.Add(this.lblRegionDescriptionTitle);
+            this.pnlRegion.Controls.Add(this.lblRegionName);
+            this.pnlRegion.Controls.Add(this.lblRegionNameTitle);
+            this.pnlRegion.Location = new System.Drawing.Point(421, 112);
+            this.pnlRegion.Name = "pnlRegion";
+            this.pnlRegion.Size = new System.Drawing.Size(583, 567);
+            this.pnlRegion.TabIndex = 31;
+            this.pnlRegion.Visible = false;
+            // 
             // txbRegionDescription
             // 
             this.txbRegionDescription.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -221,29 +281,6 @@ namespace PersonalControls
             this.lblRegionNameTitle.Size = new System.Drawing.Size(49, 17);
             this.lblRegionNameTitle.TabIndex = 17;
             this.lblRegionNameTitle.Text = "Name:";
-            // 
-            // pnlPlanetDetails
-            // 
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetRoutesTitle);
-            this.pnlPlanetDetails.Controls.Add(this.pcbPlanetImage);
-            this.pnlPlanetDetails.Controls.Add(this.lblNatives);
-            this.pnlPlanetDetails.Controls.Add(this.lblNativesTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblLatitude);
-            this.pnlPlanetDetails.Controls.Add(this.lblLatitudeTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblLongitude);
-            this.pnlPlanetDetails.Controls.Add(this.lblLongitudeTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliation);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetFiliationTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSector);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetSectorTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetName);
-            this.pnlPlanetDetails.Controls.Add(this.lblPlanetNameTitle);
-            this.pnlPlanetDetails.Controls.Add(this.lbxPlanetRoutes);
-            this.pnlPlanetDetails.Location = new System.Drawing.Point(463, 146);
-            this.pnlPlanetDetails.Name = "pnlPlanetDetails";
-            this.pnlPlanetDetails.Size = new System.Drawing.Size(583, 567);
-            this.pnlPlanetDetails.TabIndex = 30;
-            this.pnlPlanetDetails.Visible = false;
             // 
             // lblPlanetRoutesTitle
             // 
@@ -387,35 +424,6 @@ namespace PersonalControls
             this.lbxPlanetRoutes.Size = new System.Drawing.Size(227, 100);
             this.lbxPlanetRoutes.TabIndex = 15;
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(70, 227);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(229, 238);
-            this.treeView1.TabIndex = 14;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // cbxCategories
-            // 
-            this.cbxCategories.FormattingEnabled = true;
-            this.cbxCategories.Location = new System.Drawing.Point(70, 115);
-            this.cbxCategories.Name = "cbxCategories";
-            this.cbxCategories.Size = new System.Drawing.Size(229, 24);
-            this.cbxCategories.TabIndex = 12;
-            this.cbxCategories.SelectedValueChanged += new System.EventHandler(this.cbxCategories_SelectedValueChanged);
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(1101, 88);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "SPACESHIP DETAILS";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SpaceShipDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,15 +433,15 @@ namespace PersonalControls
             this.Name = "SpaceShipDetails";
             this.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.pnlRegion.ResumeLayout(false);
-            this.pnlRegion.PerformLayout();
             this.pnlRoute.ResumeLayout(false);
             this.pnlRoute.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.pnlPlanetDetails.ResumeLayout(false);
             this.pnlPlanetDetails.PerformLayout();
+            this.pnlRegion.ResumeLayout(false);
+            this.pnlRegion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRegionImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPlanetImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -474,5 +482,6 @@ namespace PersonalControls
         private System.Windows.Forms.Label lblRouteName;
         private System.Windows.Forms.Label lblRouteNameTitle;
         private System.Windows.Forms.ListBox lsbRoutePlanets;
+        private System.Windows.Forms.Panel pnlSelectedCategory;
     }
 }

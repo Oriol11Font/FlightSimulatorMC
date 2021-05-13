@@ -216,7 +216,7 @@ namespace PersonalControls
                 switch (selectedCategoryName.ToLower())
                 {
                     case "planets":
-                        fillPlanetDetails(selectedOptionId);
+                        //fillPlanetDetails(selectedOptionId);
                         break;
                     case "regions":
                         fillRegionDetails(selectedOptionId);
@@ -246,7 +246,7 @@ namespace PersonalControls
 
         }
 
-        private void fillPlanetDetails(int selectedOptionId)
+        private OnBoardPlanets fillPlanetDetails(int selectedOptionId, OnBoardPlanets form)
         {
             //IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
             XElement planetElement = xDoc.Root.Elements("planets").Elements("planet").ElementAt(selectedOptionId);
@@ -262,10 +262,12 @@ namespace PersonalControls
             IEnumerable<XElement> planetRoutes = planetElement.Element("hyperspaceRoute").Elements("route");
 
             lbxPlanetRoutes.Items.Clear();
-
+            List<String> routesList = new List<String>();
             foreach (XElement route in planetRoutes)
             {
                 lbxPlanetRoutes.Items.Add(route.Value.ToString());
+                routesList.Add(route.Value.ToString());
+
             }
 
             lblPlanetName.Text = planetName;
@@ -276,7 +278,16 @@ namespace PersonalControls
             lblNatives.Text = planetNatives;
             pcbPlanetImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", imageName));
-            pnlPlanetDetails.Visible = true;
+            form.PlanetName = planetName;
+            form.PlanetSector = planetSector;
+            form.PlanetFiliation = planetFiliation;
+            form.PlanetLatitude = planetLatitude;
+            form.PlanetLongitude = planetLongitude;
+            form.PlanetNatives = planetNatives;
+            form.ImagePath = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", imageName));
+            form.PlanetRoutesList = routesList;
+            return form;
         }
 
         private void fillMapDetails()
@@ -286,7 +297,7 @@ namespace PersonalControls
 
         private void fillRouteDetails(String selectedOptionText)
         {
-            
+
             lblRouteName.Text = selectedOptionText;
             lsbRoutePlanets.Items.Clear();
             //IEnumerable<XElement> ddd = xDoc.Root.Elements("planets").Elements("planet").Elements("hperspaceRoute").Elements("route");
@@ -301,13 +312,13 @@ namespace PersonalControls
                 IEnumerable<XElement> planetHyperspaceRouteElements = element.Elements("hyperspaceRoute").Elements("route");
                 foreach (XElement route in planetHyperspaceRouteElements)
                 {
-                    if(route.Value.ToString().ToLower() == selectedOptionText.ToLower())
+                    if (route.Value.ToString().ToLower() == selectedOptionText.ToLower())
                     {
                         String planetName = element.Element("name").Value.ToString();
                         lsbRoutePlanets.Items.Add(planetName);
                     }
                 }
-                
+
             }
 
             pcbRoute.Image = Image.FromFile(Path.Combine(Application.StartupPath, "assets", "placeholder.png"));
@@ -331,7 +342,7 @@ namespace PersonalControls
             String imageName = regionElement.Element("mapRegion").Value.ToString();
 
 
-            
+
 
             lblRegionName.Text = regionName;
             txbRegionDescription.Text = regionDescription;
@@ -373,17 +384,66 @@ namespace PersonalControls
 
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+
+
+
+
+
+        private void HandleFormChange(object sender, TreeViewEventArgs e)
         {
             selectedOptionId = Convert.ToInt32(treeView1.SelectedNode.Tag);
             selectedOptionText = treeView1.SelectedNode.Text.ToString();
-
             //Hay que coger como elemento padre el
-            fillDetails(selectedCategoryName, selectedOptionId);
-        }
+            //fillDetails(selectedCategoryName, selectedOptionId);
+            Type type = sender.GetType();
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
+            if (sender is not TreeView controller) return;
+            var btnName = controller.Name;
+            var selectedNodeText = controller.SelectedNode.Text.ToString();
+            var selectedNodeTag = controller.SelectedNode.Tag.ToString();
+
+
+            if (selectedNodeTag != "-1")
+            {
+                var treeNodeText = controller.Text.ToString().ToLower();
+                var selectedCategory = selectedCategoryName.ToLower();
+
+                dynamic form;
+
+                switch (selectedCategory)
+                {
+                    case "planets":
+                        form = new OnBoardPlanets();
+                        form = fillPlanetDetails(selectedOptionId, form);
+                        break;
+                    case "regions":
+                        form = new OnBoardRegions();
+                        form = fillPlanetDetails(selectedOptionId, form);
+                        break;
+                    case "routes":
+                        form = new OnBoardPlanets();
+                        form = fillPlanetDetails(selectedOptionId, form);
+                        break;
+                    case "maps":
+                        form = new OnBoardPlanets();
+                        form = fillPlanetDetails(selectedOptionId, form);
+                        break;
+                    default:
+                        form = new OnBoardPlanets();
+                        form = fillPlanetDetails(selectedOptionId, form);
+                        break;
+                }
+
+                pnlSelectedCategory.Controls.Clear();
+
+                if (form == null) return;
+
+                if (form.AutoScroll)
+                    form.AutoScroll = false;
+
+                pnlSelectedCategory.Controls.Add(form);
+                form.Show();
+            }
 
         }
     }
