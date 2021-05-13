@@ -306,9 +306,6 @@ namespace PersonalControls
             var originVector = Hyperspace.CalculateVector(_selectedOriginPlanet.Situation);
             var destinationVector = Hyperspace.CalculateVector();
 
-            MessageBox.Show(
-                $@"origin vector: {originVector}, destination vector: {destinationVector}");
-
             if (originVector == null)
             {
                 MessageBox.Show(

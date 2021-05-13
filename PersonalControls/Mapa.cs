@@ -1,4 +1,5 @@
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersonalControls
@@ -22,8 +23,9 @@ namespace PersonalControls
         {
             if (ApproachVector == null || DestinationVector == null) return;
 
-            CreatePlanet(ApproachVector, Color.Yellow);
-            CreatePlanet(DestinationVector, Color.Yellow, DestinationPlanet);
+            Parallel.Invoke(
+                () => CreatePlanet(ApproachVector, Color.Yellow),
+                () => CreatePlanet(DestinationVector, Color.Yellow, DestinationPlanet));
         }
 
         private void CreatePlanet(string approachPoint, Color color, string planetName = null)

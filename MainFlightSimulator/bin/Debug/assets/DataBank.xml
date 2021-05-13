@@ -116,6 +116,10 @@
         <OrDes>Dathomir-Corellia</OrDes>
         <selectedRoute>Hydian Way-Rimma Trade Route-Corellian Run-Corellian Trade Spine</selectedRoute>
       </defineRoute>
+      <defineRoute>
+        <OrDes>Manaan-Teth</OrDes>
+        <selectedRoute>Rimma Trade Route-Myto's Arrow</selectedRoute>
+      </defineRoute>
     </definedRoutes>
   </hyperspaceRoutes>
   <filiations>
