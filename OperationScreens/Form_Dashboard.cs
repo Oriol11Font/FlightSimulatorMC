@@ -9,11 +9,7 @@ namespace OperationScreens
     {
         public Form_dashboard()
         {
-            var trd = new Thread(formRun);
-            trd.Start();
-            Thread.Sleep(8000);
             InitializeComponent();
-            trd.Abort();
         }
 
         private static void formRun ()
