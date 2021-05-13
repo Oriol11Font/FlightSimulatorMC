@@ -219,7 +219,7 @@ namespace PersonalControls
                         //fillPlanetDetails(selectedOptionId);
                         break;
                     case "regions":
-                        fillRegionDetails(selectedOptionId);
+                        //fillRegionDetails(selectedOptionId);
 
 
                         break;
@@ -261,23 +261,8 @@ namespace PersonalControls
                         "assets", "planetes"), planetName);
             IEnumerable<XElement> planetRoutes = planetElement.Element("hyperspaceRoute").Elements("route");
 
-            lbxPlanetRoutes.Items.Clear();
             List<String> routesList = new List<String>();
-            foreach (XElement route in planetRoutes)
-            {
-                lbxPlanetRoutes.Items.Add(route.Value.ToString());
-                routesList.Add(route.Value.ToString());
-
-            }
-
-            lblPlanetName.Text = planetName;
-            lblPlanetSector.Text = planetSector;
-            lblPlanetFiliation.Text = planetFiliation;
-            lblLatitude.Text = planetLatitude;
-            lblLongitude.Text = planetLongitude;
-            lblNatives.Text = planetNatives;
-            pcbPlanetImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", imageName));
+            
             form.PlanetName = planetName;
             form.PlanetSector = planetSector;
             form.PlanetFiliation = planetFiliation;
@@ -332,7 +317,7 @@ namespace PersonalControls
 
         }
 
-        private void fillRegionDetails(int selectedOptionId)
+        private OnBoardRegions fillRegionDetails(int selectedOptionId, OnBoardRegions form)
         {
             //IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
             XElement regionElement = xDoc.Root.Elements("regions").Elements("Region").ElementAt(selectedOptionId);
@@ -341,15 +326,17 @@ namespace PersonalControls
             String regionDescription = regionElement.Element("descriptionRegion").Value.ToString();
             String imageName = regionElement.Element("mapRegion").Value.ToString();
 
-
+            form.RegionName = regionName;
+            form.RegionDescription = regionDescription;
+            form.RegionImage = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", imageName));
 
 
             lblRegionName.Text = regionName;
             txbRegionDescription.Text = regionDescription;
-            pcbRegionImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", imageName));
-            hidePanels();
-            pnlRegion.Visible = true;
+
+            return form;
+            //hidePanels();
         }
 
 
@@ -373,9 +360,7 @@ namespace PersonalControls
         private void hidePanels()
         {
             //Hide Panel
-            pnlPlanetDetails.Visible = false;
-            pnlRegion.Visible = false;
-            pnlRoute.Visible = false;
+            pnlSelectedCategory.Visible = false;
         }
 
         private void clearTreeview()
@@ -418,7 +403,7 @@ namespace PersonalControls
                         break;
                     case "regions":
                         form = new OnBoardRegions();
-                        form = fillPlanetDetails(selectedOptionId, form);
+                        form = fillRegionDetails(selectedOptionId, form);
                         break;
                     case "routes":
                         form = new OnBoardPlanets();

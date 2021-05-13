@@ -50,7 +50,6 @@
             this.pnlRegion.Name = "pnlRegion";
             this.pnlRegion.Size = new System.Drawing.Size(583, 567);
             this.pnlRegion.TabIndex = 32;
-            this.pnlRegion.Visible = false;
             // 
             // txbRegionDescription
             // 
