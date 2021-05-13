@@ -51,8 +51,7 @@ namespace PersonalControls
             var label = new Label
             {
                 BackColor = Color.Transparent, Visible = true, Location = new Point(location.X,
-                    location.Y + 10),
-                ForeColor = Color.White, Size = new Size(40, 20), Text = planetName
+                    location.Y + 10), ForeColor = Color.White, Text = planetName
             };
 
             Controls.Add(label);
