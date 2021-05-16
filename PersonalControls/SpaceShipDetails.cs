@@ -42,6 +42,13 @@ namespace PersonalControls
             return files != null && files.Length > 0 ? files[0].Name : null;
         }
 
+        private static FileInfo[] FindFilesByName(string path, string name)
+        {
+            var dir = new DirectoryInfo(path);
+            var files = dir.GetFiles($@"{name}*", SearchOption.TopDirectoryOnly);
+            return files != null && files.Length > 0 ? files : null;
+        }
+
         private static FileInfo[] GetZoneFiles(string directoryPath, string fileName)
         {
             var dir = new DirectoryInfo(directoryPath);
@@ -229,7 +236,7 @@ namespace PersonalControls
 
                         break;
                     case "maps":
-                        fillMapDetails();
+                        //fillMapDetails();
 
                         break;
                     default:
@@ -283,9 +290,31 @@ namespace PersonalControls
             return form;
         }
 
-        private void fillMapDetails()
+        private OnBoardMaps fillMapDetails(OnBoardMaps form)
         {
-            throw new NotImplementedException();
+            XElement routeElement = xDoc.Root.Elements("hyperspaceRoutes").Elements("Route").ElementAt(selectedOptionId);
+
+
+            //IEnumerable<XElement> ddd = xDoc.Root.Elements("planets").Elements("planet").Elements("hperspaceRoute").Elements("route");
+            IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
+            String routeType = routeElement.Element("type").Value.ToString();
+            String routeName = routeElement.Element("nameRoute").Value.ToString();
+            String routeStart = routeElement.Element("start").Value.ToString();
+            String routeEnd = routeElement.Element("end").Value.ToString();
+            //XElement routeElement = xDoc.Root.Elements("regions").Elements("Region").ElementAt(selectedOptionId);
+
+            FileInfo[] fileInfoArray =  FindFilesByName(Path.Combine(Application.StartupPath,
+                        "assets", "planetes"), "zona");
+
+            List<string> imageList = new List<string>();
+
+            foreach (FileInfo fileInfo in fileInfoArray)
+            {
+                imageList.Add(fileInfo.Name);
+            }
+            form.ImageList = imageList;
+            
+            return form;
         }
 
         private OnBoardRoutes fillRouteDetails(int selectedOptionId, OnBoardRoutes form)
@@ -425,7 +454,7 @@ namespace PersonalControls
                         break;
                     case "maps":
                         form = new OnBoardMaps();
-                        form = fillPlanetDetails(selectedOptionId, form);
+                        form = fillMapDetails(form);
                         break;
                     default:
                         form = new OnBoardPlanets();
