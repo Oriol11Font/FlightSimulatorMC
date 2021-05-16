@@ -15,7 +15,9 @@ namespace PersonalControls
         public string RegionName
         {
             get { return _regionName; }
-            set { _regionName = value;
+            set
+            {
+                _regionName = value;
                 lblRegionName.Text = _regionName;
             }
         }
@@ -26,7 +28,9 @@ namespace PersonalControls
         public string RegionDescription
         {
             get { return _regionDescription; }
-            set { _regionDescription = value;
+            set
+            {
+                _regionDescription = value;
                 txbRegionDescription.Text = value;
             }
         }

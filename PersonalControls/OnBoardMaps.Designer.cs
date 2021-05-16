@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbSelectedImage = new System.Windows.Forms.PictureBox();
             this.btnBackward = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pcbMini1 = new System.Windows.Forms.PictureBox();
-            this.pcbMini2 = new System.Windows.Forms.PictureBox();
-            this.pcbMini3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini3)).BeginInit();
+            this.pcbLeftImage = new System.Windows.Forms.PictureBox();
+            this.pcbMiddleImage = new System.Windows.Forms.PictureBox();
+            this.pcbRightImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSelectedImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLeftImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiddleImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRightImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pcbSelectedImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(580, 336);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pcbSelectedImage.Location = new System.Drawing.Point(3, 0);
+            this.pcbSelectedImage.Name = "pcbSelectedImage";
+            this.pcbSelectedImage.Size = new System.Drawing.Size(580, 336);
+            this.pcbSelectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbSelectedImage.TabIndex = 0;
+            this.pcbSelectedImage.TabStop = false;
             // 
             // btnBackward
             // 
@@ -75,64 +75,64 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pcbMini1
+            // pcbLeftImage
             // 
-            this.pcbMini1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbMini1.Location = new System.Drawing.Point(118, 452);
-            this.pcbMini1.Name = "pcbMini1";
-            this.pcbMini1.Size = new System.Drawing.Size(80, 80);
-            this.pcbMini1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMini1.TabIndex = 5;
-            this.pcbMini1.TabStop = false;
+            this.pcbLeftImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbLeftImage.Location = new System.Drawing.Point(118, 452);
+            this.pcbLeftImage.Name = "pcbLeftImage";
+            this.pcbLeftImage.Size = new System.Drawing.Size(80, 80);
+            this.pcbLeftImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLeftImage.TabIndex = 5;
+            this.pcbLeftImage.TabStop = false;
             // 
-            // pcbMini2
+            // pcbMiddleImage
             // 
-            this.pcbMini2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbMini2.Location = new System.Drawing.Point(237, 432);
-            this.pcbMini2.Name = "pcbMini2";
-            this.pcbMini2.Size = new System.Drawing.Size(100, 100);
-            this.pcbMini2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMini2.TabIndex = 6;
-            this.pcbMini2.TabStop = false;
+            this.pcbMiddleImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbMiddleImage.Location = new System.Drawing.Point(237, 432);
+            this.pcbMiddleImage.Name = "pcbMiddleImage";
+            this.pcbMiddleImage.Size = new System.Drawing.Size(100, 100);
+            this.pcbMiddleImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbMiddleImage.TabIndex = 6;
+            this.pcbMiddleImage.TabStop = false;
             // 
-            // pcbMini3
+            // pcbRightImage
             // 
-            this.pcbMini3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbMini3.Location = new System.Drawing.Point(381, 452);
-            this.pcbMini3.Name = "pcbMini3";
-            this.pcbMini3.Size = new System.Drawing.Size(80, 80);
-            this.pcbMini3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMini3.TabIndex = 7;
-            this.pcbMini3.TabStop = false;
+            this.pcbRightImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcbRightImage.Location = new System.Drawing.Point(381, 452);
+            this.pcbRightImage.Name = "pcbRightImage";
+            this.pcbRightImage.Size = new System.Drawing.Size(80, 80);
+            this.pcbRightImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbRightImage.TabIndex = 7;
+            this.pcbRightImage.TabStop = false;
             // 
             // OnBoardMaps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Controls.Add(this.pcbMini3);
-            this.Controls.Add(this.pcbMini2);
-            this.Controls.Add(this.pcbMini1);
+            this.Controls.Add(this.pcbRightImage);
+            this.Controls.Add(this.pcbMiddleImage);
+            this.Controls.Add(this.pcbLeftImage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBackward);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pcbSelectedImage);
             this.Name = "OnBoardMaps";
             this.Size = new System.Drawing.Size(583, 567);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMini3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSelectedImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLeftImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiddleImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRightImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbSelectedImage;
         private System.Windows.Forms.Button btnBackward;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pcbMini1;
-        private System.Windows.Forms.PictureBox pcbMini2;
-        private System.Windows.Forms.PictureBox pcbMini3;
+        private System.Windows.Forms.PictureBox pcbLeftImage;
+        private System.Windows.Forms.PictureBox pcbMiddleImage;
+        private System.Windows.Forms.PictureBox pcbRightImage;
     }
 }

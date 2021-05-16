@@ -113,7 +113,9 @@ namespace PersonalControls
         public String PlanetParsecs
         {
             get { return _planetParsecs; }
-            set { _planetParsecs = value;
+            set
+            {
+                _planetParsecs = value;
                 lblPlanetParsecs.Text = value;
             }
         }

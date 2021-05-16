@@ -199,7 +199,8 @@ namespace PersonalControls
                 {
                     Name = mapNameWithExtension,
                     Tag = indexMaps.ToString(),
-                    Text = mapName
+                    Text = mapName,
+
                 };
                 root.Nodes.Add(treeNode);
                 indexMaps++;
@@ -276,7 +277,7 @@ namespace PersonalControls
             {
                 routesList.Add(route.Value);
             }
-            
+
             form.PlanetName = planetName;
             form.PlanetSector = planetSector;
             form.PlanetFiliation = planetFiliation;
@@ -303,7 +304,7 @@ namespace PersonalControls
             String routeEnd = routeElement.Element("end").Value.ToString();
             //XElement routeElement = xDoc.Root.Elements("regions").Elements("Region").ElementAt(selectedOptionId);
 
-            FileInfo[] fileInfoArray =  FindFilesByName(Path.Combine(Application.StartupPath,
+            FileInfo[] fileInfoArray = FindFilesByName(Path.Combine(Application.StartupPath,
                         "assets", "planetes"), "zona");
 
             List<string> imageList = new List<string>();
@@ -313,7 +314,8 @@ namespace PersonalControls
                 imageList.Add(fileInfo.Name);
             }
             form.ImageList = imageList;
-            
+            form.SelectedIndex = selectedOptionId;
+
             return form;
         }
 
@@ -421,14 +423,14 @@ namespace PersonalControls
         {
             selectedOptionId = Convert.ToInt32(treeView1.SelectedNode.Tag);
             selectedOptionText = treeView1.SelectedNode.Text.ToString();
-            //Hay que coger como elemento padre el
-            //fillDetails(selectedCategoryName, selectedOptionId);
+
             Type type = sender.GetType();
 
             if (sender is not TreeView controller) return;
             var btnName = controller.Name;
             var selectedNodeText = controller.SelectedNode.Text.ToString();
             var selectedNodeTag = controller.SelectedNode.Tag.ToString();
+
 
 
             if (selectedNodeTag != "-1")
@@ -471,6 +473,12 @@ namespace PersonalControls
 
                 pnlSelectedCategory.Controls.Add(form);
                 form.Show();
+            } else
+            {
+                if(selectedCategoryName.ToLower() == "maps")
+                {
+
+                }
             }
 
         }

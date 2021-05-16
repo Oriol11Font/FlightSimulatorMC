@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersonalControls
@@ -22,7 +16,9 @@ namespace PersonalControls
         public String RouteType
         {
             get { return _type; }
-            set { _type = value;
+            set
+            {
+                _type = value;
                 lblRouteType.Text = value;
             }
         }
@@ -32,7 +28,9 @@ namespace PersonalControls
         public String RouteName
         {
             get { return _routeName; }
-            set { _routeName = value;
+            set
+            {
+                _routeName = value;
                 lblRouteName.Text = value;
             }
         }
@@ -42,7 +40,9 @@ namespace PersonalControls
         public String RouteStart
         {
             get { return _routeStart; }
-            set { _routeStart = value;
+            set
+            {
+                _routeStart = value;
                 lblRouteStart.Text = value;
             }
         }
@@ -52,7 +52,9 @@ namespace PersonalControls
         public String RouteEnd
         {
             get { return _routeEnd; }
-            set { _routeEnd = value;
+            set
+            {
+                _routeEnd = value;
                 lblRouteEnd.Text = value;
             }
         }
@@ -62,7 +64,9 @@ namespace PersonalControls
         public Image RouteImage
         {
             get { return _routeImage; }
-            set { _routeImage = value;
+            set
+            {
+                _routeImage = value;
                 pcbRoute.Image = value;
             }
         }

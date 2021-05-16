@@ -1,69 +1,83 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PersonalControls
 {
     public partial class OnBoardMaps : UserControl
     {
-        int selectedIndex = 0;
         public OnBoardMaps()
         {
             InitializeComponent();
         }
+
+
+        private int _selectedIndex = 0;
+
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set
+            {
+                _selectedIndex = value;
+                afterIndexUpdate(_selectedIndex);
+            }
+        }
+
 
         private List<String> _imageList;
 
         public List<String> ImageList
         {
             get { return _imageList; }
-            set { _imageList = value;
-                pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", _imageList[selectedIndex]));
-                int indexMini1 = getIndexBackward(selectedIndex);
-                int indexMini2 = selectedIndex;
-
-                int indexMini3 = getIndexForward(selectedIndex);
-
-                pcbMini1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                            "assets", "planetes", _imageList[indexMini1]));
-
-                pcbMini2.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                            "assets", "planetes", _imageList[indexMini2]));
-
-                pcbMini3.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                            "assets", "planetes", _imageList[indexMini3]));
+            set
+            {
+                _imageList = value;
+                afterIndexUpdate(_selectedIndex);
             }
         }
 
+        public void afterIndexUpdate(int selectedIndex)
+        {
+            pcbSelectedImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[_selectedIndex]));
+            int indexMini1 = getIndexBackward(_selectedIndex);
+            int indexMini2 = _selectedIndex;
+
+            int indexMini3 = getIndexForward(_selectedIndex);
+
+            pcbLeftImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[indexMini1]));
+
+            pcbMiddleImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[indexMini2]));
+
+            pcbRightImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[indexMini3]));
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selectedIndex = getIndexForward(selectedIndex);
-            int indexMini1 = getIndexBackward(selectedIndex);
-            int indexMini2 = selectedIndex;
+            _selectedIndex = getIndexForward(_selectedIndex);
+            int indexMini1 = getIndexBackward(_selectedIndex);
+            int indexMini2 = _selectedIndex;
 
-            int indexMini3 = getIndexForward(selectedIndex);
+            int indexMini3 = getIndexForward(_selectedIndex);
 
-            pcbMini1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbLeftImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini1]));
 
-            pcbMini2.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbMiddleImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini2]));
 
-            pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", _imageList[selectedIndex]));
+            pcbSelectedImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[_selectedIndex]));
 
-            pcbMini3.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbRightImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini3]));
-            
+
         }
 
         private int getIndexForward(int selectedIndex)
@@ -92,22 +106,22 @@ namespace PersonalControls
             //{
             //    selectedIndex = _imageList.Count - 1;
             //}
-            selectedIndex = getIndexBackward(selectedIndex);
-            int indexMini1 = getIndexBackward(selectedIndex);
-            int indexMini2 = selectedIndex;
+            _selectedIndex = getIndexBackward(_selectedIndex);
+            int indexMini1 = getIndexBackward(_selectedIndex);
+            int indexMini2 = _selectedIndex;
 
-            int indexMini3 = getIndexForward(selectedIndex);
+            int indexMini3 = getIndexForward(_selectedIndex);
 
-            pcbMini1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbLeftImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini1]));
 
-            pcbMini2.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbMiddleImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini2]));
 
-            pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", _imageList[selectedIndex]));
+            pcbSelectedImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", _imageList[_selectedIndex]));
 
-            pcbMini3.Image = Image.FromFile(Path.Combine(Application.StartupPath,
+            pcbRightImage.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini3]));
         }
 
