@@ -224,7 +224,7 @@ namespace PersonalControls
 
                         break;
                     case "routes":
-                        fillRouteDetails(selectedOptionText);
+                        //fillRouteDetails(selectedOptionText);
 
 
                         break;
@@ -259,9 +259,15 @@ namespace PersonalControls
             String planetNatives = planetElement.Element("natives").Value.ToString();
             String imageName = FindFileByName(Path.Combine(Application.StartupPath,
                         "assets", "planetes"), planetName);
+
             IEnumerable<XElement> planetRoutes = planetElement.Element("hyperspaceRoute").Elements("route");
 
             List<String> routesList = new List<String>();
+
+            foreach (XElement route in planetRoutes)
+            {
+                routesList.Add(route.Value);
+            }
             
             form.PlanetName = planetName;
             form.PlanetSector = planetSector;
