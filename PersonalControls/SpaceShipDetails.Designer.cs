@@ -72,18 +72,27 @@ namespace PersonalControls
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.treeView1.LineColor = System.Drawing.Color.White;
             this.treeView1.Location = new System.Drawing.Point(70, 227);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(229, 238);
+            this.treeView1.ShowLines = false;
+            this.treeView1.Size = new System.Drawing.Size(314, 493);
             this.treeView1.TabIndex = 14;
+            this.treeView1.Visible = false;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.HandleFormChange);
             // 
             // cbxCategories
             // 
+            this.cbxCategories.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbxCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategories.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbxCategories.FormattingEnabled = true;
-            this.cbxCategories.Location = new System.Drawing.Point(70, 115);
+            this.cbxCategories.Location = new System.Drawing.Point(70, 117);
             this.cbxCategories.Name = "cbxCategories";
-            this.cbxCategories.Size = new System.Drawing.Size(229, 24);
+            this.cbxCategories.Size = new System.Drawing.Size(314, 28);
             this.cbxCategories.TabIndex = 12;
             this.cbxCategories.SelectedValueChanged += new System.EventHandler(this.cbxCategories_SelectedValueChanged);
             // 

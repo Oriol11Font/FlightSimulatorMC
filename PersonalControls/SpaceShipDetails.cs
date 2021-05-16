@@ -111,6 +111,7 @@ namespace PersonalControls
 
 
             treeView1.Nodes.Add(rootTreeNode);
+            treeView1.Visible = true;
         }
 
         private TreeNode populateNodeWithPlanets(TreeNode root, IEnumerable<XElement> listOfPlanets)
@@ -338,25 +339,7 @@ namespace PersonalControls
             List<String> planetsInRoute = new List<String>();
             listaPlanets.Count();
             return form;
-            //foreach (XElement element in listaPlanets)
-            //{
-            //    IEnumerable<XElement> planetHyperspaceRouteElements = element.Elements("hyperspaceRoute").Elements("route");
-            //    foreach (XElement route in planetHyperspaceRouteElements)
-            //    {
-            //        if (route.Value.ToString().ToLower() == selectedOptionText.ToLower())
-            //        {
-            //            String planetName = element.Element("name").Value.ToString();
-            //            lsbRoutePlanets.Items.Add(planetName);
-            //        }
-            //    }
 
-            //}
-
-            //pcbRoute.Image = Image.FromFile(Path.Combine(Application.StartupPath, "assets", "placeholder.png"));
-
-            //hidePanels();
-
-            //pnlRoute.Visible = true;
 
 
 
@@ -394,6 +377,7 @@ namespace PersonalControls
                 clearTreeview();
                 //Hide controllers
                 hidePanels();
+                treeView1.Visible = false;
             }
             else
             {
