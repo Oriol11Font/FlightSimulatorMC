@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace PersonalControls
+namespace FlightControlScreen
 {
     partial class SelectionPlanet
     {
@@ -34,7 +33,7 @@ namespace PersonalControls
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_selectplanet = new System.Windows.Forms.Panel();
-            this.mapa1 = new PersonalControls.Mapa();
+            this.mapa1 = new Mapa();
             this.btn_calc_vector = new System.Windows.Forms.Button();
             this.gpb_route = new System.Windows.Forms.GroupBox();
             this.pb_route_image = new System.Windows.Forms.PictureBox();
@@ -520,6 +519,6 @@ namespace PersonalControls
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private PersonalControls.Mapa mapa1;
+        private Mapa mapa1;
     }
 }

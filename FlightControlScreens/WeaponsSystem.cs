@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PersonalControls
+namespace FlightControlScreen
 {
     public partial class WeaponsSystem : UserControl
     {
@@ -21,7 +21,7 @@ namespace PersonalControls
 
         readonly string path = Application.StartupPath + "\\assets\\targets.txt";
         readonly string modelPath = Application.StartupPath + "\\assets\\models\\";
-        readonly Random rnd = new();
+        readonly Random rnd = new Random();
 
         bool dead = false;
         bool misil = false;

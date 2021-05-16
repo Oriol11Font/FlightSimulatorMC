@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Xml;
 using UtilsMuchoCodigo;
 
-namespace PersonalControls
+namespace FlightControlScreen
 {
     public partial class SelectionPlanet : UserControl
     {
@@ -40,7 +40,7 @@ namespace PersonalControls
                 () => _routes = ReadRoutes(_dbFilePath),
                 () => _definedRoutes = ReadDefinedRoutes(_dbFilePath));
 
-            if (_planets is not {Count: > 0}) return;
+            if (!(_planets.Count() > 0)) return;
 
             cbx_origin_planet.Items.Clear();
             cbx_destination_planet.Items.Clear();
@@ -243,9 +243,13 @@ namespace PersonalControls
             var dir = new DirectoryInfo(path);
 
             var files = dir.GetFiles($@"{name}*", SearchOption.TopDirectoryOnly);
-            return files is {Length: > 0}
-                ? files[0]
-                : null;
+
+            if (files.Length > 0)
+            {
+                return files[0];
+            }
+
+            return null;
         }
 
         private void lb_routes_SelectedValueChanged(object sender, EventArgs e)

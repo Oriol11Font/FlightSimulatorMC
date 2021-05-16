@@ -1,5 +1,5 @@
 ﻿
-namespace PersonalControls
+namespace FlightControlScreen
 {
     partial class WeaponsSystem
     {

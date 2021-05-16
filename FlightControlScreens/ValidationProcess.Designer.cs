@@ -1,4 +1,4 @@
-﻿namespace PersonalControls
+﻿namespace FlightControlScreen
 {
     partial class ValidationProcess
     {
@@ -137,7 +137,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PersonalControls.Properties.Resources._3bc97fe6bc122c8875786b4fe0ad31df;
+            this.pictureBox1.Image = global::FlightControlScreens.Properties.Resources._3bc97fe6bc122c8875786b4fe0ad31df;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(447, 576);

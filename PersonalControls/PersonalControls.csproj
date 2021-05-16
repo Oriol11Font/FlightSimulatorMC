@@ -48,22 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mapa.Designer.cs">
-      <DependentUpon>Mapa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionPlanet.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SelectionPlanet.Designer.cs">
-      <DependentUpon>SelectionPlanet.cs</DependentUpon>
     </Compile>
     <Compile Include="SpaceShipDetails.cs">
       <SubType>UserControl</SubType>
@@ -71,40 +59,16 @@
     <Compile Include="SpaceShipDetails.Designer.cs">
       <DependentUpon>SpaceShipDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="ValidationProcess.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ValidationProcess.Designer.cs">
-      <DependentUpon>ValidationProcess.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeaponsSystem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="WeaponsSystem.Designer.cs">
-      <DependentUpon>WeaponsSystem.cs</DependentUpon>
-    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapa.resx">
-      <DependentUpon>Mapa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectionPlanet.resx">
-      <DependentUpon>SelectionPlanet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SpaceShipDetails.resx">
       <DependentUpon>SpaceShipDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ValidationProcess.resx">
-      <DependentUpon>ValidationProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WeaponsSystem.resx">
-      <DependentUpon>WeaponsSystem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

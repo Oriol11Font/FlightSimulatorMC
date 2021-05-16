@@ -2,7 +2,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PersonalControls
+namespace FlightControlScreen
 {
     public partial class Mapa : UserControl
     {

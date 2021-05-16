@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalControls", "..\Pers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilsMuchoCodigo.UnitTest", "UtilsMuchoCodigo.UnitTest\UtilsMuchoCodigo.UnitTest.csproj", "{6F775B9E-565A-4282-A71D-72B132E204FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightControlScreens", "..\FlightControlScreens\FlightControlScreens.csproj", "{37252388-0342-4B3A-B899-587BE10C5A62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6F775B9E-565A-4282-A71D-72B132E204FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F775B9E-565A-4282-A71D-72B132E204FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F775B9E-565A-4282-A71D-72B132E204FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37252388-0342-4B3A-B899-587BE10C5A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37252388-0342-4B3A-B899-587BE10C5A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37252388-0342-4B3A-B899-587BE10C5A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37252388-0342-4B3A-B899-587BE10C5A62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

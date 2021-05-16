@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using UtilsMuchoCodigo;
 
-namespace PersonalControls
+namespace FlightControlScreen
 {
     public partial class ValidationProcess: UserControl
     {
