@@ -473,12 +473,6 @@ namespace PersonalControls
 
                 pnlSelectedCategory.Controls.Add(form);
                 form.Show();
-            } else
-            {
-                if(selectedCategoryName.ToLower() == "maps")
-                {
-
-                }
             }
 
         }
