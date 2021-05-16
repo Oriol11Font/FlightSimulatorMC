@@ -19,12 +19,15 @@ namespace PersonalControls
             InitializeComponent();
         }
 
-        readonly string ruta = Application.StartupPath + "\\assets\\targets.txt";
-        Random rnd = new Random();
+        readonly string path = Application.StartupPath + "\\assets\\targets.txt";
+        readonly string modelPath = Application.StartupPath + "\\assets\\models\\";
+        readonly Random rnd = new();
+
         bool dead = false;
         bool misil = false;
         bool laser = false;
         string[] spaceShip;
+
         Thread trd;
         
         private void btn_Start_Click(object sender, EventArgs e)
@@ -40,42 +43,9 @@ namespace PersonalControls
             {
                 if (!trd.IsAlive)
                 {
-                    if (spaceShip[1].Equals("E"))
-                    {
-                        label3.Text = spaceShip[0];
-                        label4.Text = "ENEMIC!!";
-                        label4.ForeColor = Color.Red;
-                        aimPanel.Visible = true;
-                        btn_Start.Enabled = false;
-                        if (laser)
-                        {
-                            btn_laser.Visible = true;
-                        }
-                        if (misil)
-                        {
-                            btn_misil.Visible = true;
-                        }
+                    detectSpacehShip(spaceShip[1]);
 
-                        btn_Abort.Enabled = true;
-                        pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
-                        aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.gif";
-                        aimEnemy.Start();
-
-                    }
-                    else if (spaceShip[1].Equals("A"))
-                    {
-                        label3.Text = spaceShip[0];
-                        label4.Text = "Aliat";
-                        label4.ForeColor = Color.Green;
-                        btn_laser.Visible = false;
-                        btn_misil.Visible = false;
-                        btn_Abort.Enabled = false;
-                        label5.Visible = false;
-                        aimPanel.Visible = false;
-                        pictureBox3.ImageLocation = "";
-                    }
-
-                    picture_SpaceShip.ImageLocation = Application.StartupPath + "\\assets\\models\\" + spaceShip[0] + ".gif";
+                    picture_SpaceShip.ImageLocation = modelPath + spaceShip[0] + ".gif";
                     picture_SpaceShip.Visible = true;
 
                     wait = false;
@@ -83,11 +53,10 @@ namespace PersonalControls
             }
         }
 
-
         private void SearchSpaceShips ()
         {
-            List<string> lines = File.ReadLines(ruta).ToList();
-            var lineCount = File.ReadLines(ruta).Count();
+            List<string> lines = File.ReadLines(path).ToList();
+            var lineCount = File.ReadLines(path).Count();
 
             int num = rnd.Next(0, lineCount - 1);
 
@@ -134,7 +103,7 @@ namespace PersonalControls
             reloadWeapons.Start();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_laser_Click(object sender, EventArgs e)
         {
             slider1.Width = 0;
             laser = false;
@@ -156,7 +125,7 @@ namespace PersonalControls
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_misil_Click(object sender, EventArgs e)
         {
             slider2.Width = 0;
             misil = false;
@@ -179,6 +148,62 @@ namespace PersonalControls
 
         private void btn_abort_Click(object sender, EventArgs e)
         {
+            SystemOff();
+        }
+
+        private void aimEnemy_Tick(object sender, EventArgs e)
+        {
+            aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.png";
+            label5.Visible = true;
+            dead = true;
+            aimEnemy.Stop();
+        }
+
+        private void detectSpacehShip (string detection)
+        {
+            switch (detection)
+            {
+                case "E":
+                    label3.Text = spaceShip[0];
+                    label4.Text = "ENEMIC!!";
+                    label4.ForeColor = Color.Red;
+                    aimPanel.Visible = true;
+                    btn_Start.Enabled = false;
+                    if (laser)
+                    {
+                        btn_laser.Visible = true;
+                    }
+                    if (misil)
+                    {
+                        btn_misil.Visible = true;
+                    }
+
+                    btn_Abort.Enabled = true;
+                    pictureBox3.ImageLocation = Application.StartupPath + "\\assets\\alert.png";
+                    aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.gif";
+                    aimEnemy.Start();
+                    break;
+                case "A":
+                    label3.Text = spaceShip[0];
+                    label4.Text = "Aliat";
+                    label4.ForeColor = Color.Green;
+                    btn_laser.Visible = false;
+                    btn_misil.Visible = false;
+                    btn_Abort.Enabled = false;
+                    label5.Visible = false;
+                    aimPanel.Visible = false;
+                    pictureBox3.ImageLocation = "";
+                    break;
+            }
+        }
+
+        private void WeaponsSystem_Load(object sender, EventArgs e)
+        {
+            Control.CheckForIllegalCrossThreadCalls = false;
+        }
+
+        private void SystemOff ()
+        {
             btn_laser.Visible = false;
             btn_misil.Visible = false;
             btn_Abort.Enabled = false;
@@ -193,19 +218,6 @@ namespace PersonalControls
             slider2.Width = 0;
             btn_Start.Enabled = false;
             if (reloadWeapons.Enabled) { reloadWeapons.Stop(); }
-        }
-
-        private void aimEnemy_Tick(object sender, EventArgs e)
-        {
-            aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.png";
-            label5.Visible = true;
-            dead = true;
-            aimEnemy.Stop();
-        }
-
-        private void WeaponsSystem_Load(object sender, EventArgs e)
-        {
-            Control.CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

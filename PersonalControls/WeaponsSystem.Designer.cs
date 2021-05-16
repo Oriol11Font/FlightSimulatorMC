@@ -185,7 +185,7 @@ namespace PersonalControls
             this.btn_misil.Text = "MISIL SHOT";
             this.btn_misil.UseVisualStyleBackColor = true;
             this.btn_misil.Visible = false;
-            this.btn_misil.Click += new System.EventHandler(this.button2_Click);
+            this.btn_misil.Click += new System.EventHandler(this.btn_misil_Click);
             // 
             // btn_laser
             // 
@@ -200,7 +200,7 @@ namespace PersonalControls
             this.btn_laser.Text = "LASER SHOT";
             this.btn_laser.UseVisualStyleBackColor = true;
             this.btn_laser.Visible = false;
-            this.btn_laser.Click += new System.EventHandler(this.button1_Click);
+            this.btn_laser.Click += new System.EventHandler(this.btn_laser_Click);
             // 
             // aimPanel
             // 
