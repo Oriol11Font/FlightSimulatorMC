@@ -67,10 +67,9 @@ namespace PersonalControls
             }
         }
 
+        private void pnlRoute_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

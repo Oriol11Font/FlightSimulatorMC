@@ -259,6 +259,7 @@ namespace PersonalControls
             String planetNatives = planetElement.Element("natives").Value.ToString();
             String imageName = FindFileByName(Path.Combine(Application.StartupPath,
                         "assets", "planetes"), planetName);
+            String planetParsecs = planetElement.Element("situation").Element("parsecs").Value.ToString();
 
             IEnumerable<XElement> planetRoutes = planetElement.Element("hyperspaceRoute").Elements("route");
 
@@ -278,6 +279,7 @@ namespace PersonalControls
             form.ImagePath = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", imageName));
             form.PlanetRoutesList = routesList;
+            form.PlanetParsecs = planetParsecs;
             return form;
         }
 

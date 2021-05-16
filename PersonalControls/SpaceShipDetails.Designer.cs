@@ -35,16 +35,8 @@ namespace PersonalControls
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.cbxCategories = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.lblRouteNameTitle = new System.Windows.Forms.Label();
-            this.lblRouteName = new System.Windows.Forms.Label();
-            this.lblRoutePlanetsTitle = new System.Windows.Forms.Label();
-            this.pcbRoute = new System.Windows.Forms.PictureBox();
-            this.lsbRoutePlanets = new System.Windows.Forms.ListBox();
-            this.pnlRoute = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).BeginInit();
-            this.pnlRoute.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,7 +54,6 @@ namespace PersonalControls
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.pnlRoute);
             this.panel6.Controls.Add(this.pnlSelectedCategory);
             this.panel6.Controls.Add(this.treeView1);
             this.panel6.Controls.Add(this.cbxCategories);
@@ -108,66 +99,6 @@ namespace PersonalControls
             this.label11.Text = "SPACESHIP DETAILS";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblRouteNameTitle
-            // 
-            this.lblRouteNameTitle.AutoSize = true;
-            this.lblRouteNameTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteNameTitle.Location = new System.Drawing.Point(45, 51);
-            this.lblRouteNameTitle.Name = "lblRouteNameTitle";
-            this.lblRouteNameTitle.Size = new System.Drawing.Size(49, 17);
-            this.lblRouteNameTitle.TabIndex = 17;
-            this.lblRouteNameTitle.Text = "Name:";
-            // 
-            // lblRouteName
-            // 
-            this.lblRouteName.AutoSize = true;
-            this.lblRouteName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteName.Location = new System.Drawing.Point(45, 83);
-            this.lblRouteName.Name = "lblRouteName";
-            this.lblRouteName.Size = new System.Drawing.Size(0, 17);
-            this.lblRouteName.TabIndex = 18;
-            // 
-            // lblRoutePlanetsTitle
-            // 
-            this.lblRoutePlanetsTitle.AutoSize = true;
-            this.lblRoutePlanetsTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRoutePlanetsTitle.Location = new System.Drawing.Point(45, 129);
-            this.lblRoutePlanetsTitle.Name = "lblRoutePlanetsTitle";
-            this.lblRoutePlanetsTitle.Size = new System.Drawing.Size(98, 17);
-            this.lblRoutePlanetsTitle.TabIndex = 19;
-            this.lblRoutePlanetsTitle.Text = "Planets within:";
-            // 
-            // pcbRoute
-            // 
-            this.pcbRoute.Location = new System.Drawing.Point(325, 322);
-            this.pcbRoute.Name = "pcbRoute";
-            this.pcbRoute.Size = new System.Drawing.Size(223, 216);
-            this.pcbRoute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbRoute.TabIndex = 29;
-            this.pcbRoute.TabStop = false;
-            // 
-            // lsbRoutePlanets
-            // 
-            this.lsbRoutePlanets.FormattingEnabled = true;
-            this.lsbRoutePlanets.ItemHeight = 16;
-            this.lsbRoutePlanets.Location = new System.Drawing.Point(45, 166);
-            this.lsbRoutePlanets.Name = "lsbRoutePlanets";
-            this.lsbRoutePlanets.Size = new System.Drawing.Size(160, 244);
-            this.lsbRoutePlanets.TabIndex = 30;
-            // 
-            // pnlRoute
-            // 
-            this.pnlRoute.Controls.Add(this.lsbRoutePlanets);
-            this.pnlRoute.Controls.Add(this.pcbRoute);
-            this.pnlRoute.Controls.Add(this.lblRoutePlanetsTitle);
-            this.pnlRoute.Controls.Add(this.lblRouteName);
-            this.pnlRoute.Controls.Add(this.lblRouteNameTitle);
-            this.pnlRoute.Location = new System.Drawing.Point(-1, 115);
-            this.pnlRoute.Name = "pnlRoute";
-            this.pnlRoute.Size = new System.Drawing.Size(583, 567);
-            this.pnlRoute.TabIndex = 32;
-            this.pnlRoute.Visible = false;
-            // 
             // SpaceShipDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -178,9 +109,6 @@ namespace PersonalControls
             this.Size = new System.Drawing.Size(1135, 1056);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).EndInit();
-            this.pnlRoute.ResumeLayout(false);
-            this.pnlRoute.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -193,11 +121,5 @@ namespace PersonalControls
         private System.Windows.Forms.ComboBox cbxCategories;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel pnlSelectedCategory;
-        private System.Windows.Forms.Panel pnlRoute;
-        private System.Windows.Forms.ListBox lsbRoutePlanets;
-        private System.Windows.Forms.PictureBox pcbRoute;
-        private System.Windows.Forms.Label lblRoutePlanetsTitle;
-        private System.Windows.Forms.Label lblRouteName;
-        private System.Windows.Forms.Label lblRouteNameTitle;
     }
 }

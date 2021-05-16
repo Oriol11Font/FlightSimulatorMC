@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pnlRoute = new System.Windows.Forms.Panel();
-            this.pcbRoute = new System.Windows.Forms.PictureBox();
-            this.lblRouteName = new System.Windows.Forms.Label();
-            this.lblRouteNameTitle = new System.Windows.Forms.Label();
-            this.lblRouteType = new System.Windows.Forms.Label();
-            this.lblRouteTypeTitle = new System.Windows.Forms.Label();
             this.lblRouteStart = new System.Windows.Forms.Label();
             this.lblRouteStartTitle = new System.Windows.Forms.Label();
             this.lblRouteEnd = new System.Windows.Forms.Label();
             this.lblRouteEndTitle = new System.Windows.Forms.Label();
+            this.lblRouteType = new System.Windows.Forms.Label();
+            this.lblRouteTypeTitle = new System.Windows.Forms.Label();
+            this.pcbRoute = new System.Windows.Forms.PictureBox();
+            this.lblRouteName = new System.Windows.Forms.Label();
+            this.lblRouteNameTitle = new System.Windows.Forms.Label();
             this.pnlRoute.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRoute)).BeginInit();
             this.SuspendLayout();
@@ -58,54 +58,7 @@
             this.pnlRoute.Name = "pnlRoute";
             this.pnlRoute.Size = new System.Drawing.Size(583, 567);
             this.pnlRoute.TabIndex = 33;
-            this.pnlRoute.Visible = false;
-            // 
-            // pcbRoute
-            // 
-            this.pcbRoute.Location = new System.Drawing.Point(325, 322);
-            this.pcbRoute.Name = "pcbRoute";
-            this.pcbRoute.Size = new System.Drawing.Size(223, 216);
-            this.pcbRoute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbRoute.TabIndex = 29;
-            this.pcbRoute.TabStop = false;
-            // 
-            // lblRouteName
-            // 
-            this.lblRouteName.AutoSize = true;
-            this.lblRouteName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteName.Location = new System.Drawing.Point(49, 139);
-            this.lblRouteName.Name = "lblRouteName";
-            this.lblRouteName.Size = new System.Drawing.Size(0, 17);
-            this.lblRouteName.TabIndex = 18;
-            // 
-            // lblRouteNameTitle
-            // 
-            this.lblRouteNameTitle.AutoSize = true;
-            this.lblRouteNameTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteNameTitle.Location = new System.Drawing.Point(49, 112);
-            this.lblRouteNameTitle.Name = "lblRouteNameTitle";
-            this.lblRouteNameTitle.Size = new System.Drawing.Size(49, 17);
-            this.lblRouteNameTitle.TabIndex = 17;
-            this.lblRouteNameTitle.Text = "Name:";
-            // 
-            // lblRouteType
-            // 
-            this.lblRouteType.AutoSize = true;
-            this.lblRouteType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteType.Location = new System.Drawing.Point(49, 83);
-            this.lblRouteType.Name = "lblRouteType";
-            this.lblRouteType.Size = new System.Drawing.Size(0, 17);
-            this.lblRouteType.TabIndex = 31;
-            // 
-            // lblRouteTypeTitle
-            // 
-            this.lblRouteTypeTitle.AutoSize = true;
-            this.lblRouteTypeTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteTypeTitle.Location = new System.Drawing.Point(49, 51);
-            this.lblRouteTypeTitle.Name = "lblRouteTypeTitle";
-            this.lblRouteTypeTitle.Size = new System.Drawing.Size(44, 17);
-            this.lblRouteTypeTitle.TabIndex = 30;
-            this.lblRouteTypeTitle.Text = "Type:";
+            this.pnlRoute.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRoute_Paint);
             // 
             // lblRouteStart
             // 
@@ -130,7 +83,7 @@
             // 
             this.lblRouteEnd.AutoSize = true;
             this.lblRouteEnd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteEnd.Location = new System.Drawing.Point(282, 139);
+            this.lblRouteEnd.Location = new System.Drawing.Point(282, 178);
             this.lblRouteEnd.Name = "lblRouteEnd";
             this.lblRouteEnd.Size = new System.Drawing.Size(0, 17);
             this.lblRouteEnd.TabIndex = 33;
@@ -139,11 +92,58 @@
             // 
             this.lblRouteEndTitle.AutoSize = true;
             this.lblRouteEndTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRouteEndTitle.Location = new System.Drawing.Point(282, 112);
+            this.lblRouteEndTitle.Location = new System.Drawing.Point(282, 151);
             this.lblRouteEndTitle.Name = "lblRouteEndTitle";
-            this.lblRouteEndTitle.Size = new System.Drawing.Size(49, 17);
+            this.lblRouteEndTitle.Size = new System.Drawing.Size(37, 17);
             this.lblRouteEndTitle.TabIndex = 32;
-            this.lblRouteEndTitle.Text = "Name:";
+            this.lblRouteEndTitle.Text = "End:";
+            // 
+            // lblRouteType
+            // 
+            this.lblRouteType.AutoSize = true;
+            this.lblRouteType.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteType.Location = new System.Drawing.Point(49, 83);
+            this.lblRouteType.Name = "lblRouteType";
+            this.lblRouteType.Size = new System.Drawing.Size(0, 17);
+            this.lblRouteType.TabIndex = 31;
+            // 
+            // lblRouteTypeTitle
+            // 
+            this.lblRouteTypeTitle.AutoSize = true;
+            this.lblRouteTypeTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteTypeTitle.Location = new System.Drawing.Point(49, 51);
+            this.lblRouteTypeTitle.Name = "lblRouteTypeTitle";
+            this.lblRouteTypeTitle.Size = new System.Drawing.Size(44, 17);
+            this.lblRouteTypeTitle.TabIndex = 30;
+            this.lblRouteTypeTitle.Text = "Type:";
+            // 
+            // pcbRoute
+            // 
+            this.pcbRoute.Location = new System.Drawing.Point(325, 322);
+            this.pcbRoute.Name = "pcbRoute";
+            this.pcbRoute.Size = new System.Drawing.Size(223, 216);
+            this.pcbRoute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbRoute.TabIndex = 29;
+            this.pcbRoute.TabStop = false;
+            // 
+            // lblRouteName
+            // 
+            this.lblRouteName.AutoSize = true;
+            this.lblRouteName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteName.Location = new System.Drawing.Point(49, 178);
+            this.lblRouteName.Name = "lblRouteName";
+            this.lblRouteName.Size = new System.Drawing.Size(0, 17);
+            this.lblRouteName.TabIndex = 18;
+            // 
+            // lblRouteNameTitle
+            // 
+            this.lblRouteNameTitle.AutoSize = true;
+            this.lblRouteNameTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRouteNameTitle.Location = new System.Drawing.Point(49, 151);
+            this.lblRouteNameTitle.Name = "lblRouteNameTitle";
+            this.lblRouteNameTitle.Size = new System.Drawing.Size(49, 17);
+            this.lblRouteNameTitle.TabIndex = 17;
+            this.lblRouteNameTitle.Text = "Name:";
             // 
             // OnBoardRoutes
             // 

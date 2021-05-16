@@ -108,6 +108,17 @@ namespace PersonalControls
             }
         }
 
+        private String _planetParsecs;
+
+        public String PlanetParsecs
+        {
+            get { return _planetParsecs; }
+            set { _planetParsecs = value;
+                lblPlanetParsecs.Text = value;
+            }
+        }
+
+
         private void fillPlanetRouteList(List<string> planetList)
         {
             lbxPlanetRoutes.Items.Clear();
