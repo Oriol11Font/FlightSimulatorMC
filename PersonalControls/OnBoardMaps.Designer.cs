@@ -77,6 +77,7 @@
             // 
             // pcbMini1
             // 
+            this.pcbMini1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcbMini1.Location = new System.Drawing.Point(118, 452);
             this.pcbMini1.Name = "pcbMini1";
             this.pcbMini1.Size = new System.Drawing.Size(80, 80);
@@ -86,6 +87,7 @@
             // 
             // pcbMini2
             // 
+            this.pcbMini2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcbMini2.Location = new System.Drawing.Point(237, 432);
             this.pcbMini2.Name = "pcbMini2";
             this.pcbMini2.Size = new System.Drawing.Size(100, 100);
@@ -95,6 +97,7 @@
             // 
             // pcbMini3
             // 
+            this.pcbMini3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcbMini3.Location = new System.Drawing.Point(381, 452);
             this.pcbMini3.Name = "pcbMini3";
             this.pcbMini3.Size = new System.Drawing.Size(80, 80);

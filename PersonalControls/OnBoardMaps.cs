@@ -63,35 +63,7 @@ namespace PersonalControls
 
             pcbMini3.Image = Image.FromFile(Path.Combine(Application.StartupPath,
                         "assets", "planetes", _imageList[indexMini3]));
-            //if (selectedIndex == _imageList.Count - 1)
-            //{
-            //    selectedIndex = 0;
-
-            //}
-            //else
-            //{
-            //    selectedIndex++;
-            //}
-            //getIndexForward(selectedIndex);
-            //pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-            //            "assets", "planetes", _imageList[selectedIndex]));
-
-            //int indexMini1 = getIndexForward(selectedIndex - 1);
-            //int indexMini2 = getIndexForward(selectedIndex);
-
-            //int indexMini3 = getIndexForward(selectedIndex + 1);
-
-            //pcbMini1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-            //            "assets", "planetes", _imageList[indexMini1]));
-
-            //pcbMini2.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-            //            "assets", "planetes", _imageList[indexMini2]));
-
-            //pictureBox1.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-            //            "assets", "planetes", _imageList[indexMini2]));
-
-            //pcbMini3.Image = Image.FromFile(Path.Combine(Application.StartupPath,
-            //            "assets", "planetes", _imageList[indexMini3]));
+            
         }
 
         private int getIndexForward(int selectedIndex)
