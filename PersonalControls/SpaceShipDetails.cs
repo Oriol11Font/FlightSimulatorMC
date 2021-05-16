@@ -292,8 +292,7 @@ namespace PersonalControls
         {
             XElement routeElement = xDoc.Root.Elements("hyperspaceRoutes").Elements("Route").ElementAt(selectedOptionId);
 
-            lblRouteName.Text = selectedOptionText;
-            lsbRoutePlanets.Items.Clear();
+
             //IEnumerable<XElement> ddd = xDoc.Root.Elements("planets").Elements("planet").Elements("hperspaceRoute").Elements("route");
             IEnumerable<XElement> listaPlanets = xDoc.Root.Elements("planets").Elements("planet");
             String routeType = routeElement.Element("type").Value.ToString();
@@ -425,7 +424,7 @@ namespace PersonalControls
                         form = fillRouteDetails(selectedOptionId, form);
                         break;
                     case "maps":
-                        form = new OnBoardPlanets();
+                        form = new OnBoardMaps();
                         form = fillPlanetDetails(selectedOptionId, form);
                         break;
                     default:
