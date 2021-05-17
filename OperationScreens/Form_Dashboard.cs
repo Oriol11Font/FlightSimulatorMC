@@ -31,14 +31,14 @@ namespace OperationScreens
                 "button5" => new WeaponsSystem(),
                 _ => null
             };
-            
+
             pn_main.Controls.Clear();
 
             if (form == null) return;
 
             if (form.AutoScroll)
                 form.AutoScroll = false;
-            
+
             pn_main.Controls.Add(form);
             form.Dock = DockStyle.Fill;
             form.Show();

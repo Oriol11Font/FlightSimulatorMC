@@ -31,6 +31,9 @@ namespace FlightControlScreen
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlSelectedCategory = new System.Windows.Forms.Panel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.cbxCategories = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -51,16 +54,52 @@ namespace FlightControlScreen
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.pnlSelectedCategory);
+            this.panel6.Controls.Add(this.treeView1);
+            this.panel6.Controls.Add(this.cbxCategories);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(14, 15);
+            this.panel6.Location = new System.Drawing.Point(12, 25);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1103, 1026);
             this.panel6.TabIndex = 6;
             // 
+            // pnlSelectedCategory
+            // 
+            this.pnlSelectedCategory.Location = new System.Drawing.Point(475, 129);
+            this.pnlSelectedCategory.Name = "pnlSelectedCategory";
+            this.pnlSelectedCategory.Size = new System.Drawing.Size(619, 591);
+            this.pnlSelectedCategory.TabIndex = 15;
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.treeView1.LineColor = System.Drawing.Color.White;
+            this.treeView1.Location = new System.Drawing.Point(70, 227);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.ShowLines = false;
+            this.treeView1.Size = new System.Drawing.Size(314, 493);
+            this.treeView1.TabIndex = 14;
+            this.treeView1.Visible = false;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.HandleFormChange);
+            // 
+            // cbxCategories
+            // 
+            this.cbxCategories.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cbxCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategories.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cbxCategories.FormattingEnabled = true;
+            this.cbxCategories.Location = new System.Drawing.Point(70, 117);
+            this.cbxCategories.Name = "cbxCategories";
+            this.cbxCategories.Size = new System.Drawing.Size(314, 28);
+            this.cbxCategories.TabIndex = 12;
+            this.cbxCategories.SelectedValueChanged += new System.EventHandler(this.cbxCategories_SelectedValueChanged);
+            // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Alien Encounters", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(0, 0);
             this.label11.Name = "label11";
@@ -88,5 +127,8 @@ namespace FlightControlScreen
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox cbxCategories;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Panel pnlSelectedCategory;
     }
 }

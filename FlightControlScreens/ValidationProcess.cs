@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
 using UtilsMuchoCodigo;
 
 namespace FlightControlScreen
 {
-    public partial class ValidationProcess: UserControl
+    public partial class ValidationProcess : UserControl
     {
         public ValidationProcess()
         {
@@ -41,7 +35,7 @@ namespace FlightControlScreen
         private void StartProcess()
         {
             this.Invoke((MethodInvoker)delegate () { btn_Start.Enabled = false; });
-            string[] uri = { "https://www.gutenberg.org/files/120/120-0.txt", "https://www.gutenberg.org/cache/epub/57303/pg57303.txt", "https://www.gutenberg.org/cache/epub/1228/pg1228.txt", 
+            string[] uri = { "https://www.gutenberg.org/files/120/120-0.txt", "https://www.gutenberg.org/cache/epub/57303/pg57303.txt", "https://www.gutenberg.org/cache/epub/1228/pg1228.txt",
                 "https://www.gutenberg.org/cache/epub/2000/pg2000.txt", "https://www.gutenberg.org/files/1524/1524-0.txt" };
 
             Parallel.Invoke(
@@ -97,12 +91,12 @@ namespace FlightControlScreen
                     {
                         progressG.Value += 20;
                         label5.ForeColor = Color.Green;
-                    });                
+                    });
                     WriteTextSafe("Finish process with: " + uri[4]);
                 }
             );
             WriteTextSafe("INTEGRITY VERIFICATION SUCCESFULLY DONE!");
-            this.Invoke((MethodInvoker)delegate () { btn_Start.Enabled = true;  });
+            this.Invoke((MethodInvoker)delegate () { btn_Start.Enabled = true; });
         }
 
 

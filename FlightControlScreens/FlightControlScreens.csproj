@@ -48,6 +48,30 @@
     <Compile Include="Mapa.Designer.cs">
       <DependentUpon>Mapa.cs</DependentUpon>
     </Compile>
+    <Compile Include="OnBoardMaps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardMaps.Designer.cs">
+      <DependentUpon>OnBoardMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardPlanets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardPlanets.Designer.cs">
+      <DependentUpon>OnBoardPlanets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardRegions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardRegions.Designer.cs">
+      <DependentUpon>OnBoardRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardRoutes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardRoutes.Designer.cs">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +108,18 @@
     <EmbeddedResource Include="Mapa.resx">
       <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardMaps.resx">
+      <DependentUpon>OnBoardMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardPlanets.resx">
+      <DependentUpon>OnBoardPlanets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardRegions.resx">
+      <DependentUpon>OnBoardRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardRoutes.resx">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,17 +138,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UtilsMuchoCodigo\UtilsMuchoCodigo.csproj">
-      <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
-      <Name>UtilsMuchoCodigo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\3bc97fe6bc122c8875786b4fe0ad31df.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\galaxybg.jpg" />
     <Content Include="Resources\galaxybg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilsMuchoCodigo\UtilsMuchoCodigo.csproj">
+      <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
+      <Name>UtilsMuchoCodigo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

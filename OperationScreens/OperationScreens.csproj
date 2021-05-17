@@ -103,10 +103,6 @@
       <Project>{37252388-0342-4b3a-b899-587be10c5a62}</Project>
       <Name>FlightControlScreens</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UtilsMuchoCodigo\UtilsMuchoCodigo.csproj">
-      <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
-      <Name>UtilsMuchoCodigo</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SplashLogo.png" />

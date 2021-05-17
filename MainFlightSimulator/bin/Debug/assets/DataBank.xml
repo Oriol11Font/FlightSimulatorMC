@@ -10,7 +10,7 @@
       <type>Major hyperspace route</type>
       <nameRoute>Perlemian Trade Route</nameRoute>
       <start>Coruscant</start>
-      <end>Quermia</end>
+      <end> Quermia</end>
     </Route>
     <Route>
       <type>Major hyperspace route</type>
@@ -113,44 +113,8 @@
         <map>Kashyyyk.png</map>
       </defineRoute>
       <defineRoute>
-        <OrDes>Dathomir-Corellia</OrDes>
-        <selectedRoute>Hydian Way-Rimma Trade Route-Corellian Run-Corellian Trade Spine</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Manaan-Teth</OrDes>
-        <selectedRoute>Rimma Trade Route-Myto's Arrow</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Tatooine-Rakata Prime</OrDes>
-        <selectedRoute>Triellus Trade Route-Corellian Run-Shiritoku Way</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Tatooine-D'Qar</OrDes>
-        <selectedRoute>Triellus Trade Route-Corellian Run-Corellian Run-Hydian Way</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Mandalore-Byss</OrDes>
-        <selectedRoute>Hydian Way-Byss Run</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Manaan-Kessel</OrDes>
-        <selectedRoute>Rimma Trade Route-Kessel Run</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Dantooine-Shili</OrDes>
-        <selectedRoute>Myto's Arrow-Ison Trade Corridor-Triellus Trade Route</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Dathomir-Mandalore</OrDes>
-        <selectedRoute>Hydian Way-Rimma Trade Route-Hydian Way</selectedRoute>
-      </defineRoute>
-      <defineRoute>
         <OrDes>Dathomir-Hoth</OrDes>
         <selectedRoute>Hydian Way-Rimma Trade Route-Corellian Run-Corellian Trade Spine</selectedRoute>
-      </defineRoute>
-      <defineRoute>
-        <OrDes>Corellia-Hoth</OrDes>
-        <selectedRoute>Corellian Run-Corellian Trade Spine-Corellian Run-Corellian Trade Spine</selectedRoute>
       </defineRoute>
     </definedRoutes>
   </hyperspaceRoutes>
