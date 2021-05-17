@@ -51,12 +51,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UtilsMuchoCodigo\UtilsMuchoCodigo.csproj">
-      <Project>{f0cec4cc-9dd6-4894-8ab2-733159860bfd}</Project>
-      <Name>UtilsMuchoCodigo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

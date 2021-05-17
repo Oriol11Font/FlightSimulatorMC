@@ -48,6 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OnBoardMaps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardMaps.Designer.cs">
+      <DependentUpon>OnBoardMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardPlanets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardPlanets.Designer.cs">
+      <DependentUpon>OnBoardPlanets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardRegions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardRegions.Designer.cs">
+      <DependentUpon>OnBoardRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoardRoutes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OnBoardRoutes.Designer.cs">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,6 +87,18 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="OnBoardMaps.resx">
+      <DependentUpon>OnBoardMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardPlanets.resx">
+      <DependentUpon>OnBoardPlanets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardRegions.resx">
+      <DependentUpon>OnBoardRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OnBoardRoutes.resx">
+      <DependentUpon>OnBoardRoutes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
