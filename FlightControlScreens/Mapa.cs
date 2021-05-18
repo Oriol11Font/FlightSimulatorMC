@@ -24,7 +24,7 @@ namespace FlightControlScreen
             if (ApproachVector == null || DestinationVector == null) return;
 
             pn_total.SendToBack();
-            
+
 
             Parallel.Invoke(
                 () => CreatePlanet(ApproachVector, Color.Yellow),
@@ -41,7 +41,9 @@ namespace FlightControlScreen
 
             var pane = new Panel
             {
-                Size = new Size(10, 10), BackColor = color, Visible = true,
+                Size = new Size(10, 10),
+                BackColor = color,
+                Visible = true,
                 Location = location
             };
 
@@ -53,8 +55,12 @@ namespace FlightControlScreen
 
             var label = new Label
             {
-                BackColor = Color.Transparent, Visible = true, Location = new Point(location.X,
-                    location.Y + 10), ForeColor = Color.White, Text = planetName
+                BackColor = Color.Transparent,
+                Visible = true,
+                Location = new Point(location.X,
+                    location.Y + 10),
+                ForeColor = Color.White,
+                Text = planetName
             };
 
             Controls.Add(label);

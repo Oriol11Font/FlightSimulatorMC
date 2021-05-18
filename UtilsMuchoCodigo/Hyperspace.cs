@@ -15,18 +15,18 @@ namespace UtilsMuchoCodigo
 
         public static string CalculateVector(Coordinates situation)
         {
-            var nums = new[] {13, 11, 7, 5, 3, 2};
+            var nums = new[] { 13, 11, 7, 5, 3, 2 };
             var longitude = nums.Aggregate(.0,
                 (a, b) => a + situation.Longitude % b);
             var latitude = nums.Aggregate(.0,
                 (a, b) => a + situation.Latitude % b);
 
-            var mcm = Calculus.GetMcm((int) longitude, (int) latitude);
-            var gcd = Calculus.GetMcd((int) longitude, (int) latitude);
+            var mcm = Calculus.GetMcm((int)longitude, (int)latitude);
+            var gcd = Calculus.GetMcd((int)longitude, (int)latitude);
 
             var calculus = Calculus.AllCalculus(mcm, gcd);
 
-            if (calculus is {Count: 0})
+            if (calculus is { Count: 0 })
                 return null;
 
             var posicioLletra = (calculus[0] + calculus[1] + calculus[2]) % 6;
@@ -37,7 +37,7 @@ namespace UtilsMuchoCodigo
 
         public static string ObtainCoordinate(int posicioLletra, int posicioNumero)
         {
-            var chars = new ArrayList {'A', 'B', 'C', 'D', 'E', 'F'};
+            var chars = new ArrayList { 'A', 'B', 'C', 'D', 'E', 'F' };
 
             return $"{chars[posicioLletra - 1]}{posicioNumero.ToString()}";
         }

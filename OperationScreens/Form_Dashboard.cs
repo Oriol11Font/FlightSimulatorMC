@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading;
+﻿using FlightControlScreen;
+using System;
 using System.Windows.Forms;
-using FlightControlScreen;
 
 namespace OperationScreens
 {
@@ -12,7 +11,7 @@ namespace OperationScreens
             InitializeComponent();
         }
 
-        private static void formRun ()
+        private static void formRun()
         {
             Application.Run(new Form_Splash());
         }

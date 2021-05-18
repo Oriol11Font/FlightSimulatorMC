@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlPlanetDetails = new System.Windows.Forms.Panel();
+            this.lblPlanetParsecs = new System.Windows.Forms.Label();
+            this.lblPlanetParsecsTitle = new System.Windows.Forms.Label();
             this.lblPlanetRoutesTitle = new System.Windows.Forms.Label();
             this.pcbPlanetImage = new System.Windows.Forms.PictureBox();
             this.lblNatives = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.lblPlanetName = new System.Windows.Forms.Label();
             this.lblPlanetNameTitle = new System.Windows.Forms.Label();
             this.lbxPlanetRoutes = new System.Windows.Forms.ListBox();
-            this.lblPlanetParsecs = new System.Windows.Forms.Label();
-            this.lblPlanetParsecsTitle = new System.Windows.Forms.Label();
             this.pnlPlanetDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPlanetImage)).BeginInit();
             this.SuspendLayout();
@@ -75,11 +75,30 @@
             this.pnlPlanetDetails.Size = new System.Drawing.Size(583, 565);
             this.pnlPlanetDetails.TabIndex = 31;
             // 
+            // lblPlanetParsecs
+            // 
+            this.lblPlanetParsecs.AutoSize = true;
+            this.lblPlanetParsecs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPlanetParsecs.Location = new System.Drawing.Point(274, 239);
+            this.lblPlanetParsecs.Name = "lblPlanetParsecs";
+            this.lblPlanetParsecs.Size = new System.Drawing.Size(0, 17);
+            this.lblPlanetParsecs.TabIndex = 32;
+            // 
+            // lblPlanetParsecsTitle
+            // 
+            this.lblPlanetParsecsTitle.AutoSize = true;
+            this.lblPlanetParsecsTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPlanetParsecsTitle.Location = new System.Drawing.Point(274, 207);
+            this.lblPlanetParsecsTitle.Name = "lblPlanetParsecsTitle";
+            this.lblPlanetParsecsTitle.Size = new System.Drawing.Size(63, 17);
+            this.lblPlanetParsecsTitle.TabIndex = 31;
+            this.lblPlanetParsecsTitle.Text = "Parsecs:";
+            // 
             // lblPlanetRoutesTitle
             // 
             this.lblPlanetRoutesTitle.AutoSize = true;
             this.lblPlanetRoutesTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPlanetRoutesTitle.Location = new System.Drawing.Point(274, 363);
+            this.lblPlanetRoutesTitle.Location = new System.Drawing.Point(274, 290);
             this.lblPlanetRoutesTitle.Name = "lblPlanetRoutesTitle";
             this.lblPlanetRoutesTitle.Size = new System.Drawing.Size(57, 17);
             this.lblPlanetRoutesTitle.TabIndex = 30;
@@ -87,9 +106,9 @@
             // 
             // pcbPlanetImage
             // 
-            this.pcbPlanetImage.Location = new System.Drawing.Point(48, 366);
+            this.pcbPlanetImage.Location = new System.Drawing.Point(48, 363);
             this.pcbPlanetImage.Name = "pcbPlanetImage";
-            this.pcbPlanetImage.Size = new System.Drawing.Size(187, 173);
+            this.pcbPlanetImage.Size = new System.Drawing.Size(193, 173);
             this.pcbPlanetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbPlanetImage.TabIndex = 29;
             this.pcbPlanetImage.TabStop = false;
@@ -210,31 +229,14 @@
             // 
             // lbxPlanetRoutes
             // 
+            this.lbxPlanetRoutes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbxPlanetRoutes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbxPlanetRoutes.FormattingEnabled = true;
             this.lbxPlanetRoutes.ItemHeight = 16;
-            this.lbxPlanetRoutes.Location = new System.Drawing.Point(277, 389);
+            this.lbxPlanetRoutes.Location = new System.Drawing.Point(277, 316);
             this.lbxPlanetRoutes.Name = "lbxPlanetRoutes";
             this.lbxPlanetRoutes.Size = new System.Drawing.Size(227, 100);
             this.lbxPlanetRoutes.TabIndex = 15;
-            // 
-            // lblPlanetParsecs
-            // 
-            this.lblPlanetParsecs.AutoSize = true;
-            this.lblPlanetParsecs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPlanetParsecs.Location = new System.Drawing.Point(274, 239);
-            this.lblPlanetParsecs.Name = "lblPlanetParsecs";
-            this.lblPlanetParsecs.Size = new System.Drawing.Size(0, 17);
-            this.lblPlanetParsecs.TabIndex = 32;
-            // 
-            // lblPlanetParsecsTitle
-            // 
-            this.lblPlanetParsecsTitle.AutoSize = true;
-            this.lblPlanetParsecsTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPlanetParsecsTitle.Location = new System.Drawing.Point(274, 207);
-            this.lblPlanetParsecsTitle.Name = "lblPlanetParsecsTitle";
-            this.lblPlanetParsecsTitle.Size = new System.Drawing.Size(63, 17);
-            this.lblPlanetParsecsTitle.TabIndex = 31;
-            this.lblPlanetParsecsTitle.Text = "Parsecs:";
             // 
             // OnBoardPlanets
             // 

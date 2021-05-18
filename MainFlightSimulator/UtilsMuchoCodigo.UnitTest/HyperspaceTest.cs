@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace UtilsMuchoCodigo.UnitTest
 {
     [TestFixture]
@@ -10,7 +8,7 @@ namespace UtilsMuchoCodigo.UnitTest
         public void CalculateVectorFromSituation_MultiplicationOver300_ExpectNull(double
             longitude, double latitude)
         {
-            var situation = new Coordinates {Latitude = 23.123, Longitude = 123.124};
+            var situation = new Coordinates { Latitude = 23.123, Longitude = 123.124 };
             var vector = Hyperspace.CalculateVector(situation);
 
             Assert.That(vector, Is.Null);
@@ -36,7 +34,7 @@ namespace UtilsMuchoCodigo.UnitTest
         public string CalculateVector_FromSituation_ExpectCorrectResult(double latitude, double
             longitude)
         {
-            var situation = new Coordinates {Latitude = latitude, Longitude = longitude};
+            var situation = new Coordinates { Latitude = latitude, Longitude = longitude };
 
             var vector = Hyperspace.CalculateVector(situation);
 

@@ -21,6 +21,8 @@ namespace FlightControlScreen
         String dbPath = Application.StartupPath + "\\assets" + "\\" + DbFileName;
         TreeNode rootTreeNode;
         String selectedCategoryName;
+        String placeHolder = FindFileByName(Path.Combine(Application.StartupPath,
+                        "assets"), "placeholder.png");
 
 
         public SpaceShipDetails()
@@ -287,7 +289,7 @@ namespace FlightControlScreen
             form.PlanetLongitude = planetLongitude;
             form.PlanetNatives = planetNatives;
             form.ImagePath = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", imageName));
+                        "assets", "planetes", imageName ?? placeHolder));
             form.PlanetRoutesList = routesList;
             form.PlanetParsecs = planetParsecs;
             return form;
@@ -337,6 +339,24 @@ namespace FlightControlScreen
             form.RouteName = routeName;
             form.RouteStart = routeStart;
             form.RouteEnd = routeEnd;
+            var imageName = FindFileByName(Path.Combine(Application.StartupPath,
+                        "assets", "planetes"), routeName);
+            Image result;
+            if(imageName == null)
+            {
+                result = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", placeHolder));
+            } else
+            {
+                result = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", imageName));
+            }
+            form.RouteImage = getCorrectImage(imageName);
+
+
+
+
+
             List<String> planetsInRoute = new List<String>();
             listaPlanets.Count();
             return form;
@@ -345,6 +365,22 @@ namespace FlightControlScreen
 
 
 
+        }
+
+        private Image getCorrectImage(dynamic imageName)
+        {
+            Image result;
+            if (imageName == null)
+            {
+                result = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", placeHolder));
+            }
+            else
+            {
+                result = Image.FromFile(Path.Combine(Application.StartupPath,
+                        "assets", "planetes", imageName));
+            }
+            return result;
         }
 
         private OnBoardRegions fillRegionDetails(int selectedOptionId, OnBoardRegions form)
@@ -359,7 +395,7 @@ namespace FlightControlScreen
             form.RegionName = regionName;
             form.RegionDescription = regionDescription;
             form.RegionImage = Image.FromFile(Path.Combine(Application.StartupPath,
-                        "assets", "planetes", imageName));
+                        "assets", "planetes", imageName ?? placeHolder));
 
 
 
@@ -410,11 +446,12 @@ namespace FlightControlScreen
             try
             {
                 controller = (TreeView)sender;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return;
             }
-            
+
             var btnName = controller.Name;
             var selectedNodeText = controller.SelectedNode.Text.ToString();
             var selectedNodeTag = controller.SelectedNode.Tag.ToString();

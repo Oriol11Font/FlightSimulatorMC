@@ -111,37 +111,38 @@ namespace FlightControlScreen
             if (root == null) return null;
 
             return (from XmlNode planet in root.SelectNodes("//planet")
-                let name = planet.SelectSingleNode("name")?.InnerText
-                let sector = planet.SelectSingleNode("sector")?.InnerText.Split('-')
-                let filiation = planet.SelectSingleNode("filiation")?.InnerText
-                let natives = planet.SelectSingleNode("natives")?.InnerText
-                let situationNode = planet.SelectSingleNode("situation")
-                let latitude =
-                    double.Parse(situationNode.SelectSingleNode("lat")?.InnerText ?? string.Empty)
-                let longitude = double.Parse(situationNode.SelectSingleNode("long")?.InnerText ??
-                                             string.Empty)
-                let parsecs = situationNode.SelectSingleNode("parsecs")?.InnerText
-                let situation = new Coordinates
-                {
-                    Latitude = latitude, Longitude = longitude,
-                    Parsecs = parsecs
-                }
-                let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
-                let hyperSpaceRoutes =
-                    (from XmlNode route in routes select route.InnerText).ToList()
-                let imageInfo = FindFileByName(Path.Combine(Application.StartupPath,
-                    "assets", "planetes"), name)
-                select new Planet
-                {
-                    Name = name,
-                    Sector = sector[0],
-                    Region = sector[1],
-                    Filiation = filiation,
-                    Situation = situation,
-                    Natives = natives,
-                    HyperspaceRoutes = hyperSpaceRoutes,
-                    ImageName = imageInfo?.Name
-                }).ToList();
+                    let name = planet.SelectSingleNode("name")?.InnerText
+                    let sector = planet.SelectSingleNode("sector")?.InnerText.Split('-')
+                    let filiation = planet.SelectSingleNode("filiation")?.InnerText
+                    let natives = planet.SelectSingleNode("natives")?.InnerText
+                    let situationNode = planet.SelectSingleNode("situation")
+                    let latitude =
+                        double.Parse(situationNode.SelectSingleNode("lat")?.InnerText ?? string.Empty)
+                    let longitude = double.Parse(situationNode.SelectSingleNode("long")?.InnerText ??
+                                                 string.Empty)
+                    let parsecs = situationNode.SelectSingleNode("parsecs")?.InnerText
+                    let situation = new Coordinates
+                    {
+                        Latitude = latitude,
+                        Longitude = longitude,
+                        Parsecs = parsecs
+                    }
+                    let routes = planet.SelectNodes($"//planet[name=\"{name}\"]/hyperspaceRoute/route")
+                    let hyperSpaceRoutes =
+                        (from XmlNode route in routes select route.InnerText).ToList()
+                    let imageInfo = FindFileByName(Path.Combine(Application.StartupPath,
+                        "assets", "planetes"), name)
+                    select new Planet
+                    {
+                        Name = name,
+                        Sector = sector[0],
+                        Region = sector[1],
+                        Filiation = filiation,
+                        Situation = situation,
+                        Natives = natives,
+                        HyperspaceRoutes = hyperSpaceRoutes,
+                        ImageName = imageInfo?.Name
+                    }).ToList();
         }
 
         private static List<Route> ReadRoutes(string dbPath)
@@ -162,7 +163,10 @@ namespace FlightControlScreen
                         "assets", "planetes"), name)
                     select new Route
                     {
-                        Name = name, Type = type, Start = start, End = end,
+                        Name = name,
+                        Type = type,
+                        Start = start,
+                        End = end,
                         ImageName = imageInfo?.Name
                     }
                 ).ToList();
@@ -183,7 +187,9 @@ namespace FlightControlScreen
                     let map = route.SelectSingleNode("map")?.InnerText
                     select new DefinedRoute
                     {
-                        Origin = ordes[0], Destination = ordes[1], Routes = routes,
+                        Origin = ordes[0],
+                        Destination = ordes[1],
+                        Routes = routes,
                         Map = map
                     }
                 ).ToList();
@@ -294,7 +300,8 @@ namespace FlightControlScreen
             var selectedDefinedRoute = new DefinedRoute
             {
                 Origin = _selectedOriginPlanet.Name,
-                Destination = _selectedDestinationPlanet.Name, Routes = _selectedOriginPlanet
+                Destination = _selectedDestinationPlanet.Name,
+                Routes = _selectedOriginPlanet
                     .HyperspaceRoutes.Concat(_selectedDestinationPlanet.HyperspaceRoutes)
             };
 
@@ -342,7 +349,8 @@ namespace FlightControlScreen
                 var fileDialog = new OpenFileDialog
                 {
                     InitialDirectory = initialPath,
-                    CheckFileExists = true, Filter = @"*.png|*.jpg",
+                    CheckFileExists = true,
+                    Filter = @"*.png|*.jpg",
                     Title = @"Select an image tied to this route"
                 };
 

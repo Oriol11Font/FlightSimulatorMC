@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
 
 namespace UtilsMuchoCodigo.UnitTest
 {
@@ -93,7 +91,7 @@ namespace UtilsMuchoCodigo.UnitTest
         [Test]
         public void AllCalculus_CalculateAllMethods_ExpectCorrectResult()
         {
-            var originalCalculus = new List<int> {15, 5, -5, 50, 2, 1};
+            var originalCalculus = new List<int> { 15, 5, -5, 50, 2, 1 };
             var calculus = Calculus.AllCalculus(10, 5);
 
             CollectionAssert.AreEqual(originalCalculus, calculus);

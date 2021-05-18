@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlightControlScreen
@@ -29,7 +25,7 @@ namespace FlightControlScreen
         string[] spaceShip;
 
         Thread trd;
-        
+
         private void btn_Start_Click(object sender, EventArgs e)
         {
             bool wait = true;
@@ -39,7 +35,7 @@ namespace FlightControlScreen
             trd = new Thread(SearchSpaceShips);
             trd.Start();
 
-            while(wait)
+            while (wait)
             {
                 if (!trd.IsAlive)
                 {
@@ -53,7 +49,7 @@ namespace FlightControlScreen
             }
         }
 
-        private void SearchSpaceShips ()
+        private void SearchSpaceShips()
         {
             List<string> lines = File.ReadLines(path).ToList();
             var lineCount = File.ReadLines(path).Count();
@@ -139,7 +135,8 @@ namespace FlightControlScreen
                 btn_Start.Enabled = true;
                 dead = false;
                 aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanelFin.gif";
-            } else
+            }
+            else
             {
                 aimPanel.ImageLocation = Application.StartupPath + "\\assets\\aimPanel.gif";
                 aimEnemy.Start();
@@ -159,7 +156,7 @@ namespace FlightControlScreen
             aimEnemy.Stop();
         }
 
-        private void detectSpacehShip (string detection)
+        private void detectSpacehShip(string detection)
         {
             switch (detection)
             {
@@ -202,7 +199,7 @@ namespace FlightControlScreen
             Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        private void SystemOff ()
+        private void SystemOff()
         {
             btn_laser.Visible = false;
             btn_misil.Visible = false;

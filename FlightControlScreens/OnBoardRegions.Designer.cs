@@ -65,9 +65,9 @@
             // 
             // pcbRegionImage
             // 
-            this.pcbRegionImage.Location = new System.Drawing.Point(48, 366);
+            this.pcbRegionImage.Location = new System.Drawing.Point(48, 347);
             this.pcbRegionImage.Name = "pcbRegionImage";
-            this.pcbRegionImage.Size = new System.Drawing.Size(187, 173);
+            this.pcbRegionImage.Size = new System.Drawing.Size(475, 192);
             this.pcbRegionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbRegionImage.TabIndex = 29;
             this.pcbRegionImage.TabStop = false;

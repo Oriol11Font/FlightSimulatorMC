@@ -119,9 +119,9 @@
             // 
             // pcbRoute
             // 
-            this.pcbRoute.Location = new System.Drawing.Point(325, 322);
+            this.pcbRoute.Location = new System.Drawing.Point(32, 255);
             this.pcbRoute.Name = "pcbRoute";
-            this.pcbRoute.Size = new System.Drawing.Size(223, 216);
+            this.pcbRoute.Size = new System.Drawing.Size(516, 283);
             this.pcbRoute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbRoute.TabIndex = 29;
             this.pcbRoute.TabStop = false;

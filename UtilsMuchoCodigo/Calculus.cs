@@ -60,7 +60,7 @@ namespace UtilsMuchoCodigo
         {
             if (b.Equals(0)) throw new DivideByZeroException();
 
-            var division = (double) a / b;
+            var division = (double)a / b;
 
             return Round(division);
         }
@@ -69,7 +69,7 @@ namespace UtilsMuchoCodigo
         {
             if (b.Equals(0)) throw new DivideByZeroException();
 
-            var division = (double) b / a;
+            var division = (double)b / a;
 
             return Round(division);
         }
@@ -93,6 +93,6 @@ namespace UtilsMuchoCodigo
         }
 
         private static int Round(double num) =>
-            (int) Math.Round(num, MidpointRounding.AwayFromZero);
+            (int)Math.Round(num, MidpointRounding.AwayFromZero);
     }
 }
