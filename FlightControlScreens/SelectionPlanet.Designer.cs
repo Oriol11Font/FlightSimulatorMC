@@ -33,7 +33,7 @@ namespace FlightControlScreen
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_selectplanet = new System.Windows.Forms.Panel();
-            this.mapa1 = new Mapa();
+            this.mapa1 = new FlightControlScreen.Mapa();
             this.btn_calc_vector = new System.Windows.Forms.Button();
             this.gpb_route = new System.Windows.Forms.GroupBox();
             this.pb_route_image = new System.Windows.Forms.PictureBox();
@@ -67,9 +67,9 @@ namespace FlightControlScreen
             this.panel1.SuspendLayout();
             this.panel_selectplanet.SuspendLayout();
             this.gpb_route.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pb_route_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_route_image)).BeginInit();
             this.gpb_planet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pb_planet_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_planet_image)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,7 +118,7 @@ namespace FlightControlScreen
             // 
             this.btn_calc_vector.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_calc_vector.Enabled = false;
-            this.btn_calc_vector.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_calc_vector.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_calc_vector.ForeColor = System.Drawing.Color.White;
             this.btn_calc_vector.Location = new System.Drawing.Point(355, 813);
             this.btn_calc_vector.Name = "btn_calc_vector";
@@ -159,7 +159,7 @@ namespace FlightControlScreen
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(15, 218);
             this.label13.Name = "label13";
@@ -170,7 +170,7 @@ namespace FlightControlScreen
             // 
             // lbl_route_end
             // 
-            this.lbl_route_end.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_route_end.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_route_end.ForeColor = System.Drawing.Color.White;
             this.lbl_route_end.Location = new System.Drawing.Point(14, 241);
             this.lbl_route_end.Name = "lbl_route_end";
@@ -179,7 +179,7 @@ namespace FlightControlScreen
             // 
             // label14
             // 
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(15, 156);
             this.label14.Name = "label14";
@@ -190,7 +190,7 @@ namespace FlightControlScreen
             // 
             // lbl_route_start
             // 
-            this.lbl_route_start.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_route_start.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_route_start.ForeColor = System.Drawing.Color.White;
             this.lbl_route_start.Location = new System.Drawing.Point(14, 179);
             this.lbl_route_start.Name = "lbl_route_start";
@@ -199,7 +199,7 @@ namespace FlightControlScreen
             // 
             // lbl_route_type
             // 
-            this.lbl_route_type.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_route_type.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_route_type.ForeColor = System.Drawing.Color.White;
             this.lbl_route_type.Location = new System.Drawing.Point(14, 114);
             this.lbl_route_type.Name = "lbl_route_type";
@@ -208,7 +208,7 @@ namespace FlightControlScreen
             // 
             // lbl_route_name
             // 
-            this.lbl_route_name.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_route_name.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_route_name.ForeColor = System.Drawing.Color.White;
             this.lbl_route_name.Location = new System.Drawing.Point(15, 49);
             this.lbl_route_name.Name = "lbl_route_name";
@@ -217,7 +217,7 @@ namespace FlightControlScreen
             // 
             // label12
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(15, 91);
             this.label12.Name = "label12";
@@ -228,7 +228,7 @@ namespace FlightControlScreen
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(15, 26);
             this.label4.Name = "label4";
@@ -260,7 +260,7 @@ namespace FlightControlScreen
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(15, 27);
             this.label3.Name = "label3";
@@ -271,7 +271,7 @@ namespace FlightControlScreen
             // 
             // lbl_name
             // 
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.ForeColor = System.Drawing.Color.White;
             this.lbl_name.Location = new System.Drawing.Point(14, 50);
             this.lbl_name.Name = "lbl_name";
@@ -280,7 +280,7 @@ namespace FlightControlScreen
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(15, 92);
             this.label5.Name = "label5";
@@ -291,7 +291,7 @@ namespace FlightControlScreen
             // 
             // lbl_sector
             // 
-            this.lbl_sector.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_sector.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sector.ForeColor = System.Drawing.Color.White;
             this.lbl_sector.Location = new System.Drawing.Point(14, 115);
             this.lbl_sector.Name = "lbl_sector";
@@ -310,7 +310,7 @@ namespace FlightControlScreen
             // 
             // lbl_natives
             // 
-            this.lbl_natives.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_natives.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_natives.ForeColor = System.Drawing.Color.White;
             this.lbl_natives.Location = new System.Drawing.Point(14, 310);
             this.lbl_natives.Name = "lbl_natives";
@@ -319,7 +319,7 @@ namespace FlightControlScreen
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(14, 157);
             this.label8.Name = "label8";
@@ -330,7 +330,7 @@ namespace FlightControlScreen
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(15, 287);
             this.label6.Name = "label6";
@@ -341,7 +341,7 @@ namespace FlightControlScreen
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(14, 222);
             this.label7.Name = "label7";
@@ -352,7 +352,7 @@ namespace FlightControlScreen
             // 
             // lbl_filiation
             // 
-            this.lbl_filiation.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_filiation.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_filiation.ForeColor = System.Drawing.Color.White;
             this.lbl_filiation.Location = new System.Drawing.Point(15, 180);
             this.lbl_filiation.Name = "lbl_filiation";
@@ -361,7 +361,7 @@ namespace FlightControlScreen
             // 
             // lbl_situation
             // 
-            this.lbl_situation.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_situation.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_situation.ForeColor = System.Drawing.Color.White;
             this.lbl_situation.Location = new System.Drawing.Point(15, 245);
             this.lbl_situation.Name = "lbl_situation";
@@ -372,7 +372,7 @@ namespace FlightControlScreen
             // 
             this.lb_routes.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lb_routes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lb_routes.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lb_routes.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_routes.ForeColor = System.Drawing.Color.White;
             this.lb_routes.FormattingEnabled = true;
             this.lb_routes.ItemHeight = 25;
@@ -384,7 +384,7 @@ namespace FlightControlScreen
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(19, 348);
             this.label11.Name = "label11";
@@ -395,7 +395,7 @@ namespace FlightControlScreen
             // 
             // cbx_destination_planet
             // 
-            this.cbx_destination_planet.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cbx_destination_planet.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_destination_planet.FormattingEnabled = true;
             this.cbx_destination_planet.Location = new System.Drawing.Point(18, 255);
             this.cbx_destination_planet.Name = "cbx_destination_planet";
@@ -405,7 +405,7 @@ namespace FlightControlScreen
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(18, 216);
             this.label2.Name = "label2";
@@ -416,7 +416,7 @@ namespace FlightControlScreen
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 126);
             this.label1.Name = "label1";
@@ -427,7 +427,7 @@ namespace FlightControlScreen
             // 
             // cbx_origin_planet
             // 
-            this.cbx_origin_planet.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cbx_origin_planet.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_origin_planet.FormattingEnabled = true;
             this.cbx_origin_planet.Location = new System.Drawing.Point(19, 164);
             this.cbx_origin_planet.Name = "cbx_origin_planet";
@@ -438,7 +438,7 @@ namespace FlightControlScreen
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label10.Font = new System.Drawing.Font("Alien Encounters", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 0);
             this.label10.Name = "label10";
@@ -459,10 +459,11 @@ namespace FlightControlScreen
             this.panel1.ResumeLayout(false);
             this.panel_selectplanet.ResumeLayout(false);
             this.gpb_route.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pb_route_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_route_image)).EndInit();
             this.gpb_planet.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pb_planet_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_planet_image)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Panel panel_selectplanet;

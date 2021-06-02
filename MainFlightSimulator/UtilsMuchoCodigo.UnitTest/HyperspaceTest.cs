@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using UtilsMuchoCodigo;
+
 namespace UtilsMuchoCodigo.UnitTest
 {
     [TestFixture]
